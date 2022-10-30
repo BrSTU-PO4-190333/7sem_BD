@@ -14,7 +14,7 @@ WHERE
 	AND
 	A.de_patientId = D.id
 	AND
-	A.de_startTime >= '2022-10-28 08:15:00'
+	A.de_startTime >= '2019-01-01 00:00:00'
 	AND 
-	A.de_endTime <= '2022-10-28 08:40:00'
+	A.de_endTime <= '2019-02-20 00:00:00'
 ORDER BY дата;

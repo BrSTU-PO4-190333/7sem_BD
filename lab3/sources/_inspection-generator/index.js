@@ -1,31 +1,30 @@
 const { v4: uuidv4 } = require('uuid');
 const fs = require('fs');
 
-const surnames4woman = require('../data/ru_surnames_woman.json');
-const surnames4man = require('../data/ru_surnames_man.json');
-const names4woman = require('../data/ru_names_woman.json');
-const names4man = require('../data/ru_names_man.json');
-const patronymics4woman = require('../data/ru_patronymics_woman.json');
-const patronymics4man = require('../data/ru_patronymics_man.json');
 const regAddressDoctorTime = require('../data/region-address-doctor-time.notAll.json');
-const medicine = require('./data/DE_CTL_Medicine.json');
+const medicine = require('./../data/medicine.json');
+const symptomes = require('./../data/symptomes.json');
 
-function main() {
-  console.log(regAddressDoctorTime);
+function main_polyclinic(
+  a_date = '2019-01-07',
+  a_startTime = '8:00',
+  a_endTime = '12:00',
+  a_day = 'понедельник'
+) {
+  let sql = '';
 
   let regions = new Set(); // множество участков, работающих от 8 до 12 в понедельник
   regAddressDoctorTime.forEach((e) => {
-    if (e['понедельник'] === '8:00 - 12:00') {
+    if (e[a_day] === `${a_startTime} - ${a_endTime}`) {
       regions.add(e['Участок']);
       console.log(e);
     }
   });
 
-  console.log(regions);
+  let startDate = new Date(`${a_date} ${a_startTime}`);
+  let endDate = new Date(`${a_date} ${a_endTime}`);
 
-  let startDate = new Date('2019-01-07 08:00');
-  let endDate = new Date('2019-01-07 12:00');
-  console.log(startDate.getHours());
+  let counter = 0;
   regions.forEach((reg) => {
     console.log(`-- Транзации для участка №${reg}`);
 
@@ -42,43 +41,205 @@ function main() {
       );
 
       console.log(`${printDate(start)}  -  ${printDate(next)}`);
-      let sql = `
+      counter += 1;
+      const uuid = uuidv4();
+      sql += `
+-- Транзации №${counter}
+
 BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('${uuidv4()}','${printDate(start)}','${printDate(next)}',1,1,1,1);
-  
+  (`;
+      sql += `'${uuid}', `;
+      sql += `'${printDate(start)}', `;
+      sql += `'${printDate(next)}', `;
+      sql += `1, `;
+      sql += `${getRandomIntInclusive(1, 14629)}, `;
+      sql += `${getRandomIntInclusive(1, 1291)}, `;
+      sql += `(SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT ${reg})`;
+      sql += `);\n`;
+
+      sql += `
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
-  VALUES
-  ('${uuidv4()}', '22a9d58c-21b6-4841-91ed-e9f8ee7f0a0f'),
-  ('${uuidv4()}', 'a837dba9-0978-4384-b98a-2f018774d7dd'),
-  ('${uuidv4()}', 'f5e35fb0-912d-497c-9535-e94629a05114');
-  
+  VALUES`;
+
+      let len = getRandomIntInclusive(2, 4);
+      for (let i = 1; i < len; i++) {
+        sql += `
+  ('${uuid}', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE '${
+          medicine[getRandomIntInclusive(1, medicine.length - 1)]
+        }%' LIMIT 1)),`;
+      }
+
+      sql += `
+  ('${uuid}', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE '${
+        medicine[getRandomIntInclusive(1, medicine.length - 1)]
+      }%' LIMIT 1));\n`;
+
+      sql += `
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
-  VALUES
-  ('${uuidv4()}', 5),
-  ('${uuidv4()}', 7);
-  
+  VALUES`;
+
+      let length = getRandomIntInclusive(2, 4);
+      for (let i = 1; i < length; i++) {
+        sql += `
+  ('${uuid}', '${getRandomIntInclusive(1, symptomes.length - 1)}'),`;
+      }
+
+      sql += `
+  ('${uuid}', '${getRandomIntInclusive(1, symptomes.length - 1)}');`;
+
+      sql += `
   COMMIT TRANSACTION;
 END;   
 `;
-      let path = `sql/region-${reg}_${printDateInOneWord(
-        start
-      )}_${printDateInOneWord(next)}.sql`;
 
-      // saveFile(path, sql);
       start = next;
     }
   });
-  console.log(medicine);
 
- 
+  const path = `./../database/sql/8__${a_date}_${a_startTime}-${a_endTime}.sql`;
+  const text = sql;
+  saveFile(path, text);
 }
 
-main();
+function main_home(
+  a_date = '2019-01-07',
+  a_startTime = '12:10',
+  a_endTime = '14:00',
+  a_day = 'понедельник'
+) {
+  let sql = '';
+
+  let regions = new Set(); // множество участков, работающих от 8 до 12 в понедельник
+  regAddressDoctorTime.forEach((e) => {
+    if (e[a_day] === `${a_startTime} - ${a_endTime}`) {
+      regions.add(e['Участок']);
+      console.log(e);
+    }
+  });
+
+  let startDate = new Date(`${a_date} ${a_startTime}`);
+  let endDate = new Date(`${a_date} ${a_endTime}`);
+
+  let counter = 0;
+  regions.forEach((reg) => {
+    console.log(`-- Транзации для участка №${reg}`);
+
+    start = startDate;
+    end = endDate;
+
+    while (1) {
+      if (end.getTime() < start.getTime()) break;
+      start = addTime(
+        start,
+        1000 * 60 * getRandomIntInclusive(16, 30) +
+          1000 * getRandomIntInclusive(1, 60)
+      );
+      let next = addTime(
+        start,
+        1000 * 60 * getRandomIntInclusive(6, 15) +
+          1000 * getRandomIntInclusive(1, 60)
+      );
+
+      console.log(`${printDate(start)}  -  ${printDate(next)}`);
+      counter += 1;
+      const uuid = uuidv4();
+      sql += `
+-- Транзации №${counter}
+
+BEGIN TRANSACTION;
+INSERT INTO DE_DOC_Inspection
+(id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
+VALUES
+(`;
+      sql += `'${uuid}', `;
+      sql += `'${printDate(start)}', `;
+      sql += `'${printDate(next)}', `;
+      sql += `2, `;
+      sql += `${getRandomIntInclusive(1, 14629)}, `;
+      sql += `${getRandomIntInclusive(1, 1291)}, `;
+      sql += `(SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT ${reg})`;
+      sql += `);\n`;
+
+      sql += `
+INSERT INTO DE_TAB_InspectionMedicines
+(de_inspectionid, de_medicineid)
+VALUES`;
+
+      let len = getRandomIntInclusive(2, 4);
+      for (let i = 1; i < len; i++) {
+        sql += `
+('${uuid}', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE '${
+          medicine[getRandomIntInclusive(1, medicine.length - 1)]
+        }%' LIMIT 1)),`;
+      }
+
+      sql += `
+('${uuid}', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE '${
+        medicine[getRandomIntInclusive(1, medicine.length - 1)]
+      }%' LIMIT 1));\n`;
+
+      sql += `
+INSERT INTO DE_TAB_InspectionSymptoms
+(de_inspectionid, de_symptomeid)
+VALUES`;
+
+      let length = getRandomIntInclusive(2, 4);
+      for (let i = 1; i < length; i++) {
+        sql += `
+('${uuid}', '${getRandomIntInclusive(1, symptomes.length - 1)}'),`;
+      }
+
+      sql += `
+('${uuid}', '${getRandomIntInclusive(1, symptomes.length - 1)}');`;
+
+      sql += `
+COMMIT TRANSACTION;
+END;   
+`;
+
+      start = next;
+    }
+  });
+
+  const path = `./../database/sql/8__${a_date}_${a_startTime}-${a_endTime}.sql`;
+  const text = sql;
+  saveFile(path, text);
+}
+
+main_polyclinic('2018-12-24', '08:00', '12:00', 'понедельник');
+main_polyclinic('2018-12-31', '08:00', '12:00', 'понедельник');
+main_polyclinic('2019-01-07', '08:00', '12:00', 'понедельник');
+main_polyclinic('2019-01-14', '08:00', '12:00', 'понедельник');
+main_polyclinic('2019-01-21', '08:00', '12:00', 'понедельник');
+main_polyclinic('2019-01-28', '08:00', '12:00', 'понедельник');
+main_polyclinic('2019-02-04', '08:00', '12:00', 'понедельник');
+main_polyclinic('2019-02-11', '08:00', '12:00', 'понедельник');
+main_polyclinic('2019-02-18', '08:00', '12:00', 'понедельник');
+main_polyclinic('2019-02-25', '08:00', '12:00', 'понедельник');
+main_polyclinic('2019-03-04', '08:00', '12:00', 'понедельник');
+main_polyclinic('2019-03-11', '08:00', '12:00', 'понедельник');
+main_polyclinic('2019-03-18', '08:00', '12:00', 'понедельник');
+main_polyclinic('2019-03-25', '08:00', '12:00', 'понедельник');
+
+main_home('2018-12-26', '08:00', '12:00', 'среда');
+main_home('2019-01-02', '08:00', '12:00', 'среда');
+main_home('2019-01-09', '08:00', '12:00', 'среда');
+main_home('2019-01-16', '08:00', '12:00', 'среда');
+main_home('2019-01-23', '08:00', '12:00', 'среда');
+main_home('2019-01-30', '08:00', '12:00', 'среда');
+main_home('2019-02-06', '08:00', '12:00', 'среда');
+main_home('2019-02-13', '08:00', '12:00', 'среда');
+main_home('2019-02-20', '08:00', '12:00', 'среда');
+main_home('2019-02-27', '08:00', '12:00', 'среда');
+main_home('2019-03-06', '08:00', '12:00', 'среда');
+main_home('2019-03-13', '08:00', '12:00', 'среда');
+main_home('2019-03-20', '08:00', '12:00', 'среда');
+main_home('2019-03-27', '08:00', '12:00', 'среда');
 
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
