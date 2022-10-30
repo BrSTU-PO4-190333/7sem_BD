@@ -88,6 +88,7 @@ CREATE SEQUENCE public.de_ctl_diagnosis_id_seq_1;
 CREATE TABLE public.DE_CTL_Diagnosis (
                 id INTEGER NOT NULL DEFAULT nextval('public.de_ctl_diagnosis_id_seq_1'),
                 de_name VARCHAR(16) NOT NULL,
+                de_description VARCHAR(1024),
                 CONSTRAINT de_ctl_diagnosis_pk PRIMARY KEY (id)
 );
 
