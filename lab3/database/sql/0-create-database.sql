@@ -23,8 +23,10 @@ CREATE SEQUENCE public.de_ctl_doctors_id_seq_1;
 
 CREATE TABLE public.DE_CTL_Doctors (
                 id INTEGER NOT NULL DEFAULT nextval('public.de_ctl_doctors_id_seq_1'),
-                de_name VARCHAR(32) NOT NULL,
+                de_region INTEGER,
+                de_office VARCHAR(16),
                 de_surname VARCHAR(32) NOT NULL,
+                de_name VARCHAR(32) NOT NULL,
                 de_patronymic VARCHAR(32),
                 CONSTRAINT de_ctl_doctors_pk PRIMARY KEY (id)
 );
