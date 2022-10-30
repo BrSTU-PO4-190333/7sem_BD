@@ -5,23 +5,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('5c8960ff-4c5e-4825-a366-dc6f709141ed', '2019-03-18 08:00:21', '2019-03-18 08:08:54', 1, 4769, 421, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('01bfd639-fa35-4a8c-8dd7-047a4edfa200', '2019-03-18 08:00:04', '2019-03-18 08:07:55', 1, 6068, 1122, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('5c8960ff-4c5e-4825-a366-dc6f709141ed', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Актасулид%' LIMIT 1)),
-  ('5c8960ff-4c5e-4825-a366-dc6f709141ed', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Плитидепсин%' LIMIT 1)),
-  ('5c8960ff-4c5e-4825-a366-dc6f709141ed', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Улькуран%' LIMIT 1)),
-  ('5c8960ff-4c5e-4825-a366-dc6f709141ed', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тералиджен%' LIMIT 1));
+  ('01bfd639-fa35-4a8c-8dd7-047a4edfa200', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Гуселькумаб%' LIMIT 1)),
+  ('01bfd639-fa35-4a8c-8dd7-047a4edfa200', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Зетринал%' LIMIT 1)),
+  ('01bfd639-fa35-4a8c-8dd7-047a4edfa200', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Диеногест%' LIMIT 1)),
+  ('01bfd639-fa35-4a8c-8dd7-047a4edfa200', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пентобарбитал%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('5c8960ff-4c5e-4825-a366-dc6f709141ed', '82'),
-  ('5c8960ff-4c5e-4825-a366-dc6f709141ed', '18'),
-  ('5c8960ff-4c5e-4825-a366-dc6f709141ed', '191'),
-  ('5c8960ff-4c5e-4825-a366-dc6f709141ed', '167');
+  ('01bfd639-fa35-4a8c-8dd7-047a4edfa200', '64'),
+  ('01bfd639-fa35-4a8c-8dd7-047a4edfa200', '159');
   COMMIT TRANSACTION;
 END;   
 
@@ -31,21 +29,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('0cb185c0-db6e-4d7f-b452-a0342c25b336', '2019-03-18 08:09:34', '2019-03-18 08:14:04', 1, 903, 602, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('4fa09466-9d8a-4d67-98c6-68fe9848d71c', '2019-03-18 08:08:30', '2019-03-18 08:17:29', 1, 581, 375, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('0cb185c0-db6e-4d7f-b452-a0342c25b336', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Флорацид%' LIMIT 1)),
-  ('0cb185c0-db6e-4d7f-b452-a0342c25b336', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Велорин 100%' LIMIT 1)),
-  ('0cb185c0-db6e-4d7f-b452-a0342c25b336', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Продектин%' LIMIT 1)),
-  ('0cb185c0-db6e-4d7f-b452-a0342c25b336', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Диброспидия хлорид%' LIMIT 1));
+  ('4fa09466-9d8a-4d67-98c6-68fe9848d71c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Налорфин%' LIMIT 1)),
+  ('4fa09466-9d8a-4d67-98c6-68fe9848d71c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Сиролимус%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('0cb185c0-db6e-4d7f-b452-a0342c25b336', '188'),
-  ('0cb185c0-db6e-4d7f-b452-a0342c25b336', '66');
+  ('4fa09466-9d8a-4d67-98c6-68fe9848d71c', '185'),
+  ('4fa09466-9d8a-4d67-98c6-68fe9848d71c', '149'),
+  ('4fa09466-9d8a-4d67-98c6-68fe9848d71c', '124');
   COMMIT TRANSACTION;
 END;   
 
@@ -55,21 +52,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('524aa16f-ddd1-499d-9641-b2add27b772d', '2019-03-18 08:14:59', '2019-03-18 08:21:02', 1, 3357, 787, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('1240400e-e4eb-4281-9255-c1f9e2498f5b', '2019-03-18 08:17:57', '2019-03-18 08:27:50', 1, 13438, 574, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('524aa16f-ddd1-499d-9641-b2add27b772d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Спиносад%' LIMIT 1)),
-  ('524aa16f-ddd1-499d-9641-b2add27b772d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Сульфозин%' LIMIT 1)),
-  ('524aa16f-ddd1-499d-9641-b2add27b772d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Дипин%' LIMIT 1)),
-  ('524aa16f-ddd1-499d-9641-b2add27b772d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Адапромин%' LIMIT 1));
+  ('1240400e-e4eb-4281-9255-c1f9e2498f5b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Кнавон%' LIMIT 1)),
+  ('1240400e-e4eb-4281-9255-c1f9e2498f5b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Клафотаксим%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('524aa16f-ddd1-499d-9641-b2add27b772d', '52'),
-  ('524aa16f-ddd1-499d-9641-b2add27b772d', '177');
+  ('1240400e-e4eb-4281-9255-c1f9e2498f5b', '12'),
+  ('1240400e-e4eb-4281-9255-c1f9e2498f5b', '99'),
+  ('1240400e-e4eb-4281-9255-c1f9e2498f5b', '48'),
+  ('1240400e-e4eb-4281-9255-c1f9e2498f5b', '85');
   COMMIT TRANSACTION;
 END;   
 
@@ -79,21 +76,19 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('01c819d6-7817-4973-999e-7b7e6988aa66', '2019-03-18 08:21:08', '2019-03-18 08:30:45', 1, 931, 599, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('c4c8b8e5-4b27-4daf-a3b1-5c126e7de714', '2019-03-18 08:27:59', '2019-03-18 08:34:41', 1, 8781, 914, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('01c819d6-7817-4973-999e-7b7e6988aa66', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Коваксин%' LIMIT 1)),
-  ('01c819d6-7817-4973-999e-7b7e6988aa66', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Дазатиниб%' LIMIT 1)),
-  ('01c819d6-7817-4973-999e-7b7e6988aa66', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бромэргон%' LIMIT 1));
+  ('c4c8b8e5-4b27-4daf-a3b1-5c126e7de714', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Нецитумумаб%' LIMIT 1)),
+  ('c4c8b8e5-4b27-4daf-a3b1-5c126e7de714', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ацетилцистеин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('01c819d6-7817-4973-999e-7b7e6988aa66', '146'),
-  ('01c819d6-7817-4973-999e-7b7e6988aa66', '88'),
-  ('01c819d6-7817-4973-999e-7b7e6988aa66', '42');
+  ('c4c8b8e5-4b27-4daf-a3b1-5c126e7de714', '147'),
+  ('c4c8b8e5-4b27-4daf-a3b1-5c126e7de714', '91');
   COMMIT TRANSACTION;
 END;   
 
@@ -103,19 +98,19 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('9260d26d-aae9-4a20-9fad-43cc7c132f3a', '2019-03-18 08:31:03', '2019-03-18 08:35:45', 1, 3506, 437, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('bed9388e-3ad4-4623-abcc-81eadbe0f3e1', '2019-03-18 08:34:49', '2019-03-18 08:39:10', 1, 10678, 23, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('9260d26d-aae9-4a20-9fad-43cc7c132f3a', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Анакинра%' LIMIT 1)),
-  ('9260d26d-aae9-4a20-9fad-43cc7c132f3a', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Меропенем%' LIMIT 1));
+  ('bed9388e-3ad4-4623-abcc-81eadbe0f3e1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Седальгин-Нео%' LIMIT 1)),
+  ('bed9388e-3ad4-4623-abcc-81eadbe0f3e1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Долфин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('9260d26d-aae9-4a20-9fad-43cc7c132f3a', '54'),
-  ('9260d26d-aae9-4a20-9fad-43cc7c132f3a', '114');
+  ('bed9388e-3ad4-4623-abcc-81eadbe0f3e1', '174'),
+  ('bed9388e-3ad4-4623-abcc-81eadbe0f3e1', '57');
   COMMIT TRANSACTION;
 END;   
 
@@ -125,21 +120,22 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('d2bf9f73-ced1-4659-af1d-b9ad0ddbb42a', '2019-03-18 08:36:21', '2019-03-18 08:40:59', 1, 401, 594, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('76b49029-e9f1-493b-94e4-86fbd941df7d', '2019-03-18 08:39:44', '2019-03-18 08:49:47', 1, 6246, 582, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('d2bf9f73-ced1-4659-af1d-b9ad0ddbb42a', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Мивакурия хлорид%' LIMIT 1)),
-  ('d2bf9f73-ced1-4659-af1d-b9ad0ddbb42a', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Гексэтидин%' LIMIT 1));
+  ('76b49029-e9f1-493b-94e4-86fbd941df7d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Мебгидролин%' LIMIT 1)),
+  ('76b49029-e9f1-493b-94e4-86fbd941df7d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Эфавиренз%' LIMIT 1)),
+  ('76b49029-e9f1-493b-94e4-86fbd941df7d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Налорфин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('d2bf9f73-ced1-4659-af1d-b9ad0ddbb42a', '58'),
-  ('d2bf9f73-ced1-4659-af1d-b9ad0ddbb42a', '14'),
-  ('d2bf9f73-ced1-4659-af1d-b9ad0ddbb42a', '47'),
-  ('d2bf9f73-ced1-4659-af1d-b9ad0ddbb42a', '35');
+  ('76b49029-e9f1-493b-94e4-86fbd941df7d', '116'),
+  ('76b49029-e9f1-493b-94e4-86fbd941df7d', '147'),
+  ('76b49029-e9f1-493b-94e4-86fbd941df7d', '148'),
+  ('76b49029-e9f1-493b-94e4-86fbd941df7d', '186');
   COMMIT TRANSACTION;
 END;   
 
@@ -149,21 +145,19 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('e0ea16d2-f139-4b64-8f53-ee581cbfd4bd', '2019-03-18 08:41:48', '2019-03-18 08:49:57', 1, 13377, 557, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('ae9af88f-e50b-4e00-af44-e8f145f82e58', '2019-03-18 08:50:40', '2019-03-18 09:00:45', 1, 13341, 687, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('e0ea16d2-f139-4b64-8f53-ee581cbfd4bd', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Олицеридин%' LIMIT 1)),
-  ('e0ea16d2-f139-4b64-8f53-ee581cbfd4bd', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Транексамовая кислота%' LIMIT 1));
+  ('ae9af88f-e50b-4e00-af44-e8f145f82e58', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Гинепристон%' LIMIT 1)),
+  ('ae9af88f-e50b-4e00-af44-e8f145f82e58', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Цикортид Циклокапс%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('e0ea16d2-f139-4b64-8f53-ee581cbfd4bd', '91'),
-  ('e0ea16d2-f139-4b64-8f53-ee581cbfd4bd', '154'),
-  ('e0ea16d2-f139-4b64-8f53-ee581cbfd4bd', '196'),
-  ('e0ea16d2-f139-4b64-8f53-ee581cbfd4bd', '112');
+  ('ae9af88f-e50b-4e00-af44-e8f145f82e58', '126'),
+  ('ae9af88f-e50b-4e00-af44-e8f145f82e58', '156');
   COMMIT TRANSACTION;
 END;   
 
@@ -173,19 +167,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('2b2981f5-9991-4b0d-bb0d-706eaa8f50b9', '2019-03-18 08:50:24', '2019-03-18 08:54:28', 1, 12936, 157, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('e6885b8e-2985-4d32-9f5d-4f73e7602553', '2019-03-18 09:01:39', '2019-03-18 09:07:50', 1, 7772, 1013, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('2b2981f5-9991-4b0d-bb0d-706eaa8f50b9', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Толметин%' LIMIT 1)),
-  ('2b2981f5-9991-4b0d-bb0d-706eaa8f50b9', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пенцикловир%' LIMIT 1));
+  ('e6885b8e-2985-4d32-9f5d-4f73e7602553', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Диокор%' LIMIT 1)),
+  ('e6885b8e-2985-4d32-9f5d-4f73e7602553', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Амлорус%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('2b2981f5-9991-4b0d-bb0d-706eaa8f50b9', '90'),
-  ('2b2981f5-9991-4b0d-bb0d-706eaa8f50b9', '83');
+  ('e6885b8e-2985-4d32-9f5d-4f73e7602553', '7'),
+  ('e6885b8e-2985-4d32-9f5d-4f73e7602553', '89'),
+  ('e6885b8e-2985-4d32-9f5d-4f73e7602553', '54'),
+  ('e6885b8e-2985-4d32-9f5d-4f73e7602553', '68');
   COMMIT TRANSACTION;
 END;   
 
@@ -195,21 +191,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('f00615bc-e880-4a2a-b59f-277ee869ea1a', '2019-03-18 08:54:39', '2019-03-18 09:01:08', 1, 3065, 1159, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('ed41350e-ad0a-4c6c-b8dd-de3533422cfb', '2019-03-18 09:08:02', '2019-03-18 09:13:29', 1, 11280, 73, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('f00615bc-e880-4a2a-b59f-277ee869ea1a', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Оксапрозин%' LIMIT 1)),
-  ('f00615bc-e880-4a2a-b59f-277ee869ea1a', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Рантаг%' LIMIT 1)),
-  ('f00615bc-e880-4a2a-b59f-277ee869ea1a', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Этихлорвинол%' LIMIT 1)),
-  ('f00615bc-e880-4a2a-b59f-277ee869ea1a', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тиагабин%' LIMIT 1));
+  ('ed41350e-ad0a-4c6c-b8dd-de3533422cfb', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Истароксим%' LIMIT 1)),
+  ('ed41350e-ad0a-4c6c-b8dd-de3533422cfb', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тауфон%' LIMIT 1)),
+  ('ed41350e-ad0a-4c6c-b8dd-de3533422cfb', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Конкор%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('f00615bc-e880-4a2a-b59f-277ee869ea1a', '67'),
-  ('f00615bc-e880-4a2a-b59f-277ee869ea1a', '81');
+  ('ed41350e-ad0a-4c6c-b8dd-de3533422cfb', '66'),
+  ('ed41350e-ad0a-4c6c-b8dd-de3533422cfb', '60');
   COMMIT TRANSACTION;
 END;   
 
@@ -219,23 +214,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('df5b8155-735c-4d2c-a53b-a8f2e5185458', '2019-03-18 09:01:49', '2019-03-18 09:06:47', 1, 11518, 676, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('e7c33d8f-b729-493d-8d09-46665670ca92', '2019-03-18 09:13:33', '2019-03-18 09:17:34', 1, 12433, 859, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('df5b8155-735c-4d2c-a53b-a8f2e5185458', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Метамол%' LIMIT 1)),
-  ('df5b8155-735c-4d2c-a53b-a8f2e5185458', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Триамцинолон%' LIMIT 1)),
-  ('df5b8155-735c-4d2c-a53b-a8f2e5185458', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Медазепам%' LIMIT 1)),
-  ('df5b8155-735c-4d2c-a53b-a8f2e5185458', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Трамаклосидол%' LIMIT 1));
+  ('e7c33d8f-b729-493d-8d09-46665670ca92', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Циклопирокс%' LIMIT 1)),
+  ('e7c33d8f-b729-493d-8d09-46665670ca92', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бензалкония хлорид%' LIMIT 1)),
+  ('e7c33d8f-b729-493d-8d09-46665670ca92', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Цефаксон%' LIMIT 1)),
+  ('e7c33d8f-b729-493d-8d09-46665670ca92', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Филграстим%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('df5b8155-735c-4d2c-a53b-a8f2e5185458', '153'),
-  ('df5b8155-735c-4d2c-a53b-a8f2e5185458', '137'),
-  ('df5b8155-735c-4d2c-a53b-a8f2e5185458', '28'),
-  ('df5b8155-735c-4d2c-a53b-a8f2e5185458', '95');
+  ('e7c33d8f-b729-493d-8d09-46665670ca92', '21'),
+  ('e7c33d8f-b729-493d-8d09-46665670ca92', '104');
   COMMIT TRANSACTION;
 END;   
 
@@ -245,22 +238,19 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('e1697c94-5fc1-4e48-8a28-6d6db23ad946', '2019-03-18 09:07:16', '2019-03-18 09:12:10', 1, 11952, 359, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('5d1e608a-9217-4a6e-b7e8-c3badd591c1c', '2019-03-18 09:18:27', '2019-03-18 09:28:31', 1, 13244, 1284, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('e1697c94-5fc1-4e48-8a28-6d6db23ad946', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Вемурафениб%' LIMIT 1)),
-  ('e1697c94-5fc1-4e48-8a28-6d6db23ad946', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Индометацин%' LIMIT 1)),
-  ('e1697c94-5fc1-4e48-8a28-6d6db23ad946', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Синдаксел%' LIMIT 1)),
-  ('e1697c94-5fc1-4e48-8a28-6d6db23ad946', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Кобицистат%' LIMIT 1));
+  ('5d1e608a-9217-4a6e-b7e8-c3badd591c1c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Симвалимит%' LIMIT 1)),
+  ('5d1e608a-9217-4a6e-b7e8-c3badd591c1c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Биматопрост%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('e1697c94-5fc1-4e48-8a28-6d6db23ad946', '74'),
-  ('e1697c94-5fc1-4e48-8a28-6d6db23ad946', '124'),
-  ('e1697c94-5fc1-4e48-8a28-6d6db23ad946', '97');
+  ('5d1e608a-9217-4a6e-b7e8-c3badd591c1c', '179'),
+  ('5d1e608a-9217-4a6e-b7e8-c3badd591c1c', '195');
   COMMIT TRANSACTION;
 END;   
 
@@ -270,20 +260,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('65a6e0af-acde-4593-80dc-a6234cc30c76', '2019-03-18 09:12:37', '2019-03-18 09:17:02', 1, 6785, 330, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('628e27e7-865b-4129-a212-9728ef040373', '2019-03-18 09:28:52', '2019-03-18 09:39:21', 1, 1556, 524, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('65a6e0af-acde-4593-80dc-a6234cc30c76', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Беталок%' LIMIT 1)),
-  ('65a6e0af-acde-4593-80dc-a6234cc30c76', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Омнопон%' LIMIT 1)),
-  ('65a6e0af-acde-4593-80dc-a6234cc30c76', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Дексетимид%' LIMIT 1));
+  ('628e27e7-865b-4129-a212-9728ef040373', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Противорвотные средства%' LIMIT 1)),
+  ('628e27e7-865b-4129-a212-9728ef040373', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Преднизолон гемисукцинат%' LIMIT 1)),
+  ('628e27e7-865b-4129-a212-9728ef040373', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Эторикоксиб%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('65a6e0af-acde-4593-80dc-a6234cc30c76', '57'),
-  ('65a6e0af-acde-4593-80dc-a6234cc30c76', '195');
+  ('628e27e7-865b-4129-a212-9728ef040373', '181'),
+  ('628e27e7-865b-4129-a212-9728ef040373', '2');
   COMMIT TRANSACTION;
 END;   
 
@@ -293,22 +283,19 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('2923a692-aa3e-4fd3-a3d2-f7b399d76dbc', '2019-03-18 09:17:16', '2019-03-18 09:22:17', 1, 13561, 500, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('d4520010-a0e1-418d-9aab-7558f17ef70c', '2019-03-18 09:39:28', '2019-03-18 09:45:49', 1, 7907, 749, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('2923a692-aa3e-4fd3-a3d2-f7b399d76dbc', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Вакцина Novavax против COVID-19%' LIMIT 1)),
-  ('2923a692-aa3e-4fd3-a3d2-f7b399d76dbc', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Валокордин%' LIMIT 1)),
-  ('2923a692-aa3e-4fd3-a3d2-f7b399d76dbc', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Мовалис%' LIMIT 1)),
-  ('2923a692-aa3e-4fd3-a3d2-f7b399d76dbc', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Баралгин М%' LIMIT 1));
+  ('d4520010-a0e1-418d-9aab-7558f17ef70c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Вакцина против холеры%' LIMIT 1)),
+  ('d4520010-a0e1-418d-9aab-7558f17ef70c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Клафотаксим%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('2923a692-aa3e-4fd3-a3d2-f7b399d76dbc', '154'),
-  ('2923a692-aa3e-4fd3-a3d2-f7b399d76dbc', '176'),
-  ('2923a692-aa3e-4fd3-a3d2-f7b399d76dbc', '33');
+  ('d4520010-a0e1-418d-9aab-7558f17ef70c', '139'),
+  ('d4520010-a0e1-418d-9aab-7558f17ef70c', '194');
   COMMIT TRANSACTION;
 END;   
 
@@ -318,21 +305,19 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('0753331a-60d4-4e07-92fa-d5099e2c2825', '2019-03-18 09:23:05', '2019-03-18 09:32:24', 1, 8982, 872, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('bee03d82-f21b-459d-b955-7d1489669644', '2019-03-18 09:46:27', '2019-03-18 09:55:09', 1, 390, 377, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('0753331a-60d4-4e07-92fa-d5099e2c2825', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'ГамТБвак%' LIMIT 1)),
-  ('0753331a-60d4-4e07-92fa-d5099e2c2825', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Аген%' LIMIT 1)),
-  ('0753331a-60d4-4e07-92fa-d5099e2c2825', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Дигидроморфин%' LIMIT 1));
+  ('bee03d82-f21b-459d-b955-7d1489669644', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фузафунгин%' LIMIT 1)),
+  ('bee03d82-f21b-459d-b955-7d1489669644', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Мексикор%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('0753331a-60d4-4e07-92fa-d5099e2c2825', '5'),
-  ('0753331a-60d4-4e07-92fa-d5099e2c2825', '10'),
-  ('0753331a-60d4-4e07-92fa-d5099e2c2825', '170');
+  ('bee03d82-f21b-459d-b955-7d1489669644', '80'),
+  ('bee03d82-f21b-459d-b955-7d1489669644', '133');
   COMMIT TRANSACTION;
 END;   
 
@@ -342,23 +327,19 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('0f751711-30ad-4930-83ea-c56489cc6e74', '2019-03-18 09:33:14', '2019-03-18 09:39:34', 1, 11692, 483, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('393c046b-9791-4d5f-a4bb-442d64ed170e', '2019-03-18 09:55:32', '2019-03-18 10:06:10', 1, 13125, 679, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('0f751711-30ad-4930-83ea-c56489cc6e74', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Йодид (лекарственное средство)%' LIMIT 1)),
-  ('0f751711-30ad-4930-83ea-c56489cc6e74', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Улкодин%' LIMIT 1)),
-  ('0f751711-30ad-4930-83ea-c56489cc6e74', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Диазоксид%' LIMIT 1)),
-  ('0f751711-30ad-4930-83ea-c56489cc6e74', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Лизиноприл%' LIMIT 1));
+  ('393c046b-9791-4d5f-a4bb-442d64ed170e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Станозолол%' LIMIT 1)),
+  ('393c046b-9791-4d5f-a4bb-442d64ed170e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Олеандомицин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('0f751711-30ad-4930-83ea-c56489cc6e74', '48'),
-  ('0f751711-30ad-4930-83ea-c56489cc6e74', '13'),
-  ('0f751711-30ad-4930-83ea-c56489cc6e74', '41'),
-  ('0f751711-30ad-4930-83ea-c56489cc6e74', '44');
+  ('393c046b-9791-4d5f-a4bb-442d64ed170e', '53'),
+  ('393c046b-9791-4d5f-a4bb-442d64ed170e', '84');
   COMMIT TRANSACTION;
 END;   
 
@@ -368,22 +349,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('1c4e8bc1-a5c4-40b8-8c3b-afece68bc5c9', '2019-03-18 09:39:56', '2019-03-18 09:44:11', 1, 5211, 549, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('caada349-a4c2-4add-a7d1-40ac14803415', '2019-03-18 10:06:55', '2019-03-18 10:12:12', 1, 1818, 65, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('1c4e8bc1-a5c4-40b8-8c3b-afece68bc5c9', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Меркурохром%' LIMIT 1)),
-  ('1c4e8bc1-a5c4-40b8-8c3b-afece68bc5c9', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Астрозон%' LIMIT 1)),
-  ('1c4e8bc1-a5c4-40b8-8c3b-afece68bc5c9', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Вивитрол%' LIMIT 1)),
-  ('1c4e8bc1-a5c4-40b8-8c3b-afece68bc5c9', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Энфортумаб ведотин%' LIMIT 1));
+  ('caada349-a4c2-4add-a7d1-40ac14803415', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Дамелиум%' LIMIT 1)),
+  ('caada349-a4c2-4add-a7d1-40ac14803415', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бутамират%' LIMIT 1)),
+  ('caada349-a4c2-4add-a7d1-40ac14803415', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Палиперидон%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('1c4e8bc1-a5c4-40b8-8c3b-afece68bc5c9', '172'),
-  ('1c4e8bc1-a5c4-40b8-8c3b-afece68bc5c9', '68'),
-  ('1c4e8bc1-a5c4-40b8-8c3b-afece68bc5c9', '134');
+  ('caada349-a4c2-4add-a7d1-40ac14803415', '78'),
+  ('caada349-a4c2-4add-a7d1-40ac14803415', '184'),
+  ('caada349-a4c2-4add-a7d1-40ac14803415', '83');
   COMMIT TRANSACTION;
 END;   
 
@@ -393,19 +373,22 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('1e3a1d36-3695-4ff1-bcf3-9c502f9d2fac', '2019-03-18 09:44:28', '2019-03-18 09:48:47', 1, 4952, 211, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('74476896-3fc1-4382-89d4-d7de2113d0a2', '2019-03-18 10:12:53', '2019-03-18 10:20:43', 1, 9391, 1278, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('1e3a1d36-3695-4ff1-bcf3-9c502f9d2fac', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ремимазолам%' LIMIT 1)),
-  ('1e3a1d36-3695-4ff1-bcf3-9c502f9d2fac', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Зоксон%' LIMIT 1));
+  ('74476896-3fc1-4382-89d4-d7de2113d0a2', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Румалон%' LIMIT 1)),
+  ('74476896-3fc1-4382-89d4-d7de2113d0a2', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Сердол%' LIMIT 1)),
+  ('74476896-3fc1-4382-89d4-d7de2113d0a2', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Лоперамид%' LIMIT 1)),
+  ('74476896-3fc1-4382-89d4-d7de2113d0a2', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Перманганат калия%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('1e3a1d36-3695-4ff1-bcf3-9c502f9d2fac', '80'),
-  ('1e3a1d36-3695-4ff1-bcf3-9c502f9d2fac', '124');
+  ('74476896-3fc1-4382-89d4-d7de2113d0a2', '153'),
+  ('74476896-3fc1-4382-89d4-d7de2113d0a2', '117'),
+  ('74476896-3fc1-4382-89d4-d7de2113d0a2', '183');
   COMMIT TRANSACTION;
 END;   
 
@@ -415,23 +398,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('9ae8de66-e223-4beb-96d4-c22cfb6f5920', '2019-03-18 09:49:34', '2019-03-18 09:59:46', 1, 153, 1290, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('96320253-6def-46dc-99e0-9ca93d72a689', '2019-03-18 10:20:49', '2019-03-18 10:31:35', 1, 12728, 76, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('9ae8de66-e223-4beb-96d4-c22cfb6f5920', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Калпол%' LIMIT 1)),
-  ('9ae8de66-e223-4beb-96d4-c22cfb6f5920', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Канамицин%' LIMIT 1)),
-  ('9ae8de66-e223-4beb-96d4-c22cfb6f5920', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Барбитал%' LIMIT 1)),
-  ('9ae8de66-e223-4beb-96d4-c22cfb6f5920', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бензициллин-1%' LIMIT 1));
+  ('96320253-6def-46dc-99e0-9ca93d72a689', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Диклофенак%' LIMIT 1)),
+  ('96320253-6def-46dc-99e0-9ca93d72a689', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ципронат%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('9ae8de66-e223-4beb-96d4-c22cfb6f5920', '88'),
-  ('9ae8de66-e223-4beb-96d4-c22cfb6f5920', '12'),
-  ('9ae8de66-e223-4beb-96d4-c22cfb6f5920', '82'),
-  ('9ae8de66-e223-4beb-96d4-c22cfb6f5920', '182');
+  ('96320253-6def-46dc-99e0-9ca93d72a689', '185'),
+  ('96320253-6def-46dc-99e0-9ca93d72a689', '109'),
+  ('96320253-6def-46dc-99e0-9ca93d72a689', '112'),
+  ('96320253-6def-46dc-99e0-9ca93d72a689', '23');
   COMMIT TRANSACTION;
 END;   
 
@@ -441,20 +422,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('f09fe46e-56c6-4ef9-a75b-3d45d73ee75b', '2019-03-18 10:00:37', '2019-03-18 10:05:05', 1, 6170, 1166, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('d20d30a3-6cd0-4715-b59f-6fe43052ffec', '2019-03-18 10:31:41', '2019-03-18 10:41:05', 1, 1447, 78, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('f09fe46e-56c6-4ef9-a75b-3d45d73ee75b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Таурин%' LIMIT 1)),
-  ('f09fe46e-56c6-4ef9-a75b-3d45d73ee75b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ранисон%' LIMIT 1)),
-  ('f09fe46e-56c6-4ef9-a75b-3d45d73ee75b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Динексан А%' LIMIT 1));
+  ('d20d30a3-6cd0-4715-b59f-6fe43052ffec', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Кординорм%' LIMIT 1)),
+  ('d20d30a3-6cd0-4715-b59f-6fe43052ffec', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Панадол Экстра%' LIMIT 1)),
+  ('d20d30a3-6cd0-4715-b59f-6fe43052ffec', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пимекролимус%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('f09fe46e-56c6-4ef9-a75b-3d45d73ee75b', '42'),
-  ('f09fe46e-56c6-4ef9-a75b-3d45d73ee75b', '164');
+  ('d20d30a3-6cd0-4715-b59f-6fe43052ffec', '128'),
+  ('d20d30a3-6cd0-4715-b59f-6fe43052ffec', '63');
   COMMIT TRANSACTION;
 END;   
 
@@ -464,23 +445,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('e60e2ad0-2dd9-4d34-bd1d-497a4bc2f6bd', '2019-03-18 10:05:29', '2019-03-18 10:13:10', 1, 3330, 49, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('d46b3118-4c86-4961-a5cb-fcd0870af257', '2019-03-18 10:41:13', '2019-03-18 10:46:06', 1, 3564, 1123, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('e60e2ad0-2dd9-4d34-bd1d-497a4bc2f6bd', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Корвитол%' LIMIT 1)),
-  ('e60e2ad0-2dd9-4d34-bd1d-497a4bc2f6bd', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Нитразепам%' LIMIT 1)),
-  ('e60e2ad0-2dd9-4d34-bd1d-497a4bc2f6bd', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Эмзок%' LIMIT 1)),
-  ('e60e2ad0-2dd9-4d34-bd1d-497a4bc2f6bd', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Резерпин%' LIMIT 1));
+  ('d46b3118-4c86-4961-a5cb-fcd0870af257', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Будипин%' LIMIT 1)),
+  ('d46b3118-4c86-4961-a5cb-fcd0870af257', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Нимегесик%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('e60e2ad0-2dd9-4d34-bd1d-497a4bc2f6bd', '67'),
-  ('e60e2ad0-2dd9-4d34-bd1d-497a4bc2f6bd', '102'),
-  ('e60e2ad0-2dd9-4d34-bd1d-497a4bc2f6bd', '21'),
-  ('e60e2ad0-2dd9-4d34-bd1d-497a4bc2f6bd', '93');
+  ('d46b3118-4c86-4961-a5cb-fcd0870af257', '197'),
+  ('d46b3118-4c86-4961-a5cb-fcd0870af257', '153'),
+  ('d46b3118-4c86-4961-a5cb-fcd0870af257', '143');
   COMMIT TRANSACTION;
 END;   
 
@@ -490,21 +468,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('563e587b-1fdb-4bf3-b0a0-7fe3ae05b16f', '2019-03-18 10:13:42', '2019-03-18 10:22:22', 1, 892, 1119, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('9f9ca236-d5fb-4b8c-9ec3-330716665962', '2019-03-18 10:46:34', '2019-03-18 10:54:36', 1, 4150, 967, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('563e587b-1fdb-4bf3-b0a0-7fe3ae05b16f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Эзомепразол%' LIMIT 1)),
-  ('563e587b-1fdb-4bf3-b0a0-7fe3ae05b16f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE '"WAY-100,635"%' LIMIT 1)),
-  ('563e587b-1fdb-4bf3-b0a0-7fe3ae05b16f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Апрофен%' LIMIT 1)),
-  ('563e587b-1fdb-4bf3-b0a0-7fe3ae05b16f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Гистаглобулин%' LIMIT 1));
+  ('9f9ca236-d5fb-4b8c-9ec3-330716665962', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Энап%' LIMIT 1)),
+  ('9f9ca236-d5fb-4b8c-9ec3-330716665962', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Валидол%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('563e587b-1fdb-4bf3-b0a0-7fe3ae05b16f', '177'),
-  ('563e587b-1fdb-4bf3-b0a0-7fe3ae05b16f', '3');
+  ('9f9ca236-d5fb-4b8c-9ec3-330716665962', '105'),
+  ('9f9ca236-d5fb-4b8c-9ec3-330716665962', '102'),
+  ('9f9ca236-d5fb-4b8c-9ec3-330716665962', '26'),
+  ('9f9ca236-d5fb-4b8c-9ec3-330716665962', '13');
   COMMIT TRANSACTION;
 END;   
 
@@ -514,20 +492,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('68456dea-9b16-45e4-8acf-1e5b607f4967', '2019-03-18 10:23:16', '2019-03-18 10:30:26', 1, 9120, 605, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('73a9d763-a7f1-433b-83ee-68ef2fc82023', '2019-03-18 10:55:24', '2019-03-18 11:06:18', 1, 3774, 284, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('68456dea-9b16-45e4-8acf-1e5b607f4967', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фитин%' LIMIT 1)),
-  ('68456dea-9b16-45e4-8acf-1e5b607f4967', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фенметразин%' LIMIT 1));
+  ('73a9d763-a7f1-433b-83ee-68ef2fc82023', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ноноксинол-9%' LIMIT 1)),
+  ('73a9d763-a7f1-433b-83ee-68ef2fc82023', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Панкреатин%' LIMIT 1)),
+  ('73a9d763-a7f1-433b-83ee-68ef2fc82023', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Илоперидон%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('68456dea-9b16-45e4-8acf-1e5b607f4967', '108'),
-  ('68456dea-9b16-45e4-8acf-1e5b607f4967', '52'),
-  ('68456dea-9b16-45e4-8acf-1e5b607f4967', '113');
+  ('73a9d763-a7f1-433b-83ee-68ef2fc82023', '32'),
+  ('73a9d763-a7f1-433b-83ee-68ef2fc82023', '125');
   COMMIT TRANSACTION;
 END;   
 
@@ -537,22 +515,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('211cd2ea-28fa-4c3a-aae7-72d2afa13caf', '2019-03-18 10:30:37', '2019-03-18 10:36:31', 1, 2961, 700, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('d42e9a40-22d0-45a8-89e5-bb4a7dcb6d80', '2019-03-18 11:07:07', '2019-03-18 11:16:57', 1, 5705, 797, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('211cd2ea-28fa-4c3a-aae7-72d2afa13caf', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Финлепсин%' LIMIT 1)),
-  ('211cd2ea-28fa-4c3a-aae7-72d2afa13caf', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бензатинбензилпенициллин%' LIMIT 1)),
-  ('211cd2ea-28fa-4c3a-aae7-72d2afa13caf', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тавегил%' LIMIT 1)),
-  ('211cd2ea-28fa-4c3a-aae7-72d2afa13caf', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Нейромультивит%' LIMIT 1));
+  ('d42e9a40-22d0-45a8-89e5-bb4a7dcb6d80', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Амиокордин%' LIMIT 1)),
+  ('d42e9a40-22d0-45a8-89e5-bb4a7dcb6d80', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Симвакол%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('211cd2ea-28fa-4c3a-aae7-72d2afa13caf', '98'),
-  ('211cd2ea-28fa-4c3a-aae7-72d2afa13caf', '72'),
-  ('211cd2ea-28fa-4c3a-aae7-72d2afa13caf', '67');
+  ('d42e9a40-22d0-45a8-89e5-bb4a7dcb6d80', '35'),
+  ('d42e9a40-22d0-45a8-89e5-bb4a7dcb6d80', '12'),
+  ('d42e9a40-22d0-45a8-89e5-bb4a7dcb6d80', '43');
   COMMIT TRANSACTION;
 END;   
 
@@ -562,20 +538,22 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('a4e30f77-860c-46a2-8695-161266353702', '2019-03-18 10:37:14', '2019-03-18 10:45:18', 1, 7408, 186, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('bc581ad2-e00c-46b2-b56d-2bef55ddd8ca', '2019-03-18 11:17:26', '2019-03-18 11:27:52', 1, 5077, 199, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('a4e30f77-860c-46a2-8695-161266353702', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бензфетамин%' LIMIT 1)),
-  ('a4e30f77-860c-46a2-8695-161266353702', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ранитал%' LIMIT 1));
+  ('bc581ad2-e00c-46b2-b56d-2bef55ddd8ca', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ламивудин%' LIMIT 1)),
+  ('bc581ad2-e00c-46b2-b56d-2bef55ddd8ca', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тралокинумаб%' LIMIT 1)),
+  ('bc581ad2-e00c-46b2-b56d-2bef55ddd8ca', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пектрол%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('a4e30f77-860c-46a2-8695-161266353702', '81'),
-  ('a4e30f77-860c-46a2-8695-161266353702', '182'),
-  ('a4e30f77-860c-46a2-8695-161266353702', '145');
+  ('bc581ad2-e00c-46b2-b56d-2bef55ddd8ca', '179'),
+  ('bc581ad2-e00c-46b2-b56d-2bef55ddd8ca', '167'),
+  ('bc581ad2-e00c-46b2-b56d-2bef55ddd8ca', '27'),
+  ('bc581ad2-e00c-46b2-b56d-2bef55ddd8ca', '29');
   COMMIT TRANSACTION;
 END;   
 
@@ -585,23 +563,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('73a9ab5c-3343-4512-a55a-4f0c4af3117b', '2019-03-18 10:45:43', '2019-03-18 10:50:55', 1, 9714, 887, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('d465dab9-2773-4e95-9985-7095ad228462', '2019-03-18 11:28:35', '2019-03-18 11:34:33', 1, 2777, 707, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('73a9ab5c-3343-4512-a55a-4f0c4af3117b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Антаксон%' LIMIT 1)),
-  ('73a9ab5c-3343-4512-a55a-4f0c4af3117b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пиритинол%' LIMIT 1)),
-  ('73a9ab5c-3343-4512-a55a-4f0c4af3117b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Bromo-DragonFLY%' LIMIT 1)),
-  ('73a9ab5c-3343-4512-a55a-4f0c4af3117b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Флунол%' LIMIT 1));
+  ('d465dab9-2773-4e95-9985-7095ad228462', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ортофер%' LIMIT 1)),
+  ('d465dab9-2773-4e95-9985-7095ad228462', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Брентуксимаб ведотин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('73a9ab5c-3343-4512-a55a-4f0c4af3117b', '124'),
-  ('73a9ab5c-3343-4512-a55a-4f0c4af3117b', '32'),
-  ('73a9ab5c-3343-4512-a55a-4f0c4af3117b', '62'),
-  ('73a9ab5c-3343-4512-a55a-4f0c4af3117b', '157');
+  ('d465dab9-2773-4e95-9985-7095ad228462', '162'),
+  ('d465dab9-2773-4e95-9985-7095ad228462', '197'),
+  ('d465dab9-2773-4e95-9985-7095ad228462', '134');
   COMMIT TRANSACTION;
 END;   
 
@@ -611,22 +586,22 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('78bb63eb-9598-4bda-9a74-6d68783ca9fb', '2019-03-18 10:51:52', '2019-03-18 11:01:25', 1, 712, 881, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('5bbd1303-a27b-45f3-81a7-e53effb0eeea', '2019-03-18 11:35:25', '2019-03-18 11:43:10', 1, 1866, 271, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('78bb63eb-9598-4bda-9a74-6d68783ca9fb', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Димексид%' LIMIT 1)),
-  ('78bb63eb-9598-4bda-9a74-6d68783ca9fb', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ново-Ранидин%' LIMIT 1)),
-  ('78bb63eb-9598-4bda-9a74-6d68783ca9fb', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Буспирон%' LIMIT 1)),
-  ('78bb63eb-9598-4bda-9a74-6d68783ca9fb', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Нош-бра%' LIMIT 1));
+  ('5bbd1303-a27b-45f3-81a7-e53effb0eeea', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Промез%' LIMIT 1)),
+  ('5bbd1303-a27b-45f3-81a7-e53effb0eeea', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Дуоран%' LIMIT 1)),
+  ('5bbd1303-a27b-45f3-81a7-e53effb0eeea', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Сацитузумаб говитекан%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('78bb63eb-9598-4bda-9a74-6d68783ca9fb', '62'),
-  ('78bb63eb-9598-4bda-9a74-6d68783ca9fb', '89'),
-  ('78bb63eb-9598-4bda-9a74-6d68783ca9fb', '21');
+  ('5bbd1303-a27b-45f3-81a7-e53effb0eeea', '69'),
+  ('5bbd1303-a27b-45f3-81a7-e53effb0eeea', '183'),
+  ('5bbd1303-a27b-45f3-81a7-e53effb0eeea', '40'),
+  ('5bbd1303-a27b-45f3-81a7-e53effb0eeea', '91');
   COMMIT TRANSACTION;
 END;   
 
@@ -636,21 +611,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('b22e2c3d-aeea-4b94-9ebc-18316684db68', '2019-03-18 11:01:26', '2019-03-18 11:10:16', 1, 14562, 516, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('8d7dcff8-2b16-4e0a-b19f-2c2354780d71', '2019-03-18 11:44:09', '2019-03-18 11:55:06', 1, 11800, 1284, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('b22e2c3d-aeea-4b94-9ebc-18316684db68', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тиагабин%' LIMIT 1)),
-  ('b22e2c3d-aeea-4b94-9ebc-18316684db68', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Катадолон%' LIMIT 1)),
-  ('b22e2c3d-aeea-4b94-9ebc-18316684db68', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE '"RTS,S"%' LIMIT 1)),
-  ('b22e2c3d-aeea-4b94-9ebc-18316684db68', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Анакинра%' LIMIT 1));
+  ('8d7dcff8-2b16-4e0a-b19f-2c2354780d71', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Энафарм%' LIMIT 1)),
+  ('8d7dcff8-2b16-4e0a-b19f-2c2354780d71', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пемпидин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('b22e2c3d-aeea-4b94-9ebc-18316684db68', '88'),
-  ('b22e2c3d-aeea-4b94-9ebc-18316684db68', '68');
+  ('8d7dcff8-2b16-4e0a-b19f-2c2354780d71', '144'),
+  ('8d7dcff8-2b16-4e0a-b19f-2c2354780d71', '114'),
+  ('8d7dcff8-2b16-4e0a-b19f-2c2354780d71', '43'),
+  ('8d7dcff8-2b16-4e0a-b19f-2c2354780d71', '9');
   COMMIT TRANSACTION;
 END;   
 
@@ -660,23 +635,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('e2a068b6-35d2-44a9-9f52-a074d755af10', '2019-03-18 11:10:26', '2019-03-18 11:20:53', 1, 6319, 984, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('37af1351-d83a-4833-bbf5-da91c6ec38df', '2019-03-18 11:55:37', '2019-03-18 12:01:23', 1, 6497, 967, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('e2a068b6-35d2-44a9-9f52-a074d755af10', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Рибавирин%' LIMIT 1)),
-  ('e2a068b6-35d2-44a9-9f52-a074d755af10', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Валацикловир%' LIMIT 1)),
-  ('e2a068b6-35d2-44a9-9f52-a074d755af10', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Асунапревир%' LIMIT 1)),
-  ('e2a068b6-35d2-44a9-9f52-a074d755af10', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Подофиллотоксин%' LIMIT 1));
+  ('37af1351-d83a-4833-bbf5-da91c6ec38df', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Гелофузин%' LIMIT 1)),
+  ('37af1351-d83a-4833-bbf5-da91c6ec38df', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тиротакс%' LIMIT 1)),
+  ('37af1351-d83a-4833-bbf5-da91c6ec38df', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Нитрозомочевина%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('e2a068b6-35d2-44a9-9f52-a074d755af10', '152'),
-  ('e2a068b6-35d2-44a9-9f52-a074d755af10', '70'),
-  ('e2a068b6-35d2-44a9-9f52-a074d755af10', '169'),
-  ('e2a068b6-35d2-44a9-9f52-a074d755af10', '117');
+  ('37af1351-d83a-4833-bbf5-da91c6ec38df', '59'),
+  ('37af1351-d83a-4833-bbf5-da91c6ec38df', '65');
   COMMIT TRANSACTION;
 END;   
 
@@ -686,22 +658,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('6dda6db2-bd28-457f-b953-b1ce5d9d189f', '2019-03-18 11:21:38', '2019-03-18 11:28:05', 1, 5797, 470, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('0b8fb13c-e9a8-4057-8e0e-7e4fa1801e45', '2019-03-18 08:01:00', '2019-03-18 08:10:28', 1, 1016, 953, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('6dda6db2-bd28-457f-b953-b1ce5d9d189f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Азацитидин%' LIMIT 1)),
-  ('6dda6db2-bd28-457f-b953-b1ce5d9d189f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'ЭпиВакЭбола%' LIMIT 1)),
-  ('6dda6db2-bd28-457f-b953-b1ce5d9d189f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Талинолол%' LIMIT 1)),
-  ('6dda6db2-bd28-457f-b953-b1ce5d9d189f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Кофермент Q%' LIMIT 1));
+  ('0b8fb13c-e9a8-4057-8e0e-7e4fa1801e45', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Векурония бромид%' LIMIT 1)),
+  ('0b8fb13c-e9a8-4057-8e0e-7e4fa1801e45', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Кейтен%' LIMIT 1)),
+  ('0b8fb13c-e9a8-4057-8e0e-7e4fa1801e45', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пенестер%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('6dda6db2-bd28-457f-b953-b1ce5d9d189f', '19'),
-  ('6dda6db2-bd28-457f-b953-b1ce5d9d189f', '141'),
-  ('6dda6db2-bd28-457f-b953-b1ce5d9d189f', '87');
+  ('0b8fb13c-e9a8-4057-8e0e-7e4fa1801e45', '179'),
+  ('0b8fb13c-e9a8-4057-8e0e-7e4fa1801e45', '129');
   COMMIT TRANSACTION;
 END;   
 
@@ -711,21 +681,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('dda75087-cd9f-43b3-a38d-2739457a5029', '2019-03-18 11:28:56', '2019-03-18 11:33:47', 1, 3529, 1252, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('dc60adff-0962-4f07-a59c-ec80f43eb775', '2019-03-18 08:10:52', '2019-03-18 08:20:26', 1, 3442, 159, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('dda75087-cd9f-43b3-a38d-2739457a5029', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Цефепим%' LIMIT 1)),
-  ('dda75087-cd9f-43b3-a38d-2739457a5029', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Новоингалипт%' LIMIT 1));
+  ('dc60adff-0962-4f07-a59c-ec80f43eb775', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Перлинганит%' LIMIT 1)),
+  ('dc60adff-0962-4f07-a59c-ec80f43eb775', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Артрозан%' LIMIT 1)),
+  ('dc60adff-0962-4f07-a59c-ec80f43eb775', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Вентокол%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('dda75087-cd9f-43b3-a38d-2739457a5029', '13'),
-  ('dda75087-cd9f-43b3-a38d-2739457a5029', '122'),
-  ('dda75087-cd9f-43b3-a38d-2739457a5029', '140'),
-  ('dda75087-cd9f-43b3-a38d-2739457a5029', '76');
+  ('dc60adff-0962-4f07-a59c-ec80f43eb775', '152'),
+  ('dc60adff-0962-4f07-a59c-ec80f43eb775', '131'),
+  ('dc60adff-0962-4f07-a59c-ec80f43eb775', '150');
   COMMIT TRANSACTION;
 END;   
 
@@ -735,23 +705,22 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('164a6d9c-61d9-4e0a-8422-b213b56b46bb', '2019-03-18 11:34:28', '2019-03-18 11:41:51', 1, 7623, 656, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('9670b19b-46c1-494e-8101-0daafe9206ed', '2019-03-18 08:21:20', '2019-03-18 08:29:02', 1, 7433, 774, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('164a6d9c-61d9-4e0a-8422-b213b56b46bb', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ристомицин%' LIMIT 1)),
-  ('164a6d9c-61d9-4e0a-8422-b213b56b46bb', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Оргаспорин%' LIMIT 1)),
-  ('164a6d9c-61d9-4e0a-8422-b213b56b46bb', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Гидрокортизон%' LIMIT 1)),
-  ('164a6d9c-61d9-4e0a-8422-b213b56b46bb', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'BBIBP-CorV%' LIMIT 1));
+  ('9670b19b-46c1-494e-8101-0daafe9206ed', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Окрелизумаб%' LIMIT 1)),
+  ('9670b19b-46c1-494e-8101-0daafe9206ed', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Изониазид%' LIMIT 1)),
+  ('9670b19b-46c1-494e-8101-0daafe9206ed', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ципросан%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('164a6d9c-61d9-4e0a-8422-b213b56b46bb', '8'),
-  ('164a6d9c-61d9-4e0a-8422-b213b56b46bb', '14'),
-  ('164a6d9c-61d9-4e0a-8422-b213b56b46bb', '182'),
-  ('164a6d9c-61d9-4e0a-8422-b213b56b46bb', '159');
+  ('9670b19b-46c1-494e-8101-0daafe9206ed', '122'),
+  ('9670b19b-46c1-494e-8101-0daafe9206ed', '172'),
+  ('9670b19b-46c1-494e-8101-0daafe9206ed', '146'),
+  ('9670b19b-46c1-494e-8101-0daafe9206ed', '114');
   COMMIT TRANSACTION;
 END;   
 
@@ -761,22 +730,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('47a69e1c-15b6-41a0-b137-ef3c5fd589b5', '2019-03-18 11:42:42', '2019-03-18 11:51:08', 1, 7934, 63, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('9ef81f4c-cd4d-46be-9189-b5a5b27c65dc', '2019-03-18 08:29:13', '2019-03-18 08:39:56', 1, 8138, 861, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('47a69e1c-15b6-41a0-b137-ef3c5fd589b5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Моно Мак%' LIMIT 1)),
-  ('47a69e1c-15b6-41a0-b137-ef3c5fd589b5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Глюкобай%' LIMIT 1)),
-  ('47a69e1c-15b6-41a0-b137-ef3c5fd589b5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Этилбромизовалерианат%' LIMIT 1)),
-  ('47a69e1c-15b6-41a0-b137-ef3c5fd589b5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Сальбутамол%' LIMIT 1));
+  ('9ef81f4c-cd4d-46be-9189-b5a5b27c65dc', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тиамин (лекарственное средство)%' LIMIT 1)),
+  ('9ef81f4c-cd4d-46be-9189-b5a5b27c65dc', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пирлиндол%' LIMIT 1)),
+  ('9ef81f4c-cd4d-46be-9189-b5a5b27c65dc', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ранитал%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('47a69e1c-15b6-41a0-b137-ef3c5fd589b5', '57'),
-  ('47a69e1c-15b6-41a0-b137-ef3c5fd589b5', '10'),
-  ('47a69e1c-15b6-41a0-b137-ef3c5fd589b5', '89');
+  ('9ef81f4c-cd4d-46be-9189-b5a5b27c65dc', '153'),
+  ('9ef81f4c-cd4d-46be-9189-b5a5b27c65dc', '5'),
+  ('9ef81f4c-cd4d-46be-9189-b5a5b27c65dc', '125');
   COMMIT TRANSACTION;
 END;   
 
@@ -786,20 +754,19 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('cc4cca79-1adb-4f66-aea9-27d83ffcbfde', '2019-03-18 11:52:01', '2019-03-18 11:56:43', 1, 11322, 1193, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('8578bbe1-f656-470e-9b85-89db4f72752b', '2019-03-18 08:40:03', '2019-03-18 08:46:52', 1, 5061, 1192, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('cc4cca79-1adb-4f66-aea9-27d83ffcbfde', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Флолид%' LIMIT 1)),
-  ('cc4cca79-1adb-4f66-aea9-27d83ffcbfde', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Адамантилбромфениламин%' LIMIT 1)),
-  ('cc4cca79-1adb-4f66-aea9-27d83ffcbfde', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Алкилсульфонаты%' LIMIT 1));
+  ('8578bbe1-f656-470e-9b85-89db4f72752b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Аралии настойка%' LIMIT 1)),
+  ('8578bbe1-f656-470e-9b85-89db4f72752b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фамцикловир%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('cc4cca79-1adb-4f66-aea9-27d83ffcbfde', '7'),
-  ('cc4cca79-1adb-4f66-aea9-27d83ffcbfde', '145');
+  ('8578bbe1-f656-470e-9b85-89db4f72752b', '114'),
+  ('8578bbe1-f656-470e-9b85-89db4f72752b', '177');
   COMMIT TRANSACTION;
 END;   
 
@@ -809,22 +776,19 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('c129e555-6ce1-4c88-b29f-d084856fc659', '2019-03-18 11:56:48', '2019-03-18 12:04:34', 1, 4204, 182, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 1));
+  ('774bc658-0f24-468c-ab8e-5849eefb13b9', '2019-03-18 08:47:13', '2019-03-18 08:53:23', 1, 4147, 446, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('c129e555-6ce1-4c88-b29f-d084856fc659', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пантенолспрей%' LIMIT 1)),
-  ('c129e555-6ce1-4c88-b29f-d084856fc659', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Симвор%' LIMIT 1)),
-  ('c129e555-6ce1-4c88-b29f-d084856fc659', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пироксифер%' LIMIT 1)),
-  ('c129e555-6ce1-4c88-b29f-d084856fc659', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Лорноксикам%' LIMIT 1));
+  ('774bc658-0f24-468c-ab8e-5849eefb13b9', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Меглюмина акридонацетат%' LIMIT 1)),
+  ('774bc658-0f24-468c-ab8e-5849eefb13b9', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Прегнил%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('c129e555-6ce1-4c88-b29f-d084856fc659', '71'),
-  ('c129e555-6ce1-4c88-b29f-d084856fc659', '134'),
-  ('c129e555-6ce1-4c88-b29f-d084856fc659', '49');
+  ('774bc658-0f24-468c-ab8e-5849eefb13b9', '118'),
+  ('774bc658-0f24-468c-ab8e-5849eefb13b9', '51');
   COMMIT TRANSACTION;
 END;   
 
@@ -834,22 +798,22 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('5a3d7215-7c76-4f20-a068-78d9d3a3b1cc', '2019-03-18 08:00:37', '2019-03-18 08:07:39', 1, 1519, 1026, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('9ce7513a-2138-434d-a41b-9617cab93d97', '2019-03-18 08:53:31', '2019-03-18 08:59:47', 1, 6178, 822, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('5a3d7215-7c76-4f20-a068-78d9d3a3b1cc', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Эрсефурил%' LIMIT 1)),
-  ('5a3d7215-7c76-4f20-a068-78d9d3a3b1cc', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Гидроксиметилхиноксилиндиоксид%' LIMIT 1)),
-  ('5a3d7215-7c76-4f20-a068-78d9d3a3b1cc', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Аспаркам%' LIMIT 1));
+  ('9ce7513a-2138-434d-a41b-9617cab93d97', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фозиноприл%' LIMIT 1)),
+  ('9ce7513a-2138-434d-a41b-9617cab93d97', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пегилированный интерферон альфа-2а%' LIMIT 1)),
+  ('9ce7513a-2138-434d-a41b-9617cab93d97', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Гидрастин%' LIMIT 1)),
+  ('9ce7513a-2138-434d-a41b-9617cab93d97', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Глауцин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('5a3d7215-7c76-4f20-a068-78d9d3a3b1cc', '171'),
-  ('5a3d7215-7c76-4f20-a068-78d9d3a3b1cc', '56'),
-  ('5a3d7215-7c76-4f20-a068-78d9d3a3b1cc', '40'),
-  ('5a3d7215-7c76-4f20-a068-78d9d3a3b1cc', '91');
+  ('9ce7513a-2138-434d-a41b-9617cab93d97', '54'),
+  ('9ce7513a-2138-434d-a41b-9617cab93d97', '27'),
+  ('9ce7513a-2138-434d-a41b-9617cab93d97', '104');
   COMMIT TRANSACTION;
 END;   
 
@@ -859,22 +823,19 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('71397888-dc3e-415a-adca-cfda03271e1c', '2019-03-18 08:07:52', '2019-03-18 08:12:00', 1, 14323, 469, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('82e7b176-ed9b-4289-82e3-0159a4612fc7', '2019-03-18 09:00:24', '2019-03-18 09:06:26', 1, 12639, 754, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('71397888-dc3e-415a-adca-cfda03271e1c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Рамиприл%' LIMIT 1)),
-  ('71397888-dc3e-415a-adca-cfda03271e1c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Мукалтин%' LIMIT 1)),
-  ('71397888-dc3e-415a-adca-cfda03271e1c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Эффералган%' LIMIT 1));
+  ('82e7b176-ed9b-4289-82e3-0159a4612fc7', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Рамуцирумаб%' LIMIT 1)),
+  ('82e7b176-ed9b-4289-82e3-0159a4612fc7', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Парацетамол ЭКСТРА детский%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('71397888-dc3e-415a-adca-cfda03271e1c', '20'),
-  ('71397888-dc3e-415a-adca-cfda03271e1c', '87'),
-  ('71397888-dc3e-415a-adca-cfda03271e1c', '102'),
-  ('71397888-dc3e-415a-adca-cfda03271e1c', '101');
+  ('82e7b176-ed9b-4289-82e3-0159a4612fc7', '23'),
+  ('82e7b176-ed9b-4289-82e3-0159a4612fc7', '83');
   COMMIT TRANSACTION;
 END;   
 
@@ -884,20 +845,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('7e5f44b4-c20d-4f64-bcf0-618c7813df89', '2019-03-18 08:12:42', '2019-03-18 08:23:24', 1, 5754, 1219, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('74ce7ade-d5f2-4109-97d8-349406fa69ba', '2019-03-18 09:07:01', '2019-03-18 09:18:00', 1, 234, 451, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('7e5f44b4-c20d-4f64-bcf0-618c7813df89', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Дигидроэрготоксин%' LIMIT 1)),
-  ('7e5f44b4-c20d-4f64-bcf0-618c7813df89', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Медаксон%' LIMIT 1));
+  ('74ce7ade-d5f2-4109-97d8-349406fa69ba', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Меркаптопурин%' LIMIT 1)),
+  ('74ce7ade-d5f2-4109-97d8-349406fa69ba', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Гефитиниб%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('7e5f44b4-c20d-4f64-bcf0-618c7813df89', '73'),
-  ('7e5f44b4-c20d-4f64-bcf0-618c7813df89', '23'),
-  ('7e5f44b4-c20d-4f64-bcf0-618c7813df89', '13');
+  ('74ce7ade-d5f2-4109-97d8-349406fa69ba', '183'),
+  ('74ce7ade-d5f2-4109-97d8-349406fa69ba', '6'),
+  ('74ce7ade-d5f2-4109-97d8-349406fa69ba', '74');
   COMMIT TRANSACTION;
 END;   
 
@@ -907,21 +868,22 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('ec7cba60-2bf8-4345-8c06-a7fcdce2a900', '2019-03-18 08:23:37', '2019-03-18 08:32:09', 1, 6303, 495, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('f58df9ca-be68-412c-ba6d-6ebf527a6fb7', '2019-03-18 09:18:40', '2019-03-18 09:26:39', 1, 1112, 978, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('ec7cba60-2bf8-4345-8c06-a7fcdce2a900', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Диметилглицин%' LIMIT 1)),
-  ('ec7cba60-2bf8-4345-8c06-a7fcdce2a900', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Зопиклон%' LIMIT 1)),
-  ('ec7cba60-2bf8-4345-8c06-a7fcdce2a900', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ламивудин/Зидовудин%' LIMIT 1)),
-  ('ec7cba60-2bf8-4345-8c06-a7fcdce2a900', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Толметин%' LIMIT 1));
+  ('f58df9ca-be68-412c-ba6d-6ebf527a6fb7', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Стамло М%' LIMIT 1)),
+  ('f58df9ca-be68-412c-ba6d-6ebf527a6fb7', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бруцин%' LIMIT 1)),
+  ('f58df9ca-be68-412c-ba6d-6ebf527a6fb7', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Гемтузумаб озогамицин%' LIMIT 1)),
+  ('f58df9ca-be68-412c-ba6d-6ebf527a6fb7', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фрамицетин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('ec7cba60-2bf8-4345-8c06-a7fcdce2a900', '54'),
-  ('ec7cba60-2bf8-4345-8c06-a7fcdce2a900', '13');
+  ('f58df9ca-be68-412c-ba6d-6ebf527a6fb7', '30'),
+  ('f58df9ca-be68-412c-ba6d-6ebf527a6fb7', '149'),
+  ('f58df9ca-be68-412c-ba6d-6ebf527a6fb7', '136');
   COMMIT TRANSACTION;
 END;   
 
@@ -931,22 +893,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('c696effc-f231-47a6-97e8-b07f4d005b94', '2019-03-18 08:32:56', '2019-03-18 08:38:00', 1, 9905, 918, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('dc21474a-01ef-4c29-8189-10d2161f21b1', '2019-03-18 09:27:12', '2019-03-18 09:36:35', 1, 13507, 764, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('c696effc-f231-47a6-97e8-b07f4d005b94', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Проканазол%' LIMIT 1)),
-  ('c696effc-f231-47a6-97e8-b07f4d005b94', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Прокарбазин%' LIMIT 1)),
-  ('c696effc-f231-47a6-97e8-b07f4d005b94', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Розамет%' LIMIT 1)),
-  ('c696effc-f231-47a6-97e8-b07f4d005b94', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Целестон%' LIMIT 1));
+  ('dc21474a-01ef-4c29-8189-10d2161f21b1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'NSI-189%' LIMIT 1)),
+  ('dc21474a-01ef-4c29-8189-10d2161f21b1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Темазепам%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('c696effc-f231-47a6-97e8-b07f4d005b94', '141'),
-  ('c696effc-f231-47a6-97e8-b07f4d005b94', '60'),
-  ('c696effc-f231-47a6-97e8-b07f4d005b94', '175');
+  ('dc21474a-01ef-4c29-8189-10d2161f21b1', '122'),
+  ('dc21474a-01ef-4c29-8189-10d2161f21b1', '159'),
+  ('dc21474a-01ef-4c29-8189-10d2161f21b1', '142');
   COMMIT TRANSACTION;
 END;   
 
@@ -956,20 +916,22 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('0d55508f-b0d3-4799-a8c3-58a6f44b2df8', '2019-03-18 08:38:53', '2019-03-18 08:46:35', 1, 10829, 250, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('5565a1c9-599f-4276-b257-e11fece0bc17', '2019-03-18 09:37:16', '2019-03-18 09:47:03', 1, 8344, 739, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('0d55508f-b0d3-4799-a8c3-58a6f44b2df8', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Глюмедекс%' LIMIT 1)),
-  ('0d55508f-b0d3-4799-a8c3-58a6f44b2df8', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Йодандин%' LIMIT 1)),
-  ('0d55508f-b0d3-4799-a8c3-58a6f44b2df8', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Оксапрозин%' LIMIT 1));
+  ('5565a1c9-599f-4276-b257-e11fece0bc17', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Абилифай%' LIMIT 1)),
+  ('5565a1c9-599f-4276-b257-e11fece0bc17', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Солифенацин%' LIMIT 1)),
+  ('5565a1c9-599f-4276-b257-e11fece0bc17', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тиоридазин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('0d55508f-b0d3-4799-a8c3-58a6f44b2df8', '73'),
-  ('0d55508f-b0d3-4799-a8c3-58a6f44b2df8', '185');
+  ('5565a1c9-599f-4276-b257-e11fece0bc17', '129'),
+  ('5565a1c9-599f-4276-b257-e11fece0bc17', '21'),
+  ('5565a1c9-599f-4276-b257-e11fece0bc17', '87'),
+  ('5565a1c9-599f-4276-b257-e11fece0bc17', '183');
   COMMIT TRANSACTION;
 END;   
 
@@ -979,21 +941,22 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('0c36b03c-c75c-498a-a6c9-a2f423bbc59b', '2019-03-18 08:47:29', '2019-03-18 08:56:25', 1, 1998, 1077, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('3f6ac03d-7d7f-4b70-af2b-b6826458aa23', '2019-03-18 09:47:51', '2019-03-18 09:53:32', 1, 812, 310, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('0c36b03c-c75c-498a-a6c9-a2f423bbc59b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Орунгал%' LIMIT 1)),
-  ('0c36b03c-c75c-498a-a6c9-a2f423bbc59b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Олинт%' LIMIT 1)),
-  ('0c36b03c-c75c-498a-a6c9-a2f423bbc59b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Левомеколь%' LIMIT 1));
+  ('3f6ac03d-7d7f-4b70-af2b-b6826458aa23', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тримедоксима бромид%' LIMIT 1)),
+  ('3f6ac03d-7d7f-4b70-af2b-b6826458aa23', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Хлоропирамин%' LIMIT 1)),
+  ('3f6ac03d-7d7f-4b70-af2b-b6826458aa23', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Зиртек%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('0c36b03c-c75c-498a-a6c9-a2f423bbc59b', '83'),
-  ('0c36b03c-c75c-498a-a6c9-a2f423bbc59b', '26'),
-  ('0c36b03c-c75c-498a-a6c9-a2f423bbc59b', '114');
+  ('3f6ac03d-7d7f-4b70-af2b-b6826458aa23', '13'),
+  ('3f6ac03d-7d7f-4b70-af2b-b6826458aa23', '40'),
+  ('3f6ac03d-7d7f-4b70-af2b-b6826458aa23', '165'),
+  ('3f6ac03d-7d7f-4b70-af2b-b6826458aa23', '189');
   COMMIT TRANSACTION;
 END;   
 
@@ -1003,21 +966,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('07e75152-bcd8-4262-b405-ffff7d2982f2', '2019-03-18 08:57:01', '2019-03-18 09:04:10', 1, 448, 935, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('b0d4b588-c59b-4aac-997f-d1c20bd452bf', '2019-03-18 09:53:34', '2019-03-18 09:59:12', 1, 13855, 643, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('07e75152-bcd8-4262-b405-ffff7d2982f2', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Энзастаурин%' LIMIT 1)),
-  ('07e75152-bcd8-4262-b405-ffff7d2982f2', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Накситамаб%' LIMIT 1));
+  ('b0d4b588-c59b-4aac-997f-d1c20bd452bf', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Цефограм%' LIMIT 1)),
+  ('b0d4b588-c59b-4aac-997f-d1c20bd452bf', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Таксотер%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('07e75152-bcd8-4262-b405-ffff7d2982f2', '145'),
-  ('07e75152-bcd8-4262-b405-ffff7d2982f2', '198'),
-  ('07e75152-bcd8-4262-b405-ffff7d2982f2', '30'),
-  ('07e75152-bcd8-4262-b405-ffff7d2982f2', '161');
+  ('b0d4b588-c59b-4aac-997f-d1c20bd452bf', '61'),
+  ('b0d4b588-c59b-4aac-997f-d1c20bd452bf', '168'),
+  ('b0d4b588-c59b-4aac-997f-d1c20bd452bf', '188'),
+  ('b0d4b588-c59b-4aac-997f-d1c20bd452bf', '135');
   COMMIT TRANSACTION;
 END;   
 
@@ -1027,19 +990,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('1e1e701b-4b27-444c-9860-43485f7a09e9', '2019-03-18 09:04:20', '2019-03-18 09:09:25', 1, 1807, 265, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('51d84729-828b-4172-9760-2fe08629fbc0', '2019-03-18 09:59:46', '2019-03-18 10:06:50', 1, 4167, 295, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('1e1e701b-4b27-444c-9860-43485f7a09e9', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Идаруцизумаб%' LIMIT 1)),
-  ('1e1e701b-4b27-444c-9860-43485f7a09e9', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Дилоксанид%' LIMIT 1));
+  ('51d84729-828b-4172-9760-2fe08629fbc0', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Церварикс%' LIMIT 1)),
+  ('51d84729-828b-4172-9760-2fe08629fbc0', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Астемизол%' LIMIT 1)),
+  ('51d84729-828b-4172-9760-2fe08629fbc0', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пенталгин Плюс%' LIMIT 1)),
+  ('51d84729-828b-4172-9760-2fe08629fbc0', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ксилокаин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('1e1e701b-4b27-444c-9860-43485f7a09e9', '26'),
-  ('1e1e701b-4b27-444c-9860-43485f7a09e9', '175');
+  ('51d84729-828b-4172-9760-2fe08629fbc0', '120'),
+  ('51d84729-828b-4172-9760-2fe08629fbc0', '38');
   COMMIT TRANSACTION;
 END;   
 
@@ -1049,19 +1014,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('4360568a-588a-4f03-8c21-dd5adb3b79ca', '2019-03-18 09:09:59', '2019-03-18 09:17:31', 1, 8469, 247, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('7f057317-471a-404c-a2e8-85b9d3e618dc', '2019-03-18 10:07:35', '2019-03-18 10:17:06', 1, 1557, 1250, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('4360568a-588a-4f03-8c21-dd5adb3b79ca', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тыквеол%' LIMIT 1)),
-  ('4360568a-588a-4f03-8c21-dd5adb3b79ca', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ортофен%' LIMIT 1));
+  ('7f057317-471a-404c-a2e8-85b9d3e618dc', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Этил лофлазепат%' LIMIT 1)),
+  ('7f057317-471a-404c-a2e8-85b9d3e618dc', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ранитард%' LIMIT 1)),
+  ('7f057317-471a-404c-a2e8-85b9d3e618dc', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Кленбутерол%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('4360568a-588a-4f03-8c21-dd5adb3b79ca', '91'),
-  ('4360568a-588a-4f03-8c21-dd5adb3b79ca', '191');
+  ('7f057317-471a-404c-a2e8-85b9d3e618dc', '14'),
+  ('7f057317-471a-404c-a2e8-85b9d3e618dc', '126');
   COMMIT TRANSACTION;
 END;   
 
@@ -1071,22 +1037,22 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('a6e267dd-3cb4-492c-9f5b-d2d9018c146d', '2019-03-18 09:18:22', '2019-03-18 09:26:54', 1, 14579, 750, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('cc3f7f98-6f31-4e88-bb4d-deb4ae889c55', '2019-03-18 10:17:37', '2019-03-18 10:24:20', 1, 2798, 987, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('a6e267dd-3cb4-492c-9f5b-d2d9018c146d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ралтегравир%' LIMIT 1)),
-  ('a6e267dd-3cb4-492c-9f5b-d2d9018c146d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Азоксимера бромид%' LIMIT 1)),
-  ('a6e267dd-3cb4-492c-9f5b-d2d9018c146d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Азитромицин%' LIMIT 1)),
-  ('a6e267dd-3cb4-492c-9f5b-d2d9018c146d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Fluorodopa (18F)%' LIMIT 1));
+  ('cc3f7f98-6f31-4e88-bb4d-deb4ae889c55', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Муравьиный спирт%' LIMIT 1)),
+  ('cc3f7f98-6f31-4e88-bb4d-deb4ae889c55', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Глюконат железа%' LIMIT 1)),
+  ('cc3f7f98-6f31-4e88-bb4d-deb4ae889c55', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Элотузумаб%' LIMIT 1)),
+  ('cc3f7f98-6f31-4e88-bb4d-deb4ae889c55', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Карбидин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('a6e267dd-3cb4-492c-9f5b-d2d9018c146d', '191'),
-  ('a6e267dd-3cb4-492c-9f5b-d2d9018c146d', '43'),
-  ('a6e267dd-3cb4-492c-9f5b-d2d9018c146d', '28');
+  ('cc3f7f98-6f31-4e88-bb4d-deb4ae889c55', '47'),
+  ('cc3f7f98-6f31-4e88-bb4d-deb4ae889c55', '6'),
+  ('cc3f7f98-6f31-4e88-bb4d-deb4ae889c55', '193');
   COMMIT TRANSACTION;
 END;   
 
@@ -1096,21 +1062,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('1872aea9-6772-4f1e-a2cd-1c805755ae2b', '2019-03-18 09:27:11', '2019-03-18 09:33:11', 1, 3165, 207, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('c51a3581-324a-4648-9d68-873f310f7446', '2019-03-18 10:25:06', '2019-03-18 10:35:55', 1, 14412, 604, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('1872aea9-6772-4f1e-a2cd-1c805755ae2b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бетаферон%' LIMIT 1)),
-  ('1872aea9-6772-4f1e-a2cd-1c805755ae2b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Спиносад%' LIMIT 1)),
-  ('1872aea9-6772-4f1e-a2cd-1c805755ae2b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Норвадин%' LIMIT 1));
+  ('c51a3581-324a-4648-9d68-873f310f7446', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Трастузумаб дерукстекан%' LIMIT 1)),
+  ('c51a3581-324a-4648-9d68-873f310f7446', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Холина салицилат%' LIMIT 1)),
+  ('c51a3581-324a-4648-9d68-873f310f7446', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бильтрицид%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('1872aea9-6772-4f1e-a2cd-1c805755ae2b', '147'),
-  ('1872aea9-6772-4f1e-a2cd-1c805755ae2b', '183'),
-  ('1872aea9-6772-4f1e-a2cd-1c805755ae2b', '1');
+  ('c51a3581-324a-4648-9d68-873f310f7446', '99'),
+  ('c51a3581-324a-4648-9d68-873f310f7446', '83'),
+  ('c51a3581-324a-4648-9d68-873f310f7446', '24');
   COMMIT TRANSACTION;
 END;   
 
@@ -1120,20 +1086,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('6027e925-e0ac-45c7-86ae-079b82e47692', '2019-03-18 09:34:00', '2019-03-18 09:41:17', 1, 3965, 712, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('ef64b92d-91d2-424b-b716-c95be1b8a32e', '2019-03-18 10:36:17', '2019-03-18 10:41:28', 1, 8580, 831, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('6027e925-e0ac-45c7-86ae-079b82e47692', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Диспорт%' LIMIT 1)),
-  ('6027e925-e0ac-45c7-86ae-079b82e47692', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Орувель%' LIMIT 1)),
-  ('6027e925-e0ac-45c7-86ae-079b82e47692', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Армин%' LIMIT 1));
+  ('ef64b92d-91d2-424b-b716-c95be1b8a32e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Зитромакс%' LIMIT 1)),
+  ('ef64b92d-91d2-424b-b716-c95be1b8a32e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Циклофосфамид%' LIMIT 1)),
+  ('ef64b92d-91d2-424b-b716-c95be1b8a32e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Этомидат%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('6027e925-e0ac-45c7-86ae-079b82e47692', '133'),
-  ('6027e925-e0ac-45c7-86ae-079b82e47692', '94');
+  ('ef64b92d-91d2-424b-b716-c95be1b8a32e', '182'),
+  ('ef64b92d-91d2-424b-b716-c95be1b8a32e', '71');
   COMMIT TRANSACTION;
 END;   
 
@@ -1143,21 +1109,22 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('bfb9422d-4a41-4a60-a0d8-b284e642fe67', '2019-03-18 09:41:18', '2019-03-18 09:52:10', 1, 4110, 512, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('8827bfda-d954-4c5f-aea1-be17fbd28a49', '2019-03-18 10:42:17', '2019-03-18 10:49:36', 1, 532, 456, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('bfb9422d-4a41-4a60-a0d8-b284e642fe67', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Abdala%' LIMIT 1)),
-  ('bfb9422d-4a41-4a60-a0d8-b284e642fe67', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Натрия дезоксирибонуклеат%' LIMIT 1)),
-  ('bfb9422d-4a41-4a60-a0d8-b284e642fe67', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тетракаин%' LIMIT 1)),
-  ('bfb9422d-4a41-4a60-a0d8-b284e642fe67', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пенталгин-ICN%' LIMIT 1));
+  ('8827bfda-d954-4c5f-aea1-be17fbd28a49', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Коделмикст%' LIMIT 1)),
+  ('8827bfda-d954-4c5f-aea1-be17fbd28a49', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Преноксдиазин%' LIMIT 1)),
+  ('8827bfda-d954-4c5f-aea1-be17fbd28a49', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Дипин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('bfb9422d-4a41-4a60-a0d8-b284e642fe67', '127'),
-  ('bfb9422d-4a41-4a60-a0d8-b284e642fe67', '57');
+  ('8827bfda-d954-4c5f-aea1-be17fbd28a49', '170'),
+  ('8827bfda-d954-4c5f-aea1-be17fbd28a49', '172'),
+  ('8827bfda-d954-4c5f-aea1-be17fbd28a49', '48'),
+  ('8827bfda-d954-4c5f-aea1-be17fbd28a49', '52');
   COMMIT TRANSACTION;
 END;   
 
@@ -1167,21 +1134,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('99e5ea56-60f8-488e-bf84-75ed4d9e982c', '2019-03-18 09:52:36', '2019-03-18 09:58:52', 1, 1111, 1145, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('e518410a-ab65-4179-9157-242c9f51cdde', '2019-03-18 10:50:09', '2019-03-18 10:57:08', 1, 7465, 127, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('99e5ea56-60f8-488e-bf84-75ed4d9e982c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Декарис%' LIMIT 1)),
-  ('99e5ea56-60f8-488e-bf84-75ed4d9e982c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'СимваГЕКСАЛ%' LIMIT 1)),
-  ('99e5ea56-60f8-488e-bf84-75ed4d9e982c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Эхинокандины%' LIMIT 1));
+  ('e518410a-ab65-4179-9157-242c9f51cdde', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Нандролона фенилпропионат%' LIMIT 1)),
+  ('e518410a-ab65-4179-9157-242c9f51cdde', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тиотриазолин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('99e5ea56-60f8-488e-bf84-75ed4d9e982c', '197'),
-  ('99e5ea56-60f8-488e-bf84-75ed4d9e982c', '5'),
-  ('99e5ea56-60f8-488e-bf84-75ed4d9e982c', '64');
+  ('e518410a-ab65-4179-9157-242c9f51cdde', '74'),
+  ('e518410a-ab65-4179-9157-242c9f51cdde', '59'),
+  ('e518410a-ab65-4179-9157-242c9f51cdde', '111'),
+  ('e518410a-ab65-4179-9157-242c9f51cdde', '52');
   COMMIT TRANSACTION;
 END;   
 
@@ -1191,22 +1158,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('d37aa96d-9cfb-41f9-8abc-a361dc47b715', '2019-03-18 09:59:17', '2019-03-18 10:09:28', 1, 6324, 1061, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('71ac86c2-ef35-4d8a-8c31-99a4addeec53', '2019-03-18 10:57:50', '2019-03-18 11:06:36', 1, 7773, 161, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('d37aa96d-9cfb-41f9-8abc-a361dc47b715', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Офтаквикс%' LIMIT 1)),
-  ('d37aa96d-9cfb-41f9-8abc-a361dc47b715', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Берлиприл%' LIMIT 1)),
-  ('d37aa96d-9cfb-41f9-8abc-a361dc47b715', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Веро-Наркап%' LIMIT 1));
+  ('71ac86c2-ef35-4d8a-8c31-99a4addeec53', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бравегил%' LIMIT 1)),
+  ('71ac86c2-ef35-4d8a-8c31-99a4addeec53', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Гидрокодон%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('d37aa96d-9cfb-41f9-8abc-a361dc47b715', '145'),
-  ('d37aa96d-9cfb-41f9-8abc-a361dc47b715', '177'),
-  ('d37aa96d-9cfb-41f9-8abc-a361dc47b715', '125'),
-  ('d37aa96d-9cfb-41f9-8abc-a361dc47b715', '4');
+  ('71ac86c2-ef35-4d8a-8c31-99a4addeec53', '170'),
+  ('71ac86c2-ef35-4d8a-8c31-99a4addeec53', '109'),
+  ('71ac86c2-ef35-4d8a-8c31-99a4addeec53', '158'),
+  ('71ac86c2-ef35-4d8a-8c31-99a4addeec53', '179');
   COMMIT TRANSACTION;
 END;   
 
@@ -1216,22 +1182,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('67ecd0f8-0850-4b05-808a-419558e74615', '2019-03-18 10:10:07', '2019-03-18 10:19:28', 1, 9352, 1041, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('4abccbb2-ac97-4d0c-9c9f-0b73b7866114', '2019-03-18 11:07:03', '2019-03-18 11:12:08', 1, 5426, 1277, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('67ecd0f8-0850-4b05-808a-419558e74615', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Цефепим%' LIMIT 1)),
-  ('67ecd0f8-0850-4b05-808a-419558e74615', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Кетанов%' LIMIT 1)),
-  ('67ecd0f8-0850-4b05-808a-419558e74615', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ранитал%' LIMIT 1)),
-  ('67ecd0f8-0850-4b05-808a-419558e74615', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пиоглит%' LIMIT 1));
+  ('4abccbb2-ac97-4d0c-9c9f-0b73b7866114', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Эналаприла малеат%' LIMIT 1)),
+  ('4abccbb2-ac97-4d0c-9c9f-0b73b7866114', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ифосфамид%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('67ecd0f8-0850-4b05-808a-419558e74615', '47'),
-  ('67ecd0f8-0850-4b05-808a-419558e74615', '181'),
-  ('67ecd0f8-0850-4b05-808a-419558e74615', '134');
+  ('4abccbb2-ac97-4d0c-9c9f-0b73b7866114', '41'),
+  ('4abccbb2-ac97-4d0c-9c9f-0b73b7866114', '193'),
+  ('4abccbb2-ac97-4d0c-9c9f-0b73b7866114', '36');
   COMMIT TRANSACTION;
 END;   
 
@@ -1241,22 +1205,23 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('3021819c-9922-44db-a844-544c83596de6', '2019-03-18 10:20:22', '2019-03-18 10:26:44', 1, 4199, 220, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('52733e8c-eeb8-4f22-aa48-2fa479144fef', '2019-03-18 11:13:04', '2019-03-18 11:23:00', 1, 11833, 797, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('3021819c-9922-44db-a844-544c83596de6', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Канамицин%' LIMIT 1)),
-  ('3021819c-9922-44db-a844-544c83596de6', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ксиламидин%' LIMIT 1)),
-  ('3021819c-9922-44db-a844-544c83596de6', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Цефантрал%' LIMIT 1));
+  ('52733e8c-eeb8-4f22-aa48-2fa479144fef', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Абакавир/Долутегравир/Ламивудин%' LIMIT 1)),
+  ('52733e8c-eeb8-4f22-aa48-2fa479144fef', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Вакцина Moderna против COVID-19%' LIMIT 1)),
+  ('52733e8c-eeb8-4f22-aa48-2fa479144fef', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Корнерегель%' LIMIT 1)),
+  ('52733e8c-eeb8-4f22-aa48-2fa479144fef', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бринзоламид%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('3021819c-9922-44db-a844-544c83596de6', '156'),
-  ('3021819c-9922-44db-a844-544c83596de6', '42'),
-  ('3021819c-9922-44db-a844-544c83596de6', '158'),
-  ('3021819c-9922-44db-a844-544c83596de6', '97');
+  ('52733e8c-eeb8-4f22-aa48-2fa479144fef', '75'),
+  ('52733e8c-eeb8-4f22-aa48-2fa479144fef', '13'),
+  ('52733e8c-eeb8-4f22-aa48-2fa479144fef', '143'),
+  ('52733e8c-eeb8-4f22-aa48-2fa479144fef', '104');
   COMMIT TRANSACTION;
 END;   
 
@@ -1266,21 +1231,23 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('90e21b16-70d6-47c9-a475-fc99c95f142a', '2019-03-18 10:27:42', '2019-03-18 10:35:37', 1, 4947, 322, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('120d6297-90ab-469b-8b2b-be9e52f8e0ba', '2019-03-18 11:23:40', '2019-03-18 11:30:29', 1, 9939, 365, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('90e21b16-70d6-47c9-a475-fc99c95f142a', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тековиримат%' LIMIT 1)),
-  ('90e21b16-70d6-47c9-a475-fc99c95f142a', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Перициазин%' LIMIT 1)),
-  ('90e21b16-70d6-47c9-a475-fc99c95f142a', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Авастин%' LIMIT 1));
+  ('120d6297-90ab-469b-8b2b-be9e52f8e0ba', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Камфора (лекарственное средство)%' LIMIT 1)),
+  ('120d6297-90ab-469b-8b2b-be9e52f8e0ba', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Амитриптилин%' LIMIT 1)),
+  ('120d6297-90ab-469b-8b2b-be9e52f8e0ba', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Карбахол%' LIMIT 1)),
+  ('120d6297-90ab-469b-8b2b-be9e52f8e0ba', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Дротебанол%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('90e21b16-70d6-47c9-a475-fc99c95f142a', '59'),
-  ('90e21b16-70d6-47c9-a475-fc99c95f142a', '153'),
-  ('90e21b16-70d6-47c9-a475-fc99c95f142a', '146');
+  ('120d6297-90ab-469b-8b2b-be9e52f8e0ba', '151'),
+  ('120d6297-90ab-469b-8b2b-be9e52f8e0ba', '12'),
+  ('120d6297-90ab-469b-8b2b-be9e52f8e0ba', '93'),
+  ('120d6297-90ab-469b-8b2b-be9e52f8e0ba', '66');
   COMMIT TRANSACTION;
 END;   
 
@@ -1290,22 +1257,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('fd6f51b9-3e03-4f6a-a6f0-9bb83abcb5a6', '2019-03-18 10:35:45', '2019-03-18 10:44:27', 1, 160, 997, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('4d5ccc1b-92cb-49f3-bb68-387361c4d65e', '2019-03-18 11:31:05', '2019-03-18 11:36:58', 1, 860, 306, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('fd6f51b9-3e03-4f6a-a6f0-9bb83abcb5a6', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Циклокапс%' LIMIT 1)),
-  ('fd6f51b9-3e03-4f6a-a6f0-9bb83abcb5a6', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Панадол%' LIMIT 1)),
-  ('fd6f51b9-3e03-4f6a-a6f0-9bb83abcb5a6', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пара-Аминосалициловая кислота%' LIMIT 1));
+  ('4d5ccc1b-92cb-49f3-bb68-387361c4d65e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Вакцина Valneva против COVID-19%' LIMIT 1)),
+  ('4d5ccc1b-92cb-49f3-bb68-387361c4d65e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Плеканатид%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('fd6f51b9-3e03-4f6a-a6f0-9bb83abcb5a6', '118'),
-  ('fd6f51b9-3e03-4f6a-a6f0-9bb83abcb5a6', '71'),
-  ('fd6f51b9-3e03-4f6a-a6f0-9bb83abcb5a6', '150'),
-  ('fd6f51b9-3e03-4f6a-a6f0-9bb83abcb5a6', '79');
+  ('4d5ccc1b-92cb-49f3-bb68-387361c4d65e', '62'),
+  ('4d5ccc1b-92cb-49f3-bb68-387361c4d65e', '198'),
+  ('4d5ccc1b-92cb-49f3-bb68-387361c4d65e', '155'),
+  ('4d5ccc1b-92cb-49f3-bb68-387361c4d65e', '39');
   COMMIT TRANSACTION;
 END;   
 
@@ -1315,23 +1281,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('4ba6c080-fc6f-4678-b242-1f216b7b34f2', '2019-03-18 10:45:13', '2019-03-18 10:50:42', 1, 296, 353, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('47e0d7d9-b4bd-41a9-a392-3c3c42204ea8', '2019-03-18 11:37:23', '2019-03-18 11:43:50', 1, 5685, 503, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('4ba6c080-fc6f-4678-b242-1f216b7b34f2', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Эреспал%' LIMIT 1)),
-  ('4ba6c080-fc6f-4678-b242-1f216b7b34f2', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Нирмин%' LIMIT 1)),
-  ('4ba6c080-fc6f-4678-b242-1f216b7b34f2', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Сульфагуанидин%' LIMIT 1)),
-  ('4ba6c080-fc6f-4678-b242-1f216b7b34f2', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Вакцина Pfizer/BioNTech против COVID-19%' LIMIT 1));
+  ('47e0d7d9-b4bd-41a9-a392-3c3c42204ea8', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Спироксатрин%' LIMIT 1)),
+  ('47e0d7d9-b4bd-41a9-a392-3c3c42204ea8', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пегилированный интерферон альфа-2а%' LIMIT 1)),
+  ('47e0d7d9-b4bd-41a9-a392-3c3c42204ea8', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Элосульфаза альфа%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('4ba6c080-fc6f-4678-b242-1f216b7b34f2', '197'),
-  ('4ba6c080-fc6f-4678-b242-1f216b7b34f2', '20'),
-  ('4ba6c080-fc6f-4678-b242-1f216b7b34f2', '30'),
-  ('4ba6c080-fc6f-4678-b242-1f216b7b34f2', '10');
+  ('47e0d7d9-b4bd-41a9-a392-3c3c42204ea8', '70'),
+  ('47e0d7d9-b4bd-41a9-a392-3c3c42204ea8', '18'),
+  ('47e0d7d9-b4bd-41a9-a392-3c3c42204ea8', '31');
   COMMIT TRANSACTION;
 END;   
 
@@ -1341,21 +1305,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('1d98940c-2971-4162-90c3-12188dc259cd', '2019-03-18 10:50:59', '2019-03-18 11:01:48', 1, 11006, 1083, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('b6c8a0f1-b932-4c40-abcc-af572ef4eb1f', '2019-03-18 11:44:46', '2019-03-18 11:52:49', 1, 7354, 1070, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('1d98940c-2971-4162-90c3-12188dc259cd', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'MDMA%' LIMIT 1)),
-  ('1d98940c-2971-4162-90c3-12188dc259cd', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Дифлюкан%' LIMIT 1)),
-  ('1d98940c-2971-4162-90c3-12188dc259cd', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пембролизумаб%' LIMIT 1)),
-  ('1d98940c-2971-4162-90c3-12188dc259cd', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Найз%' LIMIT 1));
+  ('b6c8a0f1-b932-4c40-abcc-af572ef4eb1f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Эфавиренз%' LIMIT 1)),
+  ('b6c8a0f1-b932-4c40-abcc-af572ef4eb1f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Димеколония йодид%' LIMIT 1)),
+  ('b6c8a0f1-b932-4c40-abcc-af572ef4eb1f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Периндоприл%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('1d98940c-2971-4162-90c3-12188dc259cd', '189'),
-  ('1d98940c-2971-4162-90c3-12188dc259cd', '119');
+  ('b6c8a0f1-b932-4c40-abcc-af572ef4eb1f', '49'),
+  ('b6c8a0f1-b932-4c40-abcc-af572ef4eb1f', '189'),
+  ('b6c8a0f1-b932-4c40-abcc-af572ef4eb1f', '70');
   COMMIT TRANSACTION;
 END;   
 
@@ -1365,20 +1329,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('2f25109b-a548-4a7d-957f-c7e915ea123a', '2019-03-18 11:02:37', '2019-03-18 11:09:40', 1, 14129, 65, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('79686ba7-7e4e-4d0d-abdd-2155952a5e15', '2019-03-18 11:53:37', '2019-03-18 12:02:04', 1, 12219, 1164, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '2' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('2f25109b-a548-4a7d-957f-c7e915ea123a', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Акталипид%' LIMIT 1)),
-  ('2f25109b-a548-4a7d-957f-c7e915ea123a', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Эторикоксиб%' LIMIT 1));
+  ('79686ba7-7e4e-4d0d-abdd-2155952a5e15', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фосампренавир%' LIMIT 1)),
+  ('79686ba7-7e4e-4d0d-abdd-2155952a5e15', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Длянос%' LIMIT 1)),
+  ('79686ba7-7e4e-4d0d-abdd-2155952a5e15', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Репаглинид%' LIMIT 1)),
+  ('79686ba7-7e4e-4d0d-abdd-2155952a5e15', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Комбинация изониазида и рифампицина%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('2f25109b-a548-4a7d-957f-c7e915ea123a', '10'),
-  ('2f25109b-a548-4a7d-957f-c7e915ea123a', '189'),
-  ('2f25109b-a548-4a7d-957f-c7e915ea123a', '48');
+  ('79686ba7-7e4e-4d0d-abdd-2155952a5e15', '140'),
+  ('79686ba7-7e4e-4d0d-abdd-2155952a5e15', '159');
   COMMIT TRANSACTION;
 END;   
 
@@ -1388,21 +1353,22 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('5e6f200e-0212-443d-9644-34e9c87d6d61', '2019-03-18 11:10:06', '2019-03-18 11:20:24', 1, 2490, 788, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('b27a0688-4fe1-4bef-a5cf-56d2665f7a5e', '2019-03-18 08:00:41', '2019-03-18 08:05:49', 1, 9380, 1070, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('5e6f200e-0212-443d-9644-34e9c87d6d61', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Юкодал%' LIMIT 1)),
-  ('5e6f200e-0212-443d-9644-34e9c87d6d61', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фексофенадин%' LIMIT 1)),
-  ('5e6f200e-0212-443d-9644-34e9c87d6d61', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Дупилумаб%' LIMIT 1)),
-  ('5e6f200e-0212-443d-9644-34e9c87d6d61', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Дротебанол%' LIMIT 1));
+  ('b27a0688-4fe1-4bef-a5cf-56d2665f7a5e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Йодостин%' LIMIT 1)),
+  ('b27a0688-4fe1-4bef-a5cf-56d2665f7a5e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ихтиоловая мазь%' LIMIT 1)),
+  ('b27a0688-4fe1-4bef-a5cf-56d2665f7a5e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Акридерм ГЕНТА%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('5e6f200e-0212-443d-9644-34e9c87d6d61', '152'),
-  ('5e6f200e-0212-443d-9644-34e9c87d6d61', '172');
+  ('b27a0688-4fe1-4bef-a5cf-56d2665f7a5e', '142'),
+  ('b27a0688-4fe1-4bef-a5cf-56d2665f7a5e', '95'),
+  ('b27a0688-4fe1-4bef-a5cf-56d2665f7a5e', '45'),
+  ('b27a0688-4fe1-4bef-a5cf-56d2665f7a5e', '42');
   COMMIT TRANSACTION;
 END;   
 
@@ -1412,22 +1378,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('d08b6c7b-391e-4bf9-bc52-eeee029f0a01', '2019-03-18 11:20:26', '2019-03-18 11:25:04', 1, 1636, 1007, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('60608116-a697-4d3a-9b05-49e96000b5bd', '2019-03-18 08:05:52', '2019-03-18 08:14:38', 1, 11684, 665, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('d08b6c7b-391e-4bf9-bc52-eeee029f0a01', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Адефовир%' LIMIT 1)),
-  ('d08b6c7b-391e-4bf9-bc52-eeee029f0a01', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Типранавир%' LIMIT 1)),
-  ('d08b6c7b-391e-4bf9-bc52-eeee029f0a01', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Протионамид%' LIMIT 1)),
-  ('d08b6c7b-391e-4bf9-bc52-eeee029f0a01', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ноопепт%' LIMIT 1));
+  ('60608116-a697-4d3a-9b05-49e96000b5bd', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Солриамфетол%' LIMIT 1)),
+  ('60608116-a697-4d3a-9b05-49e96000b5bd', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Литрамин%' LIMIT 1)),
+  ('60608116-a697-4d3a-9b05-49e96000b5bd', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Flutemetamol (18F)%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('d08b6c7b-391e-4bf9-bc52-eeee029f0a01', '42'),
-  ('d08b6c7b-391e-4bf9-bc52-eeee029f0a01', '76'),
-  ('d08b6c7b-391e-4bf9-bc52-eeee029f0a01', '67');
+  ('60608116-a697-4d3a-9b05-49e96000b5bd', '139'),
+  ('60608116-a697-4d3a-9b05-49e96000b5bd', '71');
   COMMIT TRANSACTION;
 END;   
 
@@ -1437,23 +1401,22 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('0ca21dd0-0b57-43d7-b91e-32662e5ea1ab', '2019-03-18 11:25:21', '2019-03-18 11:35:26', 1, 12846, 350, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('cc2b5898-146c-4662-a1ad-32073dedfc2a', '2019-03-18 08:15:10', '2019-03-18 08:23:03', 1, 4115, 1172, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('0ca21dd0-0b57-43d7-b91e-32662e5ea1ab', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Гелофузин%' LIMIT 1)),
-  ('0ca21dd0-0b57-43d7-b91e-32662e5ea1ab', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Трипторелин%' LIMIT 1)),
-  ('0ca21dd0-0b57-43d7-b91e-32662e5ea1ab', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Левотироксин натрия%' LIMIT 1)),
-  ('0ca21dd0-0b57-43d7-b91e-32662e5ea1ab', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Цефтолозан%' LIMIT 1));
+  ('cc2b5898-146c-4662-a1ad-32073dedfc2a', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фарматекс%' LIMIT 1)),
+  ('cc2b5898-146c-4662-a1ad-32073dedfc2a', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Дульколакс%' LIMIT 1)),
+  ('cc2b5898-146c-4662-a1ad-32073dedfc2a', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Альфа-метилпаратирозин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('0ca21dd0-0b57-43d7-b91e-32662e5ea1ab', '16'),
-  ('0ca21dd0-0b57-43d7-b91e-32662e5ea1ab', '26'),
-  ('0ca21dd0-0b57-43d7-b91e-32662e5ea1ab', '130'),
-  ('0ca21dd0-0b57-43d7-b91e-32662e5ea1ab', '135');
+  ('cc2b5898-146c-4662-a1ad-32073dedfc2a', '17'),
+  ('cc2b5898-146c-4662-a1ad-32073dedfc2a', '94'),
+  ('cc2b5898-146c-4662-a1ad-32073dedfc2a', '86'),
+  ('cc2b5898-146c-4662-a1ad-32073dedfc2a', '114');
   COMMIT TRANSACTION;
 END;   
 
@@ -1463,20 +1426,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('50418020-9950-48b1-baaf-ef874caead3d', '2019-03-18 11:35:39', '2019-03-18 11:43:47', 1, 12158, 703, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('080756f6-577c-43d2-aff5-885cae4189e5', '2019-03-18 08:23:25', '2019-03-18 08:29:07', 1, 14060, 1058, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('50418020-9950-48b1-baaf-ef874caead3d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Мотилак%' LIMIT 1)),
-  ('50418020-9950-48b1-baaf-ef874caead3d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ипратропия бромид%' LIMIT 1)),
-  ('50418020-9950-48b1-baaf-ef874caead3d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пенталгин-Н%' LIMIT 1));
+  ('080756f6-577c-43d2-aff5-885cae4189e5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Монизид%' LIMIT 1)),
+  ('080756f6-577c-43d2-aff5-885cae4189e5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Висмута субсалицилат%' LIMIT 1)),
+  ('080756f6-577c-43d2-aff5-885cae4189e5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Темозоломид%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('50418020-9950-48b1-baaf-ef874caead3d', '74'),
-  ('50418020-9950-48b1-baaf-ef874caead3d', '115');
+  ('080756f6-577c-43d2-aff5-885cae4189e5', '52'),
+  ('080756f6-577c-43d2-aff5-885cae4189e5', '27'),
+  ('080756f6-577c-43d2-aff5-885cae4189e5', '157');
   COMMIT TRANSACTION;
 END;   
 
@@ -1486,19 +1450,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('9c250072-49dd-4444-a357-4c15561c7fbe', '2019-03-18 11:44:46', '2019-03-18 11:52:20', 1, 9044, 699, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('5820e321-5453-4aca-8c43-5cea3345b250', '2019-03-18 08:29:29', '2019-03-18 08:35:24', 1, 12868, 783, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('9c250072-49dd-4444-a357-4c15561c7fbe', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Аллилпродин%' LIMIT 1)),
-  ('9c250072-49dd-4444-a357-4c15561c7fbe', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ланинамивир%' LIMIT 1));
+  ('5820e321-5453-4aca-8c43-5cea3345b250', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Висмута субсалицилат%' LIMIT 1)),
+  ('5820e321-5453-4aca-8c43-5cea3345b250', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Леналидомид%' LIMIT 1)),
+  ('5820e321-5453-4aca-8c43-5cea3345b250', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Миртол%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('9c250072-49dd-4444-a357-4c15561c7fbe', '160'),
-  ('9c250072-49dd-4444-a357-4c15561c7fbe', '101');
+  ('5820e321-5453-4aca-8c43-5cea3345b250', '79'),
+  ('5820e321-5453-4aca-8c43-5cea3345b250', '171'),
+  ('5820e321-5453-4aca-8c43-5cea3345b250', '21');
   COMMIT TRANSACTION;
 END;   
 
@@ -1508,22 +1474,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('547db632-d26a-4e33-9c8d-63cbadbdb319', '2019-03-18 11:52:26', '2019-03-18 11:57:43', 1, 1713, 807, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('2f8c87a9-f4cd-49fb-b89a-b160fa2b0c26', '2019-03-18 08:35:48', '2019-03-18 08:43:29', 1, 13422, 669, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('547db632-d26a-4e33-9c8d-63cbadbdb319', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Мометазон%' LIMIT 1)),
-  ('547db632-d26a-4e33-9c8d-63cbadbdb319', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бетагенот%' LIMIT 1)),
-  ('547db632-d26a-4e33-9c8d-63cbadbdb319', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Арисепт%' LIMIT 1));
+  ('2f8c87a9-f4cd-49fb-b89a-b160fa2b0c26', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Интерферон альфа-2b%' LIMIT 1)),
+  ('2f8c87a9-f4cd-49fb-b89a-b160fa2b0c26', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Димексид%' LIMIT 1)),
+  ('2f8c87a9-f4cd-49fb-b89a-b160fa2b0c26', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Метронидазол%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('547db632-d26a-4e33-9c8d-63cbadbdb319', '178'),
-  ('547db632-d26a-4e33-9c8d-63cbadbdb319', '115'),
-  ('547db632-d26a-4e33-9c8d-63cbadbdb319', '161'),
-  ('547db632-d26a-4e33-9c8d-63cbadbdb319', '192');
+  ('2f8c87a9-f4cd-49fb-b89a-b160fa2b0c26', '67'),
+  ('2f8c87a9-f4cd-49fb-b89a-b160fa2b0c26', '65');
   COMMIT TRANSACTION;
 END;   
 
@@ -1533,22 +1497,22 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('28f5e6b0-4ef1-41b5-afc3-bde1e5707df1', '2019-03-18 11:58:09', '2019-03-18 12:08:15', 1, 10481, 1195, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 2));
+  ('e9b22500-c450-4a4b-a3fd-a7ef215b5248', '2019-03-18 08:43:41', '2019-03-18 08:54:29', 1, 3023, 75, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('28f5e6b0-4ef1-41b5-afc3-bde1e5707df1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тоцилизумаб%' LIMIT 1)),
-  ('28f5e6b0-4ef1-41b5-afc3-bde1e5707df1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фибринолизин%' LIMIT 1)),
-  ('28f5e6b0-4ef1-41b5-afc3-bde1e5707df1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Протионамид%' LIMIT 1));
+  ('e9b22500-c450-4a4b-a3fd-a7ef215b5248', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Имигран%' LIMIT 1)),
+  ('e9b22500-c450-4a4b-a3fd-a7ef215b5248', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пенталгин Плюс%' LIMIT 1)),
+  ('e9b22500-c450-4a4b-a3fd-a7ef215b5248', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ипилимумаб%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('28f5e6b0-4ef1-41b5-afc3-bde1e5707df1', '108'),
-  ('28f5e6b0-4ef1-41b5-afc3-bde1e5707df1', '75'),
-  ('28f5e6b0-4ef1-41b5-afc3-bde1e5707df1', '38'),
-  ('28f5e6b0-4ef1-41b5-afc3-bde1e5707df1', '7');
+  ('e9b22500-c450-4a4b-a3fd-a7ef215b5248', '167'),
+  ('e9b22500-c450-4a4b-a3fd-a7ef215b5248', '65'),
+  ('e9b22500-c450-4a4b-a3fd-a7ef215b5248', '77'),
+  ('e9b22500-c450-4a4b-a3fd-a7ef215b5248', '198');
   COMMIT TRANSACTION;
 END;   
 
@@ -1558,22 +1522,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('85c318a3-bc1c-4f26-9a44-5732ab0e313e', '2019-03-18 08:00:23', '2019-03-18 08:09:11', 1, 688, 776, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('05e5fea3-f998-48fc-8397-08a3cb4c30f4', '2019-03-18 08:55:12', '2019-03-18 09:06:08', 1, 9956, 782, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('85c318a3-bc1c-4f26-9a44-5732ab0e313e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Флорбетабен%' LIMIT 1)),
-  ('85c318a3-bc1c-4f26-9a44-5732ab0e313e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Коронал%' LIMIT 1)),
-  ('85c318a3-bc1c-4f26-9a44-5732ab0e313e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Лонкастуксимаб тезирин%' LIMIT 1)),
-  ('85c318a3-bc1c-4f26-9a44-5732ab0e313e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Осельтамивир%' LIMIT 1));
+  ('05e5fea3-f998-48fc-8397-08a3cb4c30f4', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бендазол%' LIMIT 1)),
+  ('05e5fea3-f998-48fc-8397-08a3cb4c30f4', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бетувакс-КоВ-2%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('85c318a3-bc1c-4f26-9a44-5732ab0e313e', '185'),
-  ('85c318a3-bc1c-4f26-9a44-5732ab0e313e', '62'),
-  ('85c318a3-bc1c-4f26-9a44-5732ab0e313e', '168');
+  ('05e5fea3-f998-48fc-8397-08a3cb4c30f4', '199'),
+  ('05e5fea3-f998-48fc-8397-08a3cb4c30f4', '143'),
+  ('05e5fea3-f998-48fc-8397-08a3cb4c30f4', '6');
   COMMIT TRANSACTION;
 END;   
 
@@ -1583,21 +1545,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('418da505-8e4e-4013-8320-048dc9fa484d', '2019-03-18 08:09:14', '2019-03-18 08:19:22', 1, 3007, 234, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('d508e135-eb1a-41d4-af96-782c391fd411', '2019-03-18 09:06:42', '2019-03-18 09:11:09', 1, 2651, 562, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('418da505-8e4e-4013-8320-048dc9fa484d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'ГамТБвак%' LIMIT 1)),
-  ('418da505-8e4e-4013-8320-048dc9fa484d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Суматриптана сукцинат%' LIMIT 1)),
-  ('418da505-8e4e-4013-8320-048dc9fa484d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Медоциприн%' LIMIT 1));
+  ('d508e135-eb1a-41d4-af96-782c391fd411', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Зидовудин%' LIMIT 1)),
+  ('d508e135-eb1a-41d4-af96-782c391fd411', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фуброгония йодид%' LIMIT 1)),
+  ('d508e135-eb1a-41d4-af96-782c391fd411', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Цизаприд%' LIMIT 1)),
+  ('d508e135-eb1a-41d4-af96-782c391fd411', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Флукорал%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('418da505-8e4e-4013-8320-048dc9fa484d', '92'),
-  ('418da505-8e4e-4013-8320-048dc9fa484d', '106'),
-  ('418da505-8e4e-4013-8320-048dc9fa484d', '174');
+  ('d508e135-eb1a-41d4-af96-782c391fd411', '92'),
+  ('d508e135-eb1a-41d4-af96-782c391fd411', '146');
   COMMIT TRANSACTION;
 END;   
 
@@ -1607,21 +1569,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('fb4362c0-dab2-4268-ae60-7d2fee1d7a17', '2019-03-18 08:19:33', '2019-03-18 08:26:56', 1, 11399, 1120, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('38c9d372-eafb-4b4a-8eda-70c8a725f698', '2019-03-18 09:12:08', '2019-03-18 09:22:38', 1, 3112, 316, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('fb4362c0-dab2-4268-ae60-7d2fee1d7a17', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Метопимазин%' LIMIT 1)),
-  ('fb4362c0-dab2-4268-ae60-7d2fee1d7a17', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Грамицидин%' LIMIT 1)),
-  ('fb4362c0-dab2-4268-ae60-7d2fee1d7a17', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Брентуксимаб ведотин%' LIMIT 1));
+  ('38c9d372-eafb-4b4a-8eda-70c8a725f698', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'JWH-018%' LIMIT 1)),
+  ('38c9d372-eafb-4b4a-8eda-70c8a725f698', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Синекод%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('fb4362c0-dab2-4268-ae60-7d2fee1d7a17', '86'),
-  ('fb4362c0-dab2-4268-ae60-7d2fee1d7a17', '16'),
-  ('fb4362c0-dab2-4268-ae60-7d2fee1d7a17', '105');
+  ('38c9d372-eafb-4b4a-8eda-70c8a725f698', '181'),
+  ('38c9d372-eafb-4b4a-8eda-70c8a725f698', '98'),
+  ('38c9d372-eafb-4b4a-8eda-70c8a725f698', '165');
   COMMIT TRANSACTION;
 END;   
 
@@ -1631,21 +1592,22 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('8868eb42-f9f2-49f2-a061-9298baaf0825', '2019-03-18 08:27:49', '2019-03-18 08:37:53', 1, 3589, 491, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('7e5ce593-f1ba-4f68-a812-ec918a800747', '2019-03-18 09:23:23', '2019-03-18 09:34:05', 1, 965, 963, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('8868eb42-f9f2-49f2-a061-9298baaf0825', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Омитокс%' LIMIT 1)),
-  ('8868eb42-f9f2-49f2-a061-9298baaf0825', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Метионин%' LIMIT 1)),
-  ('8868eb42-f9f2-49f2-a061-9298baaf0825', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Преднизол%' LIMIT 1));
+  ('7e5ce593-f1ba-4f68-a812-ec918a800747', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Эринит%' LIMIT 1)),
+  ('7e5ce593-f1ba-4f68-a812-ec918a800747', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Флукозан%' LIMIT 1)),
+  ('7e5ce593-f1ba-4f68-a812-ec918a800747', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Висмута субнитрат%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('8868eb42-f9f2-49f2-a061-9298baaf0825', '105'),
-  ('8868eb42-f9f2-49f2-a061-9298baaf0825', '70'),
-  ('8868eb42-f9f2-49f2-a061-9298baaf0825', '37');
+  ('7e5ce593-f1ba-4f68-a812-ec918a800747', '149'),
+  ('7e5ce593-f1ba-4f68-a812-ec918a800747', '41'),
+  ('7e5ce593-f1ba-4f68-a812-ec918a800747', '116'),
+  ('7e5ce593-f1ba-4f68-a812-ec918a800747', '126');
   COMMIT TRANSACTION;
 END;   
 
@@ -1655,23 +1617,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('6852aa59-3cc7-4b7b-a2fc-e54e1859f661', '2019-03-18 08:38:35', '2019-03-18 08:49:30', 1, 3234, 769, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('7a76bac9-53a6-4b6f-bcd5-2387494da71e', '2019-03-18 09:34:22', '2019-03-18 09:45:02', 1, 13036, 995, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('6852aa59-3cc7-4b7b-a2fc-e54e1859f661', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Паксен%' LIMIT 1)),
-  ('6852aa59-3cc7-4b7b-a2fc-e54e1859f661', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Симвакол%' LIMIT 1)),
-  ('6852aa59-3cc7-4b7b-a2fc-e54e1859f661', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Эналаприл%' LIMIT 1)),
-  ('6852aa59-3cc7-4b7b-a2fc-e54e1859f661', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Мидазолам%' LIMIT 1));
+  ('7a76bac9-53a6-4b6f-bcd5-2387494da71e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Хинидин%' LIMIT 1)),
+  ('7a76bac9-53a6-4b6f-bcd5-2387494da71e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Антиструмин-Дарница%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('6852aa59-3cc7-4b7b-a2fc-e54e1859f661', '45'),
-  ('6852aa59-3cc7-4b7b-a2fc-e54e1859f661', '31'),
-  ('6852aa59-3cc7-4b7b-a2fc-e54e1859f661', '14'),
-  ('6852aa59-3cc7-4b7b-a2fc-e54e1859f661', '110');
+  ('7a76bac9-53a6-4b6f-bcd5-2387494da71e', '107'),
+  ('7a76bac9-53a6-4b6f-bcd5-2387494da71e', '94'),
+  ('7a76bac9-53a6-4b6f-bcd5-2387494da71e', '198');
   COMMIT TRANSACTION;
 END;   
 
@@ -1681,20 +1640,23 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('e1488013-7f6e-43c6-93d6-86bb67808385', '2019-03-18 08:50:30', '2019-03-18 09:00:10', 1, 278, 65, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('1d64eddc-3bcf-40dd-bcb4-ceb0029b41dc', '2019-03-18 09:45:52', '2019-03-18 09:53:04', 1, 5285, 326, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('e1488013-7f6e-43c6-93d6-86bb67808385', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Трописетрон%' LIMIT 1)),
-  ('e1488013-7f6e-43c6-93d6-86bb67808385', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Астматол%' LIMIT 1)),
-  ('e1488013-7f6e-43c6-93d6-86bb67808385', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Гемцитабин%' LIMIT 1));
+  ('1d64eddc-3bcf-40dd-bcb4-ceb0029b41dc', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пинацидил%' LIMIT 1)),
+  ('1d64eddc-3bcf-40dd-bcb4-ceb0029b41dc', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Артрозан%' LIMIT 1)),
+  ('1d64eddc-3bcf-40dd-bcb4-ceb0029b41dc', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фастум%' LIMIT 1)),
+  ('1d64eddc-3bcf-40dd-bcb4-ceb0029b41dc', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Холина салицилат%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('e1488013-7f6e-43c6-93d6-86bb67808385', '33'),
-  ('e1488013-7f6e-43c6-93d6-86bb67808385', '127');
+  ('1d64eddc-3bcf-40dd-bcb4-ceb0029b41dc', '70'),
+  ('1d64eddc-3bcf-40dd-bcb4-ceb0029b41dc', '66'),
+  ('1d64eddc-3bcf-40dd-bcb4-ceb0029b41dc', '26'),
+  ('1d64eddc-3bcf-40dd-bcb4-ceb0029b41dc', '69');
   COMMIT TRANSACTION;
 END;   
 
@@ -1704,22 +1666,22 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('5fbf0ea0-9cd6-48c2-a28f-7ed4d427c35b', '2019-03-18 09:00:58', '2019-03-18 09:11:21', 1, 5601, 49, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('08d0a416-2eb8-44be-9dbb-badbdea9b769', '2019-03-18 09:53:37', '2019-03-18 09:59:17', 1, 5759, 898, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('5fbf0ea0-9cd6-48c2-a28f-7ed4d427c35b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Масло мяты перечной%' LIMIT 1)),
-  ('5fbf0ea0-9cd6-48c2-a28f-7ed4d427c35b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Суматриптан%' LIMIT 1)),
-  ('5fbf0ea0-9cd6-48c2-a28f-7ed4d427c35b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Эпробемид%' LIMIT 1)),
-  ('5fbf0ea0-9cd6-48c2-a28f-7ed4d427c35b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Флуконазол%' LIMIT 1));
+  ('08d0a416-2eb8-44be-9dbb-badbdea9b769', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Зикронапин%' LIMIT 1)),
+  ('08d0a416-2eb8-44be-9dbb-badbdea9b769', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Би-ксикам%' LIMIT 1)),
+  ('08d0a416-2eb8-44be-9dbb-badbdea9b769', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Галантамин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('5fbf0ea0-9cd6-48c2-a28f-7ed4d427c35b', '145'),
-  ('5fbf0ea0-9cd6-48c2-a28f-7ed4d427c35b', '82'),
-  ('5fbf0ea0-9cd6-48c2-a28f-7ed4d427c35b', '177');
+  ('08d0a416-2eb8-44be-9dbb-badbdea9b769', '64'),
+  ('08d0a416-2eb8-44be-9dbb-badbdea9b769', '152'),
+  ('08d0a416-2eb8-44be-9dbb-badbdea9b769', '193'),
+  ('08d0a416-2eb8-44be-9dbb-badbdea9b769', '108');
   COMMIT TRANSACTION;
 END;   
 
@@ -1729,19 +1691,19 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('dc211cea-930e-40cc-92b2-70e37e8bfa30', '2019-03-18 09:11:22', '2019-03-18 09:17:59', 1, 11714, 171, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('d1b2d2da-e832-4ea5-bd6d-59ede7b603e2', '2019-03-18 10:00:11', '2019-03-18 10:08:17', 1, 11119, 951, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('dc211cea-930e-40cc-92b2-70e37e8bfa30', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Прохлорперазин%' LIMIT 1)),
-  ('dc211cea-930e-40cc-92b2-70e37e8bfa30', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Вакцина против холеры%' LIMIT 1));
+  ('d1b2d2da-e832-4ea5-bd6d-59ede7b603e2', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Air polymer-type A%' LIMIT 1)),
+  ('d1b2d2da-e832-4ea5-bd6d-59ede7b603e2', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Цилоксан%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('dc211cea-930e-40cc-92b2-70e37e8bfa30', '26'),
-  ('dc211cea-930e-40cc-92b2-70e37e8bfa30', '6');
+  ('d1b2d2da-e832-4ea5-bd6d-59ede7b603e2', '105'),
+  ('d1b2d2da-e832-4ea5-bd6d-59ede7b603e2', '149');
   COMMIT TRANSACTION;
 END;   
 
@@ -1751,22 +1713,23 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('dcfa3419-4b47-4307-8ef7-0c3e2f7a199e', '2019-03-18 09:18:02', '2019-03-18 09:24:37', 1, 5253, 74, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('5aa9198f-21d5-4aae-98ad-2abf6d30f906', '2019-03-18 10:08:39', '2019-03-18 10:16:36', 1, 11371, 788, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('dcfa3419-4b47-4307-8ef7-0c3e2f7a199e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Нистатин%' LIMIT 1)),
-  ('dcfa3419-4b47-4307-8ef7-0c3e2f7a199e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ретапамулин%' LIMIT 1)),
-  ('dcfa3419-4b47-4307-8ef7-0c3e2f7a199e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Оксолиновая кислота%' LIMIT 1)),
-  ('dcfa3419-4b47-4307-8ef7-0c3e2f7a199e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фитин%' LIMIT 1));
+  ('5aa9198f-21d5-4aae-98ad-2abf6d30f906', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Декортин Н5%' LIMIT 1)),
+  ('5aa9198f-21d5-4aae-98ad-2abf6d30f906', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Алирокумаб%' LIMIT 1)),
+  ('5aa9198f-21d5-4aae-98ad-2abf6d30f906', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Кестин%' LIMIT 1)),
+  ('5aa9198f-21d5-4aae-98ad-2abf6d30f906', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фенелзин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('dcfa3419-4b47-4307-8ef7-0c3e2f7a199e', '151'),
-  ('dcfa3419-4b47-4307-8ef7-0c3e2f7a199e', '158'),
-  ('dcfa3419-4b47-4307-8ef7-0c3e2f7a199e', '96');
+  ('5aa9198f-21d5-4aae-98ad-2abf6d30f906', '37'),
+  ('5aa9198f-21d5-4aae-98ad-2abf6d30f906', '138'),
+  ('5aa9198f-21d5-4aae-98ad-2abf6d30f906', '142'),
+  ('5aa9198f-21d5-4aae-98ad-2abf6d30f906', '93');
   COMMIT TRANSACTION;
 END;   
 
@@ -1776,22 +1739,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('ee8c8948-aece-424b-a712-1340101ba2a2', '2019-03-18 09:25:32', '2019-03-18 09:35:41', 1, 7722, 556, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('cb96ff91-9793-45e7-ae36-9a6326db83d7', '2019-03-18 10:17:23', '2019-03-18 10:27:53', 1, 13876, 37, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('ee8c8948-aece-424b-a712-1340101ba2a2', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Белантамаб мафодотин%' LIMIT 1)),
-  ('ee8c8948-aece-424b-a712-1340101ba2a2', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Мафусол%' LIMIT 1)),
-  ('ee8c8948-aece-424b-a712-1340101ba2a2', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Доцетаксел%' LIMIT 1)),
-  ('ee8c8948-aece-424b-a712-1340101ba2a2', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Мебгидролин%' LIMIT 1));
+  ('cb96ff91-9793-45e7-ae36-9a6326db83d7', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Лефлуномид%' LIMIT 1)),
+  ('cb96ff91-9793-45e7-ae36-9a6326db83d7', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Амбенония хлорид%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('ee8c8948-aece-424b-a712-1340101ba2a2', '78'),
-  ('ee8c8948-aece-424b-a712-1340101ba2a2', '116'),
-  ('ee8c8948-aece-424b-a712-1340101ba2a2', '126');
+  ('cb96ff91-9793-45e7-ae36-9a6326db83d7', '189'),
+  ('cb96ff91-9793-45e7-ae36-9a6326db83d7', '178'),
+  ('cb96ff91-9793-45e7-ae36-9a6326db83d7', '6'),
+  ('cb96ff91-9793-45e7-ae36-9a6326db83d7', '130');
   COMMIT TRANSACTION;
 END;   
 
@@ -1801,20 +1763,22 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('370371fd-ca9f-4fe0-8b5d-f8bd23d285b6', '2019-03-18 09:35:48', '2019-03-18 09:41:04', 1, 102, 952, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('1dbffded-fd5f-4ffe-a803-e01c8bacd425', '2019-03-18 10:28:20', '2019-03-18 10:35:53', 1, 3317, 181, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('370371fd-ca9f-4fe0-8b5d-f8bd23d285b6', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Вильпрафен%' LIMIT 1)),
-  ('370371fd-ca9f-4fe0-8b5d-f8bd23d285b6', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бензнидазол%' LIMIT 1)),
-  ('370371fd-ca9f-4fe0-8b5d-f8bd23d285b6', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Альбендазол%' LIMIT 1));
+  ('1dbffded-fd5f-4ffe-a803-e01c8bacd425', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Галоперидол%' LIMIT 1)),
+  ('1dbffded-fd5f-4ffe-a803-e01c8bacd425', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Долутегравир/Ламивудин%' LIMIT 1)),
+  ('1dbffded-fd5f-4ffe-a803-e01c8bacd425', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Винкристин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('370371fd-ca9f-4fe0-8b5d-f8bd23d285b6', '177'),
-  ('370371fd-ca9f-4fe0-8b5d-f8bd23d285b6', '112');
+  ('1dbffded-fd5f-4ffe-a803-e01c8bacd425', '164'),
+  ('1dbffded-fd5f-4ffe-a803-e01c8bacd425', '197'),
+  ('1dbffded-fd5f-4ffe-a803-e01c8bacd425', '48'),
+  ('1dbffded-fd5f-4ffe-a803-e01c8bacd425', '188');
   COMMIT TRANSACTION;
 END;   
 
@@ -1824,22 +1788,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('54948536-104f-4f54-b352-ca40e277e0f5', '2019-03-18 09:41:51', '2019-03-18 09:47:34', 1, 12974, 746, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('8dfdf347-cb4d-4d72-91de-5a7e53f302f1', '2019-03-18 10:36:44', '2019-03-18 10:44:21', 1, 4034, 23, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('54948536-104f-4f54-b352-ca40e277e0f5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Лоразепам%' LIMIT 1)),
-  ('54948536-104f-4f54-b352-ca40e277e0f5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Рантарин%' LIMIT 1)),
-  ('54948536-104f-4f54-b352-ca40e277e0f5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Перфторан%' LIMIT 1));
+  ('8dfdf347-cb4d-4d72-91de-5a7e53f302f1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Сульпирид%' LIMIT 1)),
+  ('8dfdf347-cb4d-4d72-91de-5a7e53f302f1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Нимесил%' LIMIT 1)),
+  ('8dfdf347-cb4d-4d72-91de-5a7e53f302f1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Сандиммун Неорал%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('54948536-104f-4f54-b352-ca40e277e0f5', '88'),
-  ('54948536-104f-4f54-b352-ca40e277e0f5', '88'),
-  ('54948536-104f-4f54-b352-ca40e277e0f5', '144'),
-  ('54948536-104f-4f54-b352-ca40e277e0f5', '70');
+  ('8dfdf347-cb4d-4d72-91de-5a7e53f302f1', '115'),
+  ('8dfdf347-cb4d-4d72-91de-5a7e53f302f1', '10'),
+  ('8dfdf347-cb4d-4d72-91de-5a7e53f302f1', '163');
   COMMIT TRANSACTION;
 END;   
 
@@ -1849,22 +1812,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('22a4280e-8b16-4ec5-831e-3b84090e8868', '2019-03-18 09:48:24', '2019-03-18 09:57:19', 1, 13734, 327, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('71bc987d-cf0b-4821-bae3-b1d13b907f52', '2019-03-18 10:44:35', '2019-03-18 10:55:00', 1, 903, 321, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('22a4280e-8b16-4ec5-831e-3b84090e8868', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фибринолизин%' LIMIT 1)),
-  ('22a4280e-8b16-4ec5-831e-3b84090e8868', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Атракурия безилат%' LIMIT 1)),
-  ('22a4280e-8b16-4ec5-831e-3b84090e8868', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бетакард%' LIMIT 1));
+  ('71bc987d-cf0b-4821-bae3-b1d13b907f52', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Сульфаниламид%' LIMIT 1)),
+  ('71bc987d-cf0b-4821-bae3-b1d13b907f52', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Перметрин%' LIMIT 1)),
+  ('71bc987d-cf0b-4821-bae3-b1d13b907f52', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Зивокс%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('22a4280e-8b16-4ec5-831e-3b84090e8868', '145'),
-  ('22a4280e-8b16-4ec5-831e-3b84090e8868', '126'),
-  ('22a4280e-8b16-4ec5-831e-3b84090e8868', '158'),
-  ('22a4280e-8b16-4ec5-831e-3b84090e8868', '192');
+  ('71bc987d-cf0b-4821-bae3-b1d13b907f52', '185'),
+  ('71bc987d-cf0b-4821-bae3-b1d13b907f52', '122');
   COMMIT TRANSACTION;
 END;   
 
@@ -1874,19 +1835,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('5f643762-eabc-4f37-b31e-37e89f5eb939', '2019-03-18 09:57:48', '2019-03-18 10:02:44', 1, 3909, 208, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('0da49d5d-5fdf-45e2-b72b-9e37f84bacc6', '2019-03-18 10:55:34', '2019-03-18 11:02:29', 1, 3347, 1047, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('5f643762-eabc-4f37-b31e-37e89f5eb939', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Сульфозин%' LIMIT 1)),
-  ('5f643762-eabc-4f37-b31e-37e89f5eb939', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Панимун Биорал%' LIMIT 1));
+  ('0da49d5d-5fdf-45e2-b72b-9e37f84bacc6', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Эмзок%' LIMIT 1)),
+  ('0da49d5d-5fdf-45e2-b72b-9e37f84bacc6', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Конвасэл%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('5f643762-eabc-4f37-b31e-37e89f5eb939', '126'),
-  ('5f643762-eabc-4f37-b31e-37e89f5eb939', '104');
+  ('0da49d5d-5fdf-45e2-b72b-9e37f84bacc6', '34'),
+  ('0da49d5d-5fdf-45e2-b72b-9e37f84bacc6', '163'),
+  ('0da49d5d-5fdf-45e2-b72b-9e37f84bacc6', '70'),
+  ('0da49d5d-5fdf-45e2-b72b-9e37f84bacc6', '29');
   COMMIT TRANSACTION;
 END;   
 
@@ -1896,20 +1859,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('6306eacb-22b3-40ae-aadd-4ae32ddee16c', '2019-03-18 10:03:03', '2019-03-18 10:13:08', 1, 3821, 865, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('8c31ab81-4a8a-4db2-92fc-978aa5b27c79', '2019-03-18 11:03:12', '2019-03-18 11:08:03', 1, 7213, 1281, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('6306eacb-22b3-40ae-aadd-4ae32ddee16c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Оксазепам%' LIMIT 1)),
-  ('6306eacb-22b3-40ae-aadd-4ae32ddee16c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Симплакор%' LIMIT 1));
+  ('8c31ab81-4a8a-4db2-92fc-978aa5b27c79', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ципротерона ацетат%' LIMIT 1)),
+  ('8c31ab81-4a8a-4db2-92fc-978aa5b27c79', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Доцетаксел%' LIMIT 1)),
+  ('8c31ab81-4a8a-4db2-92fc-978aa5b27c79', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Сульфонилмочевина%' LIMIT 1)),
+  ('8c31ab81-4a8a-4db2-92fc-978aa5b27c79', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Этотоин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('6306eacb-22b3-40ae-aadd-4ae32ddee16c', '11'),
-  ('6306eacb-22b3-40ae-aadd-4ae32ddee16c', '151'),
-  ('6306eacb-22b3-40ae-aadd-4ae32ddee16c', '70');
+  ('8c31ab81-4a8a-4db2-92fc-978aa5b27c79', '108'),
+  ('8c31ab81-4a8a-4db2-92fc-978aa5b27c79', '170');
   COMMIT TRANSACTION;
 END;   
 
@@ -1919,20 +1883,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('5595820b-da9c-47bc-b787-8864f457ce7c', '2019-03-18 10:13:32', '2019-03-18 10:21:08', 1, 3481, 1056, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('cc5bbf67-2cb1-4952-ab20-d309daaed3ad', '2019-03-18 11:09:02', '2019-03-18 11:15:02', 1, 14341, 204, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('5595820b-da9c-47bc-b787-8864f457ce7c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Викодин%' LIMIT 1)),
-  ('5595820b-da9c-47bc-b787-8864f457ce7c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Изомонат%' LIMIT 1)),
-  ('5595820b-da9c-47bc-b787-8864f457ce7c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Омнискан%' LIMIT 1));
+  ('cc5bbf67-2cb1-4952-ab20-d309daaed3ad', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Нафтифин%' LIMIT 1)),
+  ('cc5bbf67-2cb1-4952-ab20-d309daaed3ad', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фенилбутазон%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('5595820b-da9c-47bc-b787-8864f457ce7c', '166'),
-  ('5595820b-da9c-47bc-b787-8864f457ce7c', '179');
+  ('cc5bbf67-2cb1-4952-ab20-d309daaed3ad', '17'),
+  ('cc5bbf67-2cb1-4952-ab20-d309daaed3ad', '170'),
+  ('cc5bbf67-2cb1-4952-ab20-d309daaed3ad', '55'),
+  ('cc5bbf67-2cb1-4952-ab20-d309daaed3ad', '187');
   COMMIT TRANSACTION;
 END;   
 
@@ -1942,22 +1907,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('19692287-4a87-49bc-a02f-b9c965325464', '2019-03-18 10:21:39', '2019-03-18 10:28:08', 1, 5323, 546, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('4ad15d9e-2121-4371-9f95-b041761d11b1', '2019-03-18 11:15:43', '2019-03-18 11:24:20', 1, 10940, 1206, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('19692287-4a87-49bc-a02f-b9c965325464', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Деферазирокс%' LIMIT 1)),
-  ('19692287-4a87-49bc-a02f-b9c965325464', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Данопревир%' LIMIT 1)),
-  ('19692287-4a87-49bc-a02f-b9c965325464', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ацеметацин%' LIMIT 1));
+  ('4ad15d9e-2121-4371-9f95-b041761d11b1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Вазокардин%' LIMIT 1)),
+  ('4ad15d9e-2121-4371-9f95-b041761d11b1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Рамуцирумаб%' LIMIT 1)),
+  ('4ad15d9e-2121-4371-9f95-b041761d11b1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Викодин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('19692287-4a87-49bc-a02f-b9c965325464', '163'),
-  ('19692287-4a87-49bc-a02f-b9c965325464', '177'),
-  ('19692287-4a87-49bc-a02f-b9c965325464', '134'),
-  ('19692287-4a87-49bc-a02f-b9c965325464', '129');
+  ('4ad15d9e-2121-4371-9f95-b041761d11b1', '54'),
+  ('4ad15d9e-2121-4371-9f95-b041761d11b1', '190');
   COMMIT TRANSACTION;
 END;   
 
@@ -1967,19 +1930,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('624b5631-28a9-4f56-b493-234954714d55', '2019-03-18 10:28:10', '2019-03-18 10:38:18', 1, 10905, 1134, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('2dce82df-6e86-436d-9187-dd09afa79b3b', '2019-03-18 11:24:26', '2019-03-18 11:29:05', 1, 11425, 1119, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('624b5631-28a9-4f56-b493-234954714d55', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Флолид%' LIMIT 1)),
-  ('624b5631-28a9-4f56-b493-234954714d55', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Нифуртимокс%' LIMIT 1));
+  ('2dce82df-6e86-436d-9187-dd09afa79b3b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Лизиноприл%' LIMIT 1)),
+  ('2dce82df-6e86-436d-9187-dd09afa79b3b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Кутерид Г%' LIMIT 1)),
+  ('2dce82df-6e86-436d-9187-dd09afa79b3b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Суприма-коф%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('624b5631-28a9-4f56-b493-234954714d55', '136'),
-  ('624b5631-28a9-4f56-b493-234954714d55', '44');
+  ('2dce82df-6e86-436d-9187-dd09afa79b3b', '69'),
+  ('2dce82df-6e86-436d-9187-dd09afa79b3b', '14');
   COMMIT TRANSACTION;
 END;   
 
@@ -1989,22 +1953,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('351b1629-1aba-4311-8ed8-1c17e7030fcf', '2019-03-18 10:38:26', '2019-03-18 10:48:32', 1, 10136, 1275, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('a24919ab-f2e2-4310-9495-aa40fcec540d', '2019-03-18 11:29:48', '2019-03-18 11:38:19', 1, 10924, 866, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('351b1629-1aba-4311-8ed8-1c17e7030fcf', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Метопролол%' LIMIT 1)),
-  ('351b1629-1aba-4311-8ed8-1c17e7030fcf', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ацетилцистеин%' LIMIT 1)),
-  ('351b1629-1aba-4311-8ed8-1c17e7030fcf', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Саб симплекс%' LIMIT 1));
+  ('a24919ab-f2e2-4310-9495-aa40fcec540d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ингрезза%' LIMIT 1)),
+  ('a24919ab-f2e2-4310-9495-aa40fcec540d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Энерион%' LIMIT 1)),
+  ('a24919ab-f2e2-4310-9495-aa40fcec540d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Амикацин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('351b1629-1aba-4311-8ed8-1c17e7030fcf', '42'),
-  ('351b1629-1aba-4311-8ed8-1c17e7030fcf', '123'),
-  ('351b1629-1aba-4311-8ed8-1c17e7030fcf', '47'),
-  ('351b1629-1aba-4311-8ed8-1c17e7030fcf', '113');
+  ('a24919ab-f2e2-4310-9495-aa40fcec540d', '29'),
+  ('a24919ab-f2e2-4310-9495-aa40fcec540d', '44'),
+  ('a24919ab-f2e2-4310-9495-aa40fcec540d', '150');
   COMMIT TRANSACTION;
 END;   
 
@@ -2014,23 +1977,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('d76f07d0-05b4-44ab-84a3-f944d096a1ea', '2019-03-18 10:49:18', '2019-03-18 10:57:45', 1, 5859, 613, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('1a600e39-1bc2-4d04-8c8a-d83ebc4f1cf7', '2019-03-18 11:38:48', '2019-03-18 11:45:18', 1, 3286, 43, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('d76f07d0-05b4-44ab-84a3-f944d096a1ea', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Хлоропирамина гидрохлорид%' LIMIT 1)),
-  ('d76f07d0-05b4-44ab-84a3-f944d096a1ea', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Талцеф%' LIMIT 1)),
-  ('d76f07d0-05b4-44ab-84a3-f944d096a1ea', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Набиксимолс%' LIMIT 1)),
-  ('d76f07d0-05b4-44ab-84a3-f944d096a1ea', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бромоприд%' LIMIT 1));
+  ('1a600e39-1bc2-4d04-8c8a-d83ebc4f1cf7', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Флорбетабен%' LIMIT 1)),
+  ('1a600e39-1bc2-4d04-8c8a-d83ebc4f1cf7', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Мефенамовая кислота%' LIMIT 1)),
+  ('1a600e39-1bc2-4d04-8c8a-d83ebc4f1cf7', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Нитрокардин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('d76f07d0-05b4-44ab-84a3-f944d096a1ea', '76'),
-  ('d76f07d0-05b4-44ab-84a3-f944d096a1ea', '198'),
-  ('d76f07d0-05b4-44ab-84a3-f944d096a1ea', '140'),
-  ('d76f07d0-05b4-44ab-84a3-f944d096a1ea', '63');
+  ('1a600e39-1bc2-4d04-8c8a-d83ebc4f1cf7', '146'),
+  ('1a600e39-1bc2-4d04-8c8a-d83ebc4f1cf7', '142');
   COMMIT TRANSACTION;
 END;   
 
@@ -2040,19 +2000,23 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('05ab3fbe-fc67-4f26-a4b3-b34d0e5bd436', '2019-03-18 10:58:41', '2019-03-18 11:09:22', 1, 4586, 400, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('a95b9de5-269b-4122-9c3c-398999dda4d0', '2019-03-18 11:45:37', '2019-03-18 11:56:26', 1, 2231, 956, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('05ab3fbe-fc67-4f26-a4b3-b34d0e5bd436', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Парацетамол в комбинации с другими препаратами%' LIMIT 1)),
-  ('05ab3fbe-fc67-4f26-a4b3-b34d0e5bd436', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тержинан%' LIMIT 1));
+  ('a95b9de5-269b-4122-9c3c-398999dda4d0', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Рибавирин%' LIMIT 1)),
+  ('a95b9de5-269b-4122-9c3c-398999dda4d0', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Зероцид%' LIMIT 1)),
+  ('a95b9de5-269b-4122-9c3c-398999dda4d0', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Амантадин%' LIMIT 1)),
+  ('a95b9de5-269b-4122-9c3c-398999dda4d0', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Гикамтин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('05ab3fbe-fc67-4f26-a4b3-b34d0e5bd436', '69'),
-  ('05ab3fbe-fc67-4f26-a4b3-b34d0e5bd436', '194');
+  ('a95b9de5-269b-4122-9c3c-398999dda4d0', '77'),
+  ('a95b9de5-269b-4122-9c3c-398999dda4d0', '145'),
+  ('a95b9de5-269b-4122-9c3c-398999dda4d0', '85'),
+  ('a95b9de5-269b-4122-9c3c-398999dda4d0', '111');
   COMMIT TRANSACTION;
 END;   
 
@@ -2062,20 +2026,23 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('10234cb0-12f2-4249-88d1-5bb59eccc2af', '2019-03-18 11:10:05', '2019-03-18 11:15:04', 1, 4525, 122, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('83b9be1b-c375-45ce-bee5-6f8c87c0c25c', '2019-03-18 11:57:00', '2019-03-18 12:06:36', 1, 6757, 478, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '4' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('10234cb0-12f2-4249-88d1-5bb59eccc2af', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Атенолол%' LIMIT 1)),
-  ('10234cb0-12f2-4249-88d1-5bb59eccc2af', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Доравирин%' LIMIT 1));
+  ('83b9be1b-c375-45ce-bee5-6f8c87c0c25c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Манномустин%' LIMIT 1)),
+  ('83b9be1b-c375-45ce-bee5-6f8c87c0c25c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Залеплон%' LIMIT 1)),
+  ('83b9be1b-c375-45ce-bee5-6f8c87c0c25c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Омализумаб%' LIMIT 1)),
+  ('83b9be1b-c375-45ce-bee5-6f8c87c0c25c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Гоматропина гидробромид%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('10234cb0-12f2-4249-88d1-5bb59eccc2af', '75'),
-  ('10234cb0-12f2-4249-88d1-5bb59eccc2af', '176'),
-  ('10234cb0-12f2-4249-88d1-5bb59eccc2af', '192');
+  ('83b9be1b-c375-45ce-bee5-6f8c87c0c25c', '13'),
+  ('83b9be1b-c375-45ce-bee5-6f8c87c0c25c', '28'),
+  ('83b9be1b-c375-45ce-bee5-6f8c87c0c25c', '100'),
+  ('83b9be1b-c375-45ce-bee5-6f8c87c0c25c', '52');
   COMMIT TRANSACTION;
 END;   
 
@@ -2085,22 +2052,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('317a06a4-cb33-42da-b8f9-f21f85efe86f', '2019-03-18 11:15:22', '2019-03-18 11:20:08', 1, 13552, 1166, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('e22f51ac-1261-491e-8700-0869af4e91f7', '2019-03-18 08:00:10', '2019-03-18 08:10:12', 1, 4669, 1289, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('317a06a4-cb33-42da-b8f9-f21f85efe86f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Лабеталол%' LIMIT 1)),
-  ('317a06a4-cb33-42da-b8f9-f21f85efe86f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Этилбромизовалерианат%' LIMIT 1)),
-  ('317a06a4-cb33-42da-b8f9-f21f85efe86f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Диэтазин%' LIMIT 1)),
-  ('317a06a4-cb33-42da-b8f9-f21f85efe86f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Седал-М%' LIMIT 1));
+  ('e22f51ac-1261-491e-8700-0869af4e91f7', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Эффералган с витамином C%' LIMIT 1)),
+  ('e22f51ac-1261-491e-8700-0869af4e91f7', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пентагастрин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('317a06a4-cb33-42da-b8f9-f21f85efe86f', '75'),
-  ('317a06a4-cb33-42da-b8f9-f21f85efe86f', '11'),
-  ('317a06a4-cb33-42da-b8f9-f21f85efe86f', '145');
+  ('e22f51ac-1261-491e-8700-0869af4e91f7', '126'),
+  ('e22f51ac-1261-491e-8700-0869af4e91f7', '89'),
+  ('e22f51ac-1261-491e-8700-0869af4e91f7', '129'),
+  ('e22f51ac-1261-491e-8700-0869af4e91f7', '144');
   COMMIT TRANSACTION;
 END;   
 
@@ -2110,22 +2076,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('5352337f-e6e7-4729-8c53-d277ca6d6747', '2019-03-18 11:20:18', '2019-03-18 11:28:46', 1, 984, 497, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('210cc158-a523-42e6-b826-02ea2e4742a5', '2019-03-18 08:10:48', '2019-03-18 08:20:14', 1, 12765, 898, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('5352337f-e6e7-4729-8c53-d277ca6d6747', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'ЭпиВакЭбола%' LIMIT 1)),
-  ('5352337f-e6e7-4729-8c53-d277ca6d6747', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тенипозид%' LIMIT 1)),
-  ('5352337f-e6e7-4729-8c53-d277ca6d6747', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Мексидол%' LIMIT 1)),
-  ('5352337f-e6e7-4729-8c53-d277ca6d6747', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Перамивир%' LIMIT 1));
+  ('210cc158-a523-42e6-b826-02ea2e4742a5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Эффералган%' LIMIT 1)),
+  ('210cc158-a523-42e6-b826-02ea2e4742a5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Седал-М%' LIMIT 1)),
+  ('210cc158-a523-42e6-b826-02ea2e4742a5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Меклофеноксат%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('5352337f-e6e7-4729-8c53-d277ca6d6747', '95'),
-  ('5352337f-e6e7-4729-8c53-d277ca6d6747', '8'),
-  ('5352337f-e6e7-4729-8c53-d277ca6d6747', '39');
+  ('210cc158-a523-42e6-b826-02ea2e4742a5', '37'),
+  ('210cc158-a523-42e6-b826-02ea2e4742a5', '84');
   COMMIT TRANSACTION;
 END;   
 
@@ -2135,23 +2099,23 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('27772437-d762-4d93-822e-dce82e0e80b6', '2019-03-18 11:29:30', '2019-03-18 11:37:01', 1, 172, 649, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('4e03cafe-95e7-4d89-85f1-fa42adbbce35', '2019-03-18 08:20:31', '2019-03-18 08:29:17', 1, 4534, 547, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('27772437-d762-4d93-822e-dce82e0e80b6', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Сорбифер Дурулес%' LIMIT 1)),
-  ('27772437-d762-4d93-822e-dce82e0e80b6', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Зопиклон%' LIMIT 1)),
-  ('27772437-d762-4d93-822e-dce82e0e80b6', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Эреспал%' LIMIT 1)),
-  ('27772437-d762-4d93-822e-dce82e0e80b6', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Дипипанон%' LIMIT 1));
+  ('4e03cafe-95e7-4d89-85f1-fa42adbbce35', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Доктор Тайсс Ринотайсс%' LIMIT 1)),
+  ('4e03cafe-95e7-4d89-85f1-fa42adbbce35', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Панкреатин%' LIMIT 1)),
+  ('4e03cafe-95e7-4d89-85f1-fa42adbbce35', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тайкерб%' LIMIT 1)),
+  ('4e03cafe-95e7-4d89-85f1-fa42adbbce35', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Симвакард%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('27772437-d762-4d93-822e-dce82e0e80b6', '178'),
-  ('27772437-d762-4d93-822e-dce82e0e80b6', '38'),
-  ('27772437-d762-4d93-822e-dce82e0e80b6', '133'),
-  ('27772437-d762-4d93-822e-dce82e0e80b6', '164');
+  ('4e03cafe-95e7-4d89-85f1-fa42adbbce35', '42'),
+  ('4e03cafe-95e7-4d89-85f1-fa42adbbce35', '86'),
+  ('4e03cafe-95e7-4d89-85f1-fa42adbbce35', '27'),
+  ('4e03cafe-95e7-4d89-85f1-fa42adbbce35', '20');
   COMMIT TRANSACTION;
 END;   
 
@@ -2161,22 +2125,23 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('a8ba5efd-6bcc-4437-ba01-1866685bf95f', '2019-03-18 11:37:26', '2019-03-18 11:44:20', 1, 8492, 225, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('c8a3d3ff-4471-4b5b-a83c-47bd6da0cf6c', '2019-03-18 08:29:32', '2019-03-18 08:40:15', 1, 7277, 130, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('a8ba5efd-6bcc-4437-ba01-1866685bf95f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Лапатиниб%' LIMIT 1)),
-  ('a8ba5efd-6bcc-4437-ba01-1866685bf95f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ранигаст%' LIMIT 1)),
-  ('a8ba5efd-6bcc-4437-ba01-1866685bf95f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Флуконорм%' LIMIT 1));
+  ('c8a3d3ff-4471-4b5b-a83c-47bd6da0cf6c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Октопамин%' LIMIT 1)),
+  ('c8a3d3ff-4471-4b5b-a83c-47bd6da0cf6c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Амиодарон%' LIMIT 1)),
+  ('c8a3d3ff-4471-4b5b-a83c-47bd6da0cf6c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Перинорм%' LIMIT 1)),
+  ('c8a3d3ff-4471-4b5b-a83c-47bd6da0cf6c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Сиалис%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('a8ba5efd-6bcc-4437-ba01-1866685bf95f', '69'),
-  ('a8ba5efd-6bcc-4437-ba01-1866685bf95f', '81'),
-  ('a8ba5efd-6bcc-4437-ba01-1866685bf95f', '13'),
-  ('a8ba5efd-6bcc-4437-ba01-1866685bf95f', '8');
+  ('c8a3d3ff-4471-4b5b-a83c-47bd6da0cf6c', '85'),
+  ('c8a3d3ff-4471-4b5b-a83c-47bd6da0cf6c', '55'),
+  ('c8a3d3ff-4471-4b5b-a83c-47bd6da0cf6c', '104'),
+  ('c8a3d3ff-4471-4b5b-a83c-47bd6da0cf6c', '103');
   COMMIT TRANSACTION;
 END;   
 
@@ -2186,22 +2151,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('031a5ba6-0e43-45e8-aba1-d3180413dd4e', '2019-03-18 11:44:50', '2019-03-18 11:55:00', 1, 8054, 968, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('f2332d97-eb6b-4fe9-8cb6-dd9fd31560b0', '2019-03-18 08:40:26', '2019-03-18 08:47:40', 1, 4949, 528, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('031a5ba6-0e43-45e8-aba1-d3180413dd4e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Метформин%' LIMIT 1)),
-  ('031a5ba6-0e43-45e8-aba1-d3180413dd4e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Цертолизумаб пегол%' LIMIT 1)),
-  ('031a5ba6-0e43-45e8-aba1-d3180413dd4e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Глимепирид%' LIMIT 1)),
-  ('031a5ba6-0e43-45e8-aba1-d3180413dd4e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ацетиламинонитропропоксибензол%' LIMIT 1));
+  ('f2332d97-eb6b-4fe9-8cb6-dd9fd31560b0', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Антистен%' LIMIT 1)),
+  ('f2332d97-eb6b-4fe9-8cb6-dd9fd31560b0', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Цефсон%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('031a5ba6-0e43-45e8-aba1-d3180413dd4e', '111'),
-  ('031a5ba6-0e43-45e8-aba1-d3180413dd4e', '194'),
-  ('031a5ba6-0e43-45e8-aba1-d3180413dd4e', '131');
+  ('f2332d97-eb6b-4fe9-8cb6-dd9fd31560b0', '185'),
+  ('f2332d97-eb6b-4fe9-8cb6-dd9fd31560b0', '70'),
+  ('f2332d97-eb6b-4fe9-8cb6-dd9fd31560b0', '11'),
+  ('f2332d97-eb6b-4fe9-8cb6-dd9fd31560b0', '199');
   COMMIT TRANSACTION;
 END;   
 
@@ -2211,21 +2175,22 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('2f091286-60fd-4cae-b7bf-64b20d4cb0b9', '2019-03-18 11:55:08', '2019-03-18 12:04:03', 1, 6049, 1089, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 4));
+  ('cd9b66ae-9f45-4c72-9229-b77d1b7fac8b', '2019-03-18 08:47:41', '2019-03-18 08:55:26', 1, 5656, 771, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('2f091286-60fd-4cae-b7bf-64b20d4cb0b9', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Систейн%' LIMIT 1)),
-  ('2f091286-60fd-4cae-b7bf-64b20d4cb0b9', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пентаэритритила тетранитрат%' LIMIT 1)),
-  ('2f091286-60fd-4cae-b7bf-64b20d4cb0b9', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бисакодил%' LIMIT 1));
+  ('cd9b66ae-9f45-4c72-9229-b77d1b7fac8b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Оксациллин%' LIMIT 1)),
+  ('cd9b66ae-9f45-4c72-9229-b77d1b7fac8b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Андекса%' LIMIT 1)),
+  ('cd9b66ae-9f45-4c72-9229-b77d1b7fac8b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фосдевирин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('2f091286-60fd-4cae-b7bf-64b20d4cb0b9', '135'),
-  ('2f091286-60fd-4cae-b7bf-64b20d4cb0b9', '17'),
-  ('2f091286-60fd-4cae-b7bf-64b20d4cb0b9', '187');
+  ('cd9b66ae-9f45-4c72-9229-b77d1b7fac8b', '12'),
+  ('cd9b66ae-9f45-4c72-9229-b77d1b7fac8b', '68'),
+  ('cd9b66ae-9f45-4c72-9229-b77d1b7fac8b', '47'),
+  ('cd9b66ae-9f45-4c72-9229-b77d1b7fac8b', '110');
   COMMIT TRANSACTION;
 END;   
 
@@ -2235,22 +2200,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('088e9c74-2001-45f5-89da-a9389924d16f', '2019-03-18 08:00:51', '2019-03-18 08:08:13', 1, 7118, 1205, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('ea2991b8-2093-4a43-91d4-d6c2e42619c4', '2019-03-18 08:56:15', '2019-03-18 09:05:36', 1, 13506, 92, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('088e9c74-2001-45f5-89da-a9389924d16f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Донормил%' LIMIT 1)),
-  ('088e9c74-2001-45f5-89da-a9389924d16f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Рисдиплам%' LIMIT 1)),
-  ('088e9c74-2001-45f5-89da-a9389924d16f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Цефтриаксон%' LIMIT 1));
+  ('ea2991b8-2093-4a43-91d4-d6c2e42619c4', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Депонит 10%' LIMIT 1)),
+  ('ea2991b8-2093-4a43-91d4-d6c2e42619c4', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Парацетамол ЭКСТРА детский%' LIMIT 1)),
+  ('ea2991b8-2093-4a43-91d4-d6c2e42619c4', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Преднимустин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('088e9c74-2001-45f5-89da-a9389924d16f', '33'),
-  ('088e9c74-2001-45f5-89da-a9389924d16f', '9'),
-  ('088e9c74-2001-45f5-89da-a9389924d16f', '85'),
-  ('088e9c74-2001-45f5-89da-a9389924d16f', '93');
+  ('ea2991b8-2093-4a43-91d4-d6c2e42619c4', '5'),
+  ('ea2991b8-2093-4a43-91d4-d6c2e42619c4', '169'),
+  ('ea2991b8-2093-4a43-91d4-d6c2e42619c4', '141');
   COMMIT TRANSACTION;
 END;   
 
@@ -2260,21 +2224,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('abbded69-1a42-40ee-a8b1-78d21b51e625', '2019-03-18 08:09:04', '2019-03-18 08:15:56', 1, 5759, 992, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('c17a115c-3613-4cba-b1a8-de51e40b48e5', '2019-03-18 09:05:47', '2019-03-18 09:14:54', 1, 11481, 235, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('abbded69-1a42-40ee-a8b1-78d21b51e625', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Йод Витрум%' LIMIT 1)),
-  ('abbded69-1a42-40ee-a8b1-78d21b51e625', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Энап%' LIMIT 1)),
-  ('abbded69-1a42-40ee-a8b1-78d21b51e625', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Секнидазол%' LIMIT 1));
+  ('c17a115c-3613-4cba-b1a8-de51e40b48e5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Нандролона деканоат%' LIMIT 1)),
+  ('c17a115c-3613-4cba-b1a8-de51e40b48e5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Юкодал%' LIMIT 1)),
+  ('c17a115c-3613-4cba-b1a8-de51e40b48e5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Имипенем/Циластатин/Релебактам%' LIMIT 1)),
+  ('c17a115c-3613-4cba-b1a8-de51e40b48e5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Амиксин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('abbded69-1a42-40ee-a8b1-78d21b51e625', '160'),
-  ('abbded69-1a42-40ee-a8b1-78d21b51e625', '67'),
-  ('abbded69-1a42-40ee-a8b1-78d21b51e625', '169');
+  ('c17a115c-3613-4cba-b1a8-de51e40b48e5', '49'),
+  ('c17a115c-3613-4cba-b1a8-de51e40b48e5', '115');
   COMMIT TRANSACTION;
 END;   
 
@@ -2284,20 +2248,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('35f0416a-627f-4707-95b9-0c67ce311719', '2019-03-18 08:16:06', '2019-03-18 08:25:32', 1, 9064, 695, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('f3563045-a99d-48bb-8ffb-e5793ab70e23', '2019-03-18 09:15:28', '2019-03-18 09:24:59', 1, 4831, 173, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('35f0416a-627f-4707-95b9-0c67ce311719', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Дименоксадол%' LIMIT 1)),
-  ('35f0416a-627f-4707-95b9-0c67ce311719', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пиридоксин%' LIMIT 1)),
-  ('35f0416a-627f-4707-95b9-0c67ce311719', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Барицитиниб%' LIMIT 1));
+  ('f3563045-a99d-48bb-8ffb-e5793ab70e23', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Амиксин%' LIMIT 1)),
+  ('f3563045-a99d-48bb-8ffb-e5793ab70e23', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Болденон%' LIMIT 1)),
+  ('f3563045-a99d-48bb-8ffb-e5793ab70e23', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тилдракизумаб%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('35f0416a-627f-4707-95b9-0c67ce311719', '187'),
-  ('35f0416a-627f-4707-95b9-0c67ce311719', '130');
+  ('f3563045-a99d-48bb-8ffb-e5793ab70e23', '169'),
+  ('f3563045-a99d-48bb-8ffb-e5793ab70e23', '169');
   COMMIT TRANSACTION;
 END;   
 
@@ -2307,21 +2271,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('86ae4cf7-b030-4570-80cb-a97e4c63191d', '2019-03-18 08:25:43', '2019-03-18 08:33:10', 1, 13161, 171, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('b7ed4f59-50c7-4ec0-bc43-634cf6fd1a2d', '2019-03-18 09:25:29', '2019-03-18 09:35:05', 1, 8341, 312, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('86ae4cf7-b030-4570-80cb-a97e4c63191d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ново-Ранидин%' LIMIT 1)),
-  ('86ae4cf7-b030-4570-80cb-a97e4c63191d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Перметрин%' LIMIT 1)),
-  ('86ae4cf7-b030-4570-80cb-a97e4c63191d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Снуп%' LIMIT 1));
+  ('b7ed4f59-50c7-4ec0-bc43-634cf6fd1a2d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Прукалоприд%' LIMIT 1)),
+  ('b7ed4f59-50c7-4ec0-bc43-634cf6fd1a2d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Деферазирокс%' LIMIT 1)),
+  ('b7ed4f59-50c7-4ec0-bc43-634cf6fd1a2d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Никорандил%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('86ae4cf7-b030-4570-80cb-a97e4c63191d', '57'),
-  ('86ae4cf7-b030-4570-80cb-a97e4c63191d', '106'),
-  ('86ae4cf7-b030-4570-80cb-a97e4c63191d', '163');
+  ('b7ed4f59-50c7-4ec0-bc43-634cf6fd1a2d', '57'),
+  ('b7ed4f59-50c7-4ec0-bc43-634cf6fd1a2d', '104');
   COMMIT TRANSACTION;
 END;   
 
@@ -2331,20 +2294,22 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('a21ca176-cc3d-47f4-bf86-f0eccdb1448f', '2019-03-18 08:33:21', '2019-03-18 08:38:19', 1, 5570, 377, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('c024eb83-1794-4961-84c7-01c1d9c5bdc4', '2019-03-18 09:36:02', '2019-03-18 09:47:00', 1, 8756, 340, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('a21ca176-cc3d-47f4-bf86-f0eccdb1448f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Диксин%' LIMIT 1)),
-  ('a21ca176-cc3d-47f4-bf86-f0eccdb1448f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Варфарин%' LIMIT 1));
+  ('c024eb83-1794-4961-84c7-01c1d9c5bdc4', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бромурал%' LIMIT 1)),
+  ('c024eb83-1794-4961-84c7-01c1d9c5bdc4', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Изосорбида динитрат%' LIMIT 1)),
+  ('c024eb83-1794-4961-84c7-01c1d9c5bdc4', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Контратекс%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('a21ca176-cc3d-47f4-bf86-f0eccdb1448f', '31'),
-  ('a21ca176-cc3d-47f4-bf86-f0eccdb1448f', '113'),
-  ('a21ca176-cc3d-47f4-bf86-f0eccdb1448f', '40');
+  ('c024eb83-1794-4961-84c7-01c1d9c5bdc4', '58'),
+  ('c024eb83-1794-4961-84c7-01c1d9c5bdc4', '147'),
+  ('c024eb83-1794-4961-84c7-01c1d9c5bdc4', '60'),
+  ('c024eb83-1794-4961-84c7-01c1d9c5bdc4', '79');
   COMMIT TRANSACTION;
 END;   
 
@@ -2354,22 +2319,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('323bfc2d-dcce-49bd-bbb9-baff63bab125', '2019-03-18 08:38:39', '2019-03-18 08:44:35', 1, 10458, 997, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('68018724-14a0-42f1-89bc-a9421163a719', '2019-03-18 09:47:36', '2019-03-18 09:56:19', 1, 7908, 1084, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('323bfc2d-dcce-49bd-bbb9-baff63bab125', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фунголон%' LIMIT 1)),
-  ('323bfc2d-dcce-49bd-bbb9-baff63bab125', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Альбендазол%' LIMIT 1)),
-  ('323bfc2d-dcce-49bd-bbb9-baff63bab125', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Зокор%' LIMIT 1));
+  ('68018724-14a0-42f1-89bc-a9421163a719', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Алимемазин%' LIMIT 1)),
+  ('68018724-14a0-42f1-89bc-a9421163a719', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тулип%' LIMIT 1)),
+  ('68018724-14a0-42f1-89bc-a9421163a719', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Эбермин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('323bfc2d-dcce-49bd-bbb9-baff63bab125', '38'),
-  ('323bfc2d-dcce-49bd-bbb9-baff63bab125', '110'),
-  ('323bfc2d-dcce-49bd-bbb9-baff63bab125', '10'),
-  ('323bfc2d-dcce-49bd-bbb9-baff63bab125', '128');
+  ('68018724-14a0-42f1-89bc-a9421163a719', '155'),
+  ('68018724-14a0-42f1-89bc-a9421163a719', '93'),
+  ('68018724-14a0-42f1-89bc-a9421163a719', '98');
   COMMIT TRANSACTION;
 END;   
 
@@ -2379,22 +2343,22 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('781b77f4-f5bb-4ff8-8323-788318a569aa', '2019-03-18 08:45:11', '2019-03-18 08:49:47', 1, 2693, 904, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('8268de12-14b9-4f76-b8c1-cd599dc0736c', '2019-03-18 09:56:21', '2019-03-18 10:03:22', 1, 1952, 829, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('781b77f4-f5bb-4ff8-8323-788318a569aa', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Цистамин%' LIMIT 1)),
-  ('781b77f4-f5bb-4ff8-8323-788318a569aa', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Амиодарон%' LIMIT 1)),
-  ('781b77f4-f5bb-4ff8-8323-788318a569aa', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Стримол%' LIMIT 1)),
-  ('781b77f4-f5bb-4ff8-8323-788318a569aa', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Невиграмон%' LIMIT 1));
+  ('8268de12-14b9-4f76-b8c1-cd599dc0736c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ломилан%' LIMIT 1)),
+  ('8268de12-14b9-4f76-b8c1-cd599dc0736c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Гемфиброзил%' LIMIT 1)),
+  ('8268de12-14b9-4f76-b8c1-cd599dc0736c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Равел СР%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('781b77f4-f5bb-4ff8-8323-788318a569aa', '130'),
-  ('781b77f4-f5bb-4ff8-8323-788318a569aa', '66'),
-  ('781b77f4-f5bb-4ff8-8323-788318a569aa', '164');
+  ('8268de12-14b9-4f76-b8c1-cd599dc0736c', '38'),
+  ('8268de12-14b9-4f76-b8c1-cd599dc0736c', '194'),
+  ('8268de12-14b9-4f76-b8c1-cd599dc0736c', '118'),
+  ('8268de12-14b9-4f76-b8c1-cd599dc0736c', '23');
   COMMIT TRANSACTION;
 END;   
 
@@ -2404,21 +2368,22 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('d4d62ab0-ae05-495b-bd1a-fdec0eb2cc09', '2019-03-18 08:50:27', '2019-03-18 09:00:52', 1, 8780, 306, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('28c601b1-950d-43c2-9da0-549852d48839', '2019-03-18 10:04:20', '2019-03-18 10:09:43', 1, 14569, 909, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('d4d62ab0-ae05-495b-bd1a-fdec0eb2cc09', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Масло мяты перечной%' LIMIT 1)),
-  ('d4d62ab0-ae05-495b-bd1a-fdec0eb2cc09', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Даратумумаб%' LIMIT 1)),
-  ('d4d62ab0-ae05-495b-bd1a-fdec0eb2cc09', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Неграм%' LIMIT 1)),
-  ('d4d62ab0-ae05-495b-bd1a-fdec0eb2cc09', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ревефенацин%' LIMIT 1));
+  ('28c601b1-950d-43c2-9da0-549852d48839', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Теризидон%' LIMIT 1)),
+  ('28c601b1-950d-43c2-9da0-549852d48839', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Эфлейра%' LIMIT 1)),
+  ('28c601b1-950d-43c2-9da0-549852d48839', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Алмагель%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('d4d62ab0-ae05-495b-bd1a-fdec0eb2cc09', '142'),
-  ('d4d62ab0-ae05-495b-bd1a-fdec0eb2cc09', '79');
+  ('28c601b1-950d-43c2-9da0-549852d48839', '87'),
+  ('28c601b1-950d-43c2-9da0-549852d48839', '9'),
+  ('28c601b1-950d-43c2-9da0-549852d48839', '175'),
+  ('28c601b1-950d-43c2-9da0-549852d48839', '30');
   COMMIT TRANSACTION;
 END;   
 
@@ -2428,20 +2393,19 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('b5975989-f93c-487d-b229-fea128f9db5d', '2019-03-18 09:01:15', '2019-03-18 09:06:05', 1, 13522, 719, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('fd14b7ff-312e-4b3e-9860-322badbdd1bf', '2019-03-18 10:09:51', '2019-03-18 10:18:55', 1, 10498, 331, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('b5975989-f93c-487d-b229-fea128f9db5d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Микстура Бехтерева%' LIMIT 1)),
-  ('b5975989-f93c-487d-b229-fea128f9db5d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Диспорт%' LIMIT 1));
+  ('fd14b7ff-312e-4b3e-9860-322badbdd1bf', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Карбидин%' LIMIT 1)),
+  ('fd14b7ff-312e-4b3e-9860-322badbdd1bf', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Флефедрон%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('b5975989-f93c-487d-b229-fea128f9db5d', '170'),
-  ('b5975989-f93c-487d-b229-fea128f9db5d', '78'),
-  ('b5975989-f93c-487d-b229-fea128f9db5d', '117');
+  ('fd14b7ff-312e-4b3e-9860-322badbdd1bf', '97'),
+  ('fd14b7ff-312e-4b3e-9860-322badbdd1bf', '58');
   COMMIT TRANSACTION;
 END;   
 
@@ -2451,21 +2415,22 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('9e632206-4fd3-4ad8-9588-429f1e889b11', '2019-03-18 09:06:33', '2019-03-18 09:15:34', 1, 10224, 864, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('cdefde14-c4fe-4073-80f4-cad00e8264f1', '2019-03-18 10:19:53', '2019-03-18 10:30:00', 1, 12731, 301, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('9e632206-4fd3-4ad8-9588-429f1e889b11', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тонокардин%' LIMIT 1)),
-  ('9e632206-4fd3-4ad8-9588-429f1e889b11', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фенистил Пенцивир%' LIMIT 1)),
-  ('9e632206-4fd3-4ad8-9588-429f1e889b11', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Валбеназин%' LIMIT 1));
+  ('cdefde14-c4fe-4073-80f4-cad00e8264f1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Иммард%' LIMIT 1)),
+  ('cdefde14-c4fe-4073-80f4-cad00e8264f1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Кофетамин%' LIMIT 1)),
+  ('cdefde14-c4fe-4073-80f4-cad00e8264f1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Висмута трикалия дицитрат%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('9e632206-4fd3-4ad8-9588-429f1e889b11', '60'),
-  ('9e632206-4fd3-4ad8-9588-429f1e889b11', '49'),
-  ('9e632206-4fd3-4ad8-9588-429f1e889b11', '144');
+  ('cdefde14-c4fe-4073-80f4-cad00e8264f1', '86'),
+  ('cdefde14-c4fe-4073-80f4-cad00e8264f1', '109'),
+  ('cdefde14-c4fe-4073-80f4-cad00e8264f1', '41'),
+  ('cdefde14-c4fe-4073-80f4-cad00e8264f1', '134');
   COMMIT TRANSACTION;
 END;   
 
@@ -2475,22 +2440,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('ce022889-5684-4700-8373-40de4f31dcf0', '2019-03-18 09:15:40', '2019-03-18 09:20:47', 1, 9580, 1154, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('2b2d8bcd-6dd4-405d-8ed8-2729b3fb203f', '2019-03-18 10:30:30', '2019-03-18 10:39:35', 1, 2961, 1234, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('ce022889-5684-4700-8373-40de4f31dcf0', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Периндоприл%' LIMIT 1)),
-  ('ce022889-5684-4700-8373-40de4f31dcf0', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Де-Нол%' LIMIT 1)),
-  ('ce022889-5684-4700-8373-40de4f31dcf0', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Апротинин%' LIMIT 1));
+  ('2b2d8bcd-6dd4-405d-8ed8-2729b3fb203f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Грамицидин С%' LIMIT 1)),
+  ('2b2d8bcd-6dd4-405d-8ed8-2729b3fb203f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ретапрес%' LIMIT 1)),
+  ('2b2d8bcd-6dd4-405d-8ed8-2729b3fb203f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Амигренин%' LIMIT 1)),
+  ('2b2d8bcd-6dd4-405d-8ed8-2729b3fb203f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ферроплекс%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('ce022889-5684-4700-8373-40de4f31dcf0', '170'),
-  ('ce022889-5684-4700-8373-40de4f31dcf0', '45'),
-  ('ce022889-5684-4700-8373-40de4f31dcf0', '25'),
-  ('ce022889-5684-4700-8373-40de4f31dcf0', '190');
+  ('2b2d8bcd-6dd4-405d-8ed8-2729b3fb203f', '34'),
+  ('2b2d8bcd-6dd4-405d-8ed8-2729b3fb203f', '129');
   COMMIT TRANSACTION;
 END;   
 
@@ -2500,22 +2464,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('c7acfd83-a58b-402f-a04d-7c42256e6b26', '2019-03-18 09:21:01', '2019-03-18 09:31:07', 1, 6356, 231, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('6cc1f46d-a318-4db0-ab12-5003e81f05ea', '2019-03-18 10:40:29', '2019-03-18 10:50:35', 1, 8340, 1119, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('c7acfd83-a58b-402f-a04d-7c42256e6b26', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Алкилсульфонаты%' LIMIT 1)),
-  ('c7acfd83-a58b-402f-a04d-7c42256e6b26', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Окселадин%' LIMIT 1)),
-  ('c7acfd83-a58b-402f-a04d-7c42256e6b26', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Зантак%' LIMIT 1)),
-  ('c7acfd83-a58b-402f-a04d-7c42256e6b26', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Рабепразол%' LIMIT 1));
+  ('6cc1f46d-a318-4db0-ab12-5003e81f05ea', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ципродокс%' LIMIT 1)),
+  ('6cc1f46d-a318-4db0-ab12-5003e81f05ea', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тинидазол%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('c7acfd83-a58b-402f-a04d-7c42256e6b26', '65'),
-  ('c7acfd83-a58b-402f-a04d-7c42256e6b26', '24'),
-  ('c7acfd83-a58b-402f-a04d-7c42256e6b26', '101');
+  ('6cc1f46d-a318-4db0-ab12-5003e81f05ea', '196'),
+  ('6cc1f46d-a318-4db0-ab12-5003e81f05ea', '77'),
+  ('6cc1f46d-a318-4db0-ab12-5003e81f05ea', '161'),
+  ('6cc1f46d-a318-4db0-ab12-5003e81f05ea', '179');
   COMMIT TRANSACTION;
 END;   
 
@@ -2525,19 +2488,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('7061f736-7132-4ac3-a84f-723c33e017f5', '2019-03-18 09:31:27', '2019-03-18 09:41:46', 1, 9984, 1289, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('695cf0db-2dce-4a8a-8fe1-6e33a3b009f6', '2019-03-18 10:50:50', '2019-03-18 11:01:07', 1, 7422, 961, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('7061f736-7132-4ac3-a84f-723c33e017f5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Зитромакс%' LIMIT 1)),
-  ('7061f736-7132-4ac3-a84f-723c33e017f5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пентилентетразол%' LIMIT 1));
+  ('695cf0db-2dce-4a8a-8fe1-6e33a3b009f6', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Неостигмина метилсульфат%' LIMIT 1)),
+  ('695cf0db-2dce-4a8a-8fe1-6e33a3b009f6', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Амарил%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('7061f736-7132-4ac3-a84f-723c33e017f5', '19'),
-  ('7061f736-7132-4ac3-a84f-723c33e017f5', '139');
+  ('695cf0db-2dce-4a8a-8fe1-6e33a3b009f6', '102'),
+  ('695cf0db-2dce-4a8a-8fe1-6e33a3b009f6', '174'),
+  ('695cf0db-2dce-4a8a-8fe1-6e33a3b009f6', '183'),
+  ('695cf0db-2dce-4a8a-8fe1-6e33a3b009f6', '195');
   COMMIT TRANSACTION;
 END;   
 
@@ -2547,21 +2512,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('0ec4a36f-17c3-40ff-970b-dd046a6df359', '2019-03-18 09:42:31', '2019-03-18 09:49:33', 1, 2509, 986, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('dd1f44c5-cbd8-4a6a-88e0-ac2aee7c180c', '2019-03-18 11:01:58', '2019-03-18 11:10:13', 1, 14568, 422, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('0ec4a36f-17c3-40ff-970b-dd046a6df359', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Метилсалицилат%' LIMIT 1)),
-  ('0ec4a36f-17c3-40ff-970b-dd046a6df359', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Корбис%' LIMIT 1));
+  ('dd1f44c5-cbd8-4a6a-88e0-ac2aee7c180c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Якорцев стелющихся травы экстракт%' LIMIT 1)),
+  ('dd1f44c5-cbd8-4a6a-88e0-ac2aee7c180c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Симплакор%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('0ec4a36f-17c3-40ff-970b-dd046a6df359', '78'),
-  ('0ec4a36f-17c3-40ff-970b-dd046a6df359', '77'),
-  ('0ec4a36f-17c3-40ff-970b-dd046a6df359', '77'),
-  ('0ec4a36f-17c3-40ff-970b-dd046a6df359', '53');
+  ('dd1f44c5-cbd8-4a6a-88e0-ac2aee7c180c', '164'),
+  ('dd1f44c5-cbd8-4a6a-88e0-ac2aee7c180c', '53'),
+  ('dd1f44c5-cbd8-4a6a-88e0-ac2aee7c180c', '198'),
+  ('dd1f44c5-cbd8-4a6a-88e0-ac2aee7c180c', '122');
   COMMIT TRANSACTION;
 END;   
 
@@ -2571,21 +2536,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('a9481547-d0f9-4f0d-a8be-ab9ed306f559', '2019-03-18 09:49:34', '2019-03-18 09:55:31', 1, 10168, 159, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('7d2cf0a7-5691-47cf-8c4c-acaa72195875', '2019-03-18 11:10:31', '2019-03-18 11:16:09', 1, 4150, 1255, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('a9481547-d0f9-4f0d-a8be-ab9ed306f559', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Актасулид%' LIMIT 1)),
-  ('a9481547-d0f9-4f0d-a8be-ab9ed306f559', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Меропенем%' LIMIT 1));
+  ('7d2cf0a7-5691-47cf-8c4c-acaa72195875', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пиоктаннин%' LIMIT 1)),
+  ('7d2cf0a7-5691-47cf-8c4c-acaa72195875', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Мовизар%' LIMIT 1)),
+  ('7d2cf0a7-5691-47cf-8c4c-acaa72195875', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ранисан%' LIMIT 1)),
+  ('7d2cf0a7-5691-47cf-8c4c-acaa72195875', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Адапромин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('a9481547-d0f9-4f0d-a8be-ab9ed306f559', '49'),
-  ('a9481547-d0f9-4f0d-a8be-ab9ed306f559', '101'),
-  ('a9481547-d0f9-4f0d-a8be-ab9ed306f559', '145'),
-  ('a9481547-d0f9-4f0d-a8be-ab9ed306f559', '135');
+  ('7d2cf0a7-5691-47cf-8c4c-acaa72195875', '69'),
+  ('7d2cf0a7-5691-47cf-8c4c-acaa72195875', '51');
   COMMIT TRANSACTION;
 END;   
 
@@ -2595,22 +2560,22 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('3920f164-133b-4081-bced-e5f80973f1c2', '2019-03-18 09:56:08', '2019-03-18 10:04:23', 1, 576, 1199, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('82f9ad59-6d6e-4bca-8ae8-7ef43b012d77', '2019-03-18 11:17:04', '2019-03-18 11:28:00', 1, 13785, 146, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('3920f164-133b-4081-bced-e5f80973f1c2', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Элбасвир%' LIMIT 1)),
-  ('3920f164-133b-4081-bced-e5f80973f1c2', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Лиздексамфетамин%' LIMIT 1)),
-  ('3920f164-133b-4081-bced-e5f80973f1c2', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тыквеол%' LIMIT 1)),
-  ('3920f164-133b-4081-bced-e5f80973f1c2', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фенкарол%' LIMIT 1));
+  ('82f9ad59-6d6e-4bca-8ae8-7ef43b012d77', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пентагастрин%' LIMIT 1)),
+  ('82f9ad59-6d6e-4bca-8ae8-7ef43b012d77', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ацеклофенак%' LIMIT 1)),
+  ('82f9ad59-6d6e-4bca-8ae8-7ef43b012d77', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Зуклопентиксол%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('3920f164-133b-4081-bced-e5f80973f1c2', '107'),
-  ('3920f164-133b-4081-bced-e5f80973f1c2', '119'),
-  ('3920f164-133b-4081-bced-e5f80973f1c2', '68');
+  ('82f9ad59-6d6e-4bca-8ae8-7ef43b012d77', '125'),
+  ('82f9ad59-6d6e-4bca-8ae8-7ef43b012d77', '21'),
+  ('82f9ad59-6d6e-4bca-8ae8-7ef43b012d77', '176'),
+  ('82f9ad59-6d6e-4bca-8ae8-7ef43b012d77', '106');
   COMMIT TRANSACTION;
 END;   
 
@@ -2620,19 +2585,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('65ed00a7-8116-4163-b219-6fd57edb90cc', '2019-03-18 10:04:48', '2019-03-18 10:09:34', 1, 160, 1233, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('76fb8fad-6152-42c1-bdde-3215ef471919', '2019-03-18 11:28:22', '2019-03-18 11:35:38', 1, 7020, 1088, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('65ed00a7-8116-4163-b219-6fd57edb90cc', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Вакцина AstraZeneca против COVID-19%' LIMIT 1)),
-  ('65ed00a7-8116-4163-b219-6fd57edb90cc', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пилокарпин%' LIMIT 1));
+  ('76fb8fad-6152-42c1-bdde-3215ef471919', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Вакцина против холеры%' LIMIT 1)),
+  ('76fb8fad-6152-42c1-bdde-3215ef471919', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Альбуцид%' LIMIT 1)),
+  ('76fb8fad-6152-42c1-bdde-3215ef471919', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Трибромфенолат висмута%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('65ed00a7-8116-4163-b219-6fd57edb90cc', '8'),
-  ('65ed00a7-8116-4163-b219-6fd57edb90cc', '120');
+  ('76fb8fad-6152-42c1-bdde-3215ef471919', '148'),
+  ('76fb8fad-6152-42c1-bdde-3215ef471919', '94');
   COMMIT TRANSACTION;
 END;   
 
@@ -2642,20 +2608,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('3af22d8b-467e-4779-8431-27128290c463', '2019-03-18 10:10:31', '2019-03-18 10:20:06', 1, 8704, 228, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('02f6739d-5197-4518-a2e4-7ef66897adde', '2019-03-18 11:36:14', '2019-03-18 11:43:55', 1, 6700, 284, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('3af22d8b-467e-4779-8431-27128290c463', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Масло шиповника%' LIMIT 1)),
-  ('3af22d8b-467e-4779-8431-27128290c463', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ципрофлоксацина гидрохлорид%' LIMIT 1));
+  ('02f6739d-5197-4518-a2e4-7ef66897adde', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фентанил%' LIMIT 1)),
+  ('02f6739d-5197-4518-a2e4-7ef66897adde', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Гриппол%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('3af22d8b-467e-4779-8431-27128290c463', '64'),
-  ('3af22d8b-467e-4779-8431-27128290c463', '40'),
-  ('3af22d8b-467e-4779-8431-27128290c463', '193');
+  ('02f6739d-5197-4518-a2e4-7ef66897adde', '161'),
+  ('02f6739d-5197-4518-a2e4-7ef66897adde', '43'),
+  ('02f6739d-5197-4518-a2e4-7ef66897adde', '83'),
+  ('02f6739d-5197-4518-a2e4-7ef66897adde', '142');
   COMMIT TRANSACTION;
 END;   
 
@@ -2665,21 +2632,22 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('4496907f-7c4c-4efd-a09a-dc8441b17553', '2019-03-18 10:20:24', '2019-03-18 10:26:14', 1, 2810, 1153, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('655c09c6-df25-407d-a127-9f6b5aaae1f6', '2019-03-18 11:44:13', '2019-03-18 11:52:03', 1, 14201, 126, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('4496907f-7c4c-4efd-a09a-dc8441b17553', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ингитрил%' LIMIT 1)),
-  ('4496907f-7c4c-4efd-a09a-dc8441b17553', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Викодин%' LIMIT 1)),
-  ('4496907f-7c4c-4efd-a09a-dc8441b17553', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Индипам%' LIMIT 1));
+  ('655c09c6-df25-407d-a127-9f6b5aaae1f6', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бринзоламид%' LIMIT 1)),
+  ('655c09c6-df25-407d-a127-9f6b5aaae1f6', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'PRL-8-53%' LIMIT 1)),
+  ('655c09c6-df25-407d-a127-9f6b5aaae1f6', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Зерлон%' LIMIT 1)),
+  ('655c09c6-df25-407d-a127-9f6b5aaae1f6', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пенталгин-Н%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('4496907f-7c4c-4efd-a09a-dc8441b17553', '134'),
-  ('4496907f-7c4c-4efd-a09a-dc8441b17553', '152'),
-  ('4496907f-7c4c-4efd-a09a-dc8441b17553', '107');
+  ('655c09c6-df25-407d-a127-9f6b5aaae1f6', '10'),
+  ('655c09c6-df25-407d-a127-9f6b5aaae1f6', '30'),
+  ('655c09c6-df25-407d-a127-9f6b5aaae1f6', '4');
   COMMIT TRANSACTION;
 END;   
 
@@ -2689,20 +2657,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('06c7469b-f770-4ea1-9484-bc39e70577f3', '2019-03-18 10:27:04', '2019-03-18 10:36:11', 1, 5294, 734, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('63077dff-3f70-4873-b62b-bd0e5d9d03a4', '2019-03-18 11:53:02', '2019-03-18 11:58:15', 1, 8521, 1021, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('06c7469b-f770-4ea1-9484-bc39e70577f3', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Циклазодон%' LIMIT 1)),
-  ('06c7469b-f770-4ea1-9484-bc39e70577f3', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Лоперамида гидрохлорид%' LIMIT 1)),
-  ('06c7469b-f770-4ea1-9484-bc39e70577f3', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Циклосиликат циркония-натрия%' LIMIT 1));
+  ('63077dff-3f70-4873-b62b-bd0e5d9d03a4', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Линкомицин%' LIMIT 1)),
+  ('63077dff-3f70-4873-b62b-bd0e5d9d03a4', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Лобелин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('06c7469b-f770-4ea1-9484-bc39e70577f3', '179'),
-  ('06c7469b-f770-4ea1-9484-bc39e70577f3', '83');
+  ('63077dff-3f70-4873-b62b-bd0e5d9d03a4', '67'),
+  ('63077dff-3f70-4873-b62b-bd0e5d9d03a4', '153'),
+  ('63077dff-3f70-4873-b62b-bd0e5d9d03a4', '19');
   COMMIT TRANSACTION;
 END;   
 
@@ -2712,23 +2680,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('8f3ed51b-d7b7-406f-8b0c-87a851b36917', '2019-03-18 10:36:13', '2019-03-18 10:46:22', 1, 12517, 349, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('423f06e4-0124-473a-8180-950d758d8ee8', '2019-03-18 11:58:47', '2019-03-18 12:07:23', 1, 6595, 569, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '6' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('8f3ed51b-d7b7-406f-8b0c-87a851b36917', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Сультоприд%' LIMIT 1)),
-  ('8f3ed51b-d7b7-406f-8b0c-87a851b36917', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Суперилоп%' LIMIT 1)),
-  ('8f3ed51b-d7b7-406f-8b0c-87a851b36917', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Изонитрозин%' LIMIT 1)),
-  ('8f3ed51b-d7b7-406f-8b0c-87a851b36917', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Интуссин%' LIMIT 1));
+  ('423f06e4-0124-473a-8180-950d758d8ee8', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Кассадан%' LIMIT 1)),
+  ('423f06e4-0124-473a-8180-950d758d8ee8', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тропикамид%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('8f3ed51b-d7b7-406f-8b0c-87a851b36917', '195'),
-  ('8f3ed51b-d7b7-406f-8b0c-87a851b36917', '29'),
-  ('8f3ed51b-d7b7-406f-8b0c-87a851b36917', '46'),
-  ('8f3ed51b-d7b7-406f-8b0c-87a851b36917', '60');
+  ('423f06e4-0124-473a-8180-950d758d8ee8', '1'),
+  ('423f06e4-0124-473a-8180-950d758d8ee8', '128'),
+  ('423f06e4-0124-473a-8180-950d758d8ee8', '70');
   COMMIT TRANSACTION;
 END;   
 
@@ -2738,20 +2703,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('7a63f0a4-ac18-486f-97da-c82406767c84', '2019-03-18 10:47:17', '2019-03-18 10:57:45', 1, 2639, 1136, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('5a905e93-2bb8-4f16-9d45-460938949d98', '2019-03-18 08:00:40', '2019-03-18 08:09:55', 1, 5530, 271, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('7a63f0a4-ac18-486f-97da-c82406767c84', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Атропин%' LIMIT 1)),
-  ('7a63f0a4-ac18-486f-97da-c82406767c84', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Мукалтин%' LIMIT 1));
+  ('5a905e93-2bb8-4f16-9d45-460938949d98', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Этициклидин%' LIMIT 1)),
+  ('5a905e93-2bb8-4f16-9d45-460938949d98', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Дицикломин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('7a63f0a4-ac18-486f-97da-c82406767c84', '138'),
-  ('7a63f0a4-ac18-486f-97da-c82406767c84', '48'),
-  ('7a63f0a4-ac18-486f-97da-c82406767c84', '5');
+  ('5a905e93-2bb8-4f16-9d45-460938949d98', '179'),
+  ('5a905e93-2bb8-4f16-9d45-460938949d98', '185'),
+  ('5a905e93-2bb8-4f16-9d45-460938949d98', '115');
   COMMIT TRANSACTION;
 END;   
 
@@ -2761,20 +2726,23 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('b84e1a59-e75e-446c-81c4-e819604e4fd4', '2019-03-18 10:58:30', '2019-03-18 11:08:29', 1, 586, 778, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('0906732b-1a79-4d0c-83cf-063dc7785c3a', '2019-03-18 08:10:43', '2019-03-18 08:20:40', 1, 6346, 261, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('b84e1a59-e75e-446c-81c4-e819604e4fd4', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Метитепин%' LIMIT 1)),
-  ('b84e1a59-e75e-446c-81c4-e819604e4fd4', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Нейронтин%' LIMIT 1)),
-  ('b84e1a59-e75e-446c-81c4-e819604e4fd4', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Лавомакс%' LIMIT 1));
+  ('0906732b-1a79-4d0c-83cf-063dc7785c3a', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фталилсульфатиазол%' LIMIT 1)),
+  ('0906732b-1a79-4d0c-83cf-063dc7785c3a', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Изофлуран%' LIMIT 1)),
+  ('0906732b-1a79-4d0c-83cf-063dc7785c3a', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Абакавир/Ламивудин%' LIMIT 1)),
+  ('0906732b-1a79-4d0c-83cf-063dc7785c3a', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Миконазол%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('b84e1a59-e75e-446c-81c4-e819604e4fd4', '132'),
-  ('b84e1a59-e75e-446c-81c4-e819604e4fd4', '23');
+  ('0906732b-1a79-4d0c-83cf-063dc7785c3a', '13'),
+  ('0906732b-1a79-4d0c-83cf-063dc7785c3a', '99'),
+  ('0906732b-1a79-4d0c-83cf-063dc7785c3a', '58'),
+  ('0906732b-1a79-4d0c-83cf-063dc7785c3a', '69');
   COMMIT TRANSACTION;
 END;   
 
@@ -2784,22 +2752,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('0b27560c-e74f-4675-8b2e-84e76264a24e', '2019-03-18 11:09:23', '2019-03-18 11:19:17', 1, 2257, 516, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('42e6900e-97dd-4fd6-91fa-95bd3068caec', '2019-03-18 08:21:27', '2019-03-18 08:28:35', 1, 11288, 836, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('0b27560c-e74f-4675-8b2e-84e76264a24e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Коваксин%' LIMIT 1)),
-  ('0b27560c-e74f-4675-8b2e-84e76264a24e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Дексетимид%' LIMIT 1)),
-  ('0b27560c-e74f-4675-8b2e-84e76264a24e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Перфосфамид%' LIMIT 1)),
-  ('0b27560c-e74f-4675-8b2e-84e76264a24e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE '"U-92,016-A"%' LIMIT 1));
+  ('42e6900e-97dd-4fd6-91fa-95bd3068caec', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Амлодипин%' LIMIT 1)),
+  ('42e6900e-97dd-4fd6-91fa-95bd3068caec', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Прокаинамид%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('0b27560c-e74f-4675-8b2e-84e76264a24e', '97'),
-  ('0b27560c-e74f-4675-8b2e-84e76264a24e', '179'),
-  ('0b27560c-e74f-4675-8b2e-84e76264a24e', '6');
+  ('42e6900e-97dd-4fd6-91fa-95bd3068caec', '50'),
+  ('42e6900e-97dd-4fd6-91fa-95bd3068caec', '124'),
+  ('42e6900e-97dd-4fd6-91fa-95bd3068caec', '83'),
+  ('42e6900e-97dd-4fd6-91fa-95bd3068caec', '181');
   COMMIT TRANSACTION;
 END;   
 
@@ -2809,21 +2776,19 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('a4fb3dab-7568-4f6d-ace3-88f5d90d76eb', '2019-03-18 11:20:02', '2019-03-18 11:28:10', 1, 5163, 1219, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('cfdb9113-702b-43b2-b84c-c4859c9ed23f', '2019-03-18 08:29:14', '2019-03-18 08:35:39', 1, 10338, 466, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('a4fb3dab-7568-4f6d-ace3-88f5d90d76eb', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Изосорбида динитрат%' LIMIT 1)),
-  ('a4fb3dab-7568-4f6d-ace3-88f5d90d76eb', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'МИР-19%' LIMIT 1)),
-  ('a4fb3dab-7568-4f6d-ace3-88f5d90d76eb', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Сальгим%' LIMIT 1)),
-  ('a4fb3dab-7568-4f6d-ace3-88f5d90d76eb', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Йодинол%' LIMIT 1));
+  ('cfdb9113-702b-43b2-b84c-c4859c9ed23f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Гардасил%' LIMIT 1)),
+  ('cfdb9113-702b-43b2-b84c-c4859c9ed23f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Теноксикам%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('a4fb3dab-7568-4f6d-ace3-88f5d90d76eb', '150'),
-  ('a4fb3dab-7568-4f6d-ace3-88f5d90d76eb', '190');
+  ('cfdb9113-702b-43b2-b84c-c4859c9ed23f', '98'),
+  ('cfdb9113-702b-43b2-b84c-c4859c9ed23f', '144');
   COMMIT TRANSACTION;
 END;   
 
@@ -2833,21 +2798,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('1e07cb77-31a3-4e75-9ece-900324298895', '2019-03-18 11:28:30', '2019-03-18 11:39:15', 1, 9624, 666, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('509e1a94-4708-4964-b592-397501b3a10c', '2019-03-18 08:36:14', '2019-03-18 08:42:06', 1, 9606, 401, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('1e07cb77-31a3-4e75-9ece-900324298895', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Буфексамак%' LIMIT 1)),
-  ('1e07cb77-31a3-4e75-9ece-900324298895', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Метилтестостерон%' LIMIT 1)),
-  ('1e07cb77-31a3-4e75-9ece-900324298895', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Инотузумаб озогамицин%' LIMIT 1)),
-  ('1e07cb77-31a3-4e75-9ece-900324298895', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Нормодипин%' LIMIT 1));
+  ('509e1a94-4708-4964-b592-397501b3a10c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Катадолон%' LIMIT 1)),
+  ('509e1a94-4708-4964-b592-397501b3a10c', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Лифоран%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('1e07cb77-31a3-4e75-9ece-900324298895', '36'),
-  ('1e07cb77-31a3-4e75-9ece-900324298895', '118');
+  ('509e1a94-4708-4964-b592-397501b3a10c', '141'),
+  ('509e1a94-4708-4964-b592-397501b3a10c', '165'),
+  ('509e1a94-4708-4964-b592-397501b3a10c', '192');
   COMMIT TRANSACTION;
 END;   
 
@@ -2857,23 +2821,19 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('b4cc8298-2c05-442b-b6c0-1073e2441c96', '2019-03-18 11:39:41', '2019-03-18 11:47:41', 1, 5594, 284, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('b1c4a4fa-442a-4179-b4e7-cbdc57ae10ec', '2019-03-18 08:42:35', '2019-03-18 08:49:32', 1, 7103, 421, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('b4cc8298-2c05-442b-b6c0-1073e2441c96', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бензилбензоат%' LIMIT 1)),
-  ('b4cc8298-2c05-442b-b6c0-1073e2441c96', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фенкарол%' LIMIT 1)),
-  ('b4cc8298-2c05-442b-b6c0-1073e2441c96', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Моксетумомаб пасудотокс%' LIMIT 1)),
-  ('b4cc8298-2c05-442b-b6c0-1073e2441c96', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бисокард%' LIMIT 1));
+  ('b1c4a4fa-442a-4179-b4e7-cbdc57ae10ec', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ремантадин%' LIMIT 1)),
+  ('b1c4a4fa-442a-4179-b4e7-cbdc57ae10ec', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Амлодипина малеат%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('b4cc8298-2c05-442b-b6c0-1073e2441c96', '52'),
-  ('b4cc8298-2c05-442b-b6c0-1073e2441c96', '73'),
-  ('b4cc8298-2c05-442b-b6c0-1073e2441c96', '146'),
-  ('b4cc8298-2c05-442b-b6c0-1073e2441c96', '46');
+  ('b1c4a4fa-442a-4179-b4e7-cbdc57ae10ec', '193'),
+  ('b1c4a4fa-442a-4179-b4e7-cbdc57ae10ec', '21');
   COMMIT TRANSACTION;
 END;   
 
@@ -2883,22 +2843,19 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('50650621-54dd-4095-8848-ffc8bd367c19', '2019-03-18 11:47:46', '2019-03-18 11:55:29', 1, 194, 1130, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('93a4f680-8ad1-4504-b621-18c69f53f66f', '2019-03-18 08:50:29', '2019-03-18 09:01:13', 1, 7074, 430, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('50650621-54dd-4095-8848-ffc8bd367c19', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Добутамин%' LIMIT 1)),
-  ('50650621-54dd-4095-8848-ffc8bd367c19', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Кардиовален%' LIMIT 1)),
-  ('50650621-54dd-4095-8848-ffc8bd367c19', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Астматол%' LIMIT 1)),
-  ('50650621-54dd-4095-8848-ffc8bd367c19', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Стрезам%' LIMIT 1));
+  ('93a4f680-8ad1-4504-b621-18c69f53f66f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Хлорфенамин%' LIMIT 1)),
+  ('93a4f680-8ad1-4504-b621-18c69f53f66f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Риамиловир%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('50650621-54dd-4095-8848-ffc8bd367c19', '130'),
-  ('50650621-54dd-4095-8848-ffc8bd367c19', '149'),
-  ('50650621-54dd-4095-8848-ffc8bd367c19', '33');
+  ('93a4f680-8ad1-4504-b621-18c69f53f66f', '89'),
+  ('93a4f680-8ad1-4504-b621-18c69f53f66f', '165');
   COMMIT TRANSACTION;
 END;   
 
@@ -2908,21 +2865,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('a9c78868-2287-4238-b616-88420d7723e3', '2019-03-18 11:56:01', '2019-03-18 12:04:18', 1, 4789, 994, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 6));
+  ('29db10f4-1c92-44d9-bcc9-0c6bc3c37db1', '2019-03-18 09:01:54', '2019-03-18 09:10:11', 1, 431, 180, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('a9c78868-2287-4238-b616-88420d7723e3', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Мукалтин%' LIMIT 1)),
-  ('a9c78868-2287-4238-b616-88420d7723e3', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Плаквенил%' LIMIT 1)),
-  ('a9c78868-2287-4238-b616-88420d7723e3', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Лапатиниб%' LIMIT 1)),
-  ('a9c78868-2287-4238-b616-88420d7723e3', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ново-Ранидин%' LIMIT 1));
+  ('29db10f4-1c92-44d9-bcc9-0c6bc3c37db1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Канефрон H%' LIMIT 1)),
+  ('29db10f4-1c92-44d9-bcc9-0c6bc3c37db1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Лубипростон%' LIMIT 1)),
+  ('29db10f4-1c92-44d9-bcc9-0c6bc3c37db1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Прегнил%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('a9c78868-2287-4238-b616-88420d7723e3', '99'),
-  ('a9c78868-2287-4238-b616-88420d7723e3', '33');
+  ('29db10f4-1c92-44d9-bcc9-0c6bc3c37db1', '48'),
+  ('29db10f4-1c92-44d9-bcc9-0c6bc3c37db1', '162');
   COMMIT TRANSACTION;
 END;   
 
@@ -2932,22 +2888,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('7fb383af-831c-4dc9-81cf-1395496d1ca1', '2019-03-18 08:00:39', '2019-03-18 08:11:27', 1, 3810, 121, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
+  ('8ea08c21-3a0f-4e4d-8425-818676e4fd36', '2019-03-18 09:10:32', '2019-03-18 09:16:04', 1, 6897, 861, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('7fb383af-831c-4dc9-81cf-1395496d1ca1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Заманихи корневища с корнями%' LIMIT 1)),
-  ('7fb383af-831c-4dc9-81cf-1395496d1ca1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Спироксатрин%' LIMIT 1)),
-  ('7fb383af-831c-4dc9-81cf-1395496d1ca1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пассажикс%' LIMIT 1)),
-  ('7fb383af-831c-4dc9-81cf-1395496d1ca1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Зидовудин%' LIMIT 1));
+  ('8ea08c21-3a0f-4e4d-8425-818676e4fd36', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'D-Пантенол%' LIMIT 1)),
+  ('8ea08c21-3a0f-4e4d-8425-818676e4fd36', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Гаразон%' LIMIT 1)),
+  ('8ea08c21-3a0f-4e4d-8425-818676e4fd36', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пирензепин%' LIMIT 1)),
+  ('8ea08c21-3a0f-4e4d-8425-818676e4fd36', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Гемфиброзил%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('7fb383af-831c-4dc9-81cf-1395496d1ca1', '123'),
-  ('7fb383af-831c-4dc9-81cf-1395496d1ca1', '69'),
-  ('7fb383af-831c-4dc9-81cf-1395496d1ca1', '144');
+  ('8ea08c21-3a0f-4e4d-8425-818676e4fd36', '37'),
+  ('8ea08c21-3a0f-4e4d-8425-818676e4fd36', '68');
   COMMIT TRANSACTION;
 END;   
 
@@ -2957,20 +2912,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('deba3a2c-2eb6-4a07-b658-5a333c94dfa5', '2019-03-18 08:12:11', '2019-03-18 08:22:30', 1, 13146, 1245, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
+  ('da7b7c33-55f3-4d5e-a5b3-d78c2aaa41bb', '2019-03-18 09:16:59', '2019-03-18 09:27:31', 1, 13789, 982, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('deba3a2c-2eb6-4a07-b658-5a333c94dfa5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Октреотид%' LIMIT 1)),
-  ('deba3a2c-2eb6-4a07-b658-5a333c94dfa5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Устекинумаб%' LIMIT 1));
+  ('da7b7c33-55f3-4d5e-a5b3-d78c2aaa41bb', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пропафенон%' LIMIT 1)),
+  ('da7b7c33-55f3-4d5e-a5b3-d78c2aaa41bb', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Нефопам%' LIMIT 1)),
+  ('da7b7c33-55f3-4d5e-a5b3-d78c2aaa41bb', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Оксиэтиламмония метилфеноксиацетат%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('deba3a2c-2eb6-4a07-b658-5a333c94dfa5', '54'),
-  ('deba3a2c-2eb6-4a07-b658-5a333c94dfa5', '114'),
-  ('deba3a2c-2eb6-4a07-b658-5a333c94dfa5', '72');
+  ('da7b7c33-55f3-4d5e-a5b3-d78c2aaa41bb', '127'),
+  ('da7b7c33-55f3-4d5e-a5b3-d78c2aaa41bb', '111');
   COMMIT TRANSACTION;
 END;   
 
@@ -2980,21 +2935,22 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('044e1293-2488-488d-b2c8-537cc989a9ac', '2019-03-18 08:22:31', '2019-03-18 08:31:11', 1, 1804, 1132, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
+  ('d16eedce-d30b-4657-9f27-543d7072a52f', '2019-03-18 09:28:15', '2019-03-18 09:33:05', 1, 1870, 1150, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('044e1293-2488-488d-b2c8-537cc989a9ac', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Сиролимус%' LIMIT 1)),
-  ('044e1293-2488-488d-b2c8-537cc989a9ac', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ибализумаб%' LIMIT 1)),
-  ('044e1293-2488-488d-b2c8-537cc989a9ac', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Метралиндол%' LIMIT 1)),
-  ('044e1293-2488-488d-b2c8-537cc989a9ac', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Кутерид Г%' LIMIT 1));
+  ('d16eedce-d30b-4657-9f27-543d7072a52f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Карбоплатин%' LIMIT 1)),
+  ('d16eedce-d30b-4657-9f27-543d7072a52f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Корневища с корнями валерианы%' LIMIT 1)),
+  ('d16eedce-d30b-4657-9f27-543d7072a52f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Валопицитабин%' LIMIT 1)),
+  ('d16eedce-d30b-4657-9f27-543d7072a52f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Варфарекс%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('044e1293-2488-488d-b2c8-537cc989a9ac', '157'),
-  ('044e1293-2488-488d-b2c8-537cc989a9ac', '6');
+  ('d16eedce-d30b-4657-9f27-543d7072a52f', '49'),
+  ('d16eedce-d30b-4657-9f27-543d7072a52f', '64'),
+  ('d16eedce-d30b-4657-9f27-543d7072a52f', '143');
   COMMIT TRANSACTION;
 END;   
 
@@ -3004,21 +2960,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('bd3416e8-b15b-4177-b6ee-dff772717a24', '2019-03-18 08:31:59', '2019-03-18 08:38:37', 1, 14600, 175, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
+  ('58716030-a8bd-4281-b6a8-569262e20568', '2019-03-18 09:33:24', '2019-03-18 09:44:19', 1, 9561, 1019, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('bd3416e8-b15b-4177-b6ee-dff772717a24', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пропранол%' LIMIT 1)),
-  ('bd3416e8-b15b-4177-b6ee-dff772717a24', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Итраконазол%' LIMIT 1));
+  ('58716030-a8bd-4281-b6a8-569262e20568', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Магния карбонат (лекарственное средство)%' LIMIT 1)),
+  ('58716030-a8bd-4281-b6a8-569262e20568', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Этамбутол%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('bd3416e8-b15b-4177-b6ee-dff772717a24', '45'),
-  ('bd3416e8-b15b-4177-b6ee-dff772717a24', '84'),
-  ('bd3416e8-b15b-4177-b6ee-dff772717a24', '82'),
-  ('bd3416e8-b15b-4177-b6ee-dff772717a24', '137');
+  ('58716030-a8bd-4281-b6a8-569262e20568', '169'),
+  ('58716030-a8bd-4281-b6a8-569262e20568', '32'),
+  ('58716030-a8bd-4281-b6a8-569262e20568', '152');
   COMMIT TRANSACTION;
 END;   
 
@@ -3028,19 +2983,23 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('fe084c58-45de-4a2e-b74f-eb7607b393a0', '2019-03-18 08:38:39', '2019-03-18 08:48:01', 1, 4310, 459, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
+  ('9a8e9a45-9da3-479e-8392-85544f14d270', '2019-03-18 09:45:03', '2019-03-18 09:52:29', 1, 3382, 144, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('fe084c58-45de-4a2e-b74f-eb7607b393a0', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Алпренолол%' LIMIT 1)),
-  ('fe084c58-45de-4a2e-b74f-eb7607b393a0', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Суматриптана сукцинат%' LIMIT 1));
+  ('9a8e9a45-9da3-479e-8392-85544f14d270', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Флударабин%' LIMIT 1)),
+  ('9a8e9a45-9da3-479e-8392-85544f14d270', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Илоперидон%' LIMIT 1)),
+  ('9a8e9a45-9da3-479e-8392-85544f14d270', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Топрал%' LIMIT 1)),
+  ('9a8e9a45-9da3-479e-8392-85544f14d270', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Хорагон%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('fe084c58-45de-4a2e-b74f-eb7607b393a0', '184'),
-  ('fe084c58-45de-4a2e-b74f-eb7607b393a0', '157');
+  ('9a8e9a45-9da3-479e-8392-85544f14d270', '46'),
+  ('9a8e9a45-9da3-479e-8392-85544f14d270', '85'),
+  ('9a8e9a45-9da3-479e-8392-85544f14d270', '56'),
+  ('9a8e9a45-9da3-479e-8392-85544f14d270', '190');
   COMMIT TRANSACTION;
 END;   
 
@@ -3050,20 +3009,23 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('ff7e9c16-f1fe-46c7-ad77-35f9b7a6af8e', '2019-03-18 08:48:23', '2019-03-18 08:54:52', 1, 7636, 1149, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
+  ('3f294638-52f3-48f5-a8fc-7ad234c90e1f', '2019-03-18 09:52:58', '2019-03-18 10:01:34', 1, 8031, 907, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('ff7e9c16-f1fe-46c7-ad77-35f9b7a6af8e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Мареван%' LIMIT 1)),
-  ('ff7e9c16-f1fe-46c7-ad77-35f9b7a6af8e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Трописетрон%' LIMIT 1));
+  ('3f294638-52f3-48f5-a8fc-7ad234c90e1f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Сульпирид%' LIMIT 1)),
+  ('3f294638-52f3-48f5-a8fc-7ad234c90e1f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Элотузумаб%' LIMIT 1)),
+  ('3f294638-52f3-48f5-a8fc-7ad234c90e1f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тиаприд%' LIMIT 1)),
+  ('3f294638-52f3-48f5-a8fc-7ad234c90e1f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Проспидия хлорид%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('ff7e9c16-f1fe-46c7-ad77-35f9b7a6af8e', '77'),
-  ('ff7e9c16-f1fe-46c7-ad77-35f9b7a6af8e', '176'),
-  ('ff7e9c16-f1fe-46c7-ad77-35f9b7a6af8e', '133');
+  ('3f294638-52f3-48f5-a8fc-7ad234c90e1f', '121'),
+  ('3f294638-52f3-48f5-a8fc-7ad234c90e1f', '155'),
+  ('3f294638-52f3-48f5-a8fc-7ad234c90e1f', '53'),
+  ('3f294638-52f3-48f5-a8fc-7ad234c90e1f', '32');
   COMMIT TRANSACTION;
 END;   
 
@@ -3073,21 +3035,23 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('b1152926-f011-4550-9db2-b551b384cfe1', '2019-03-18 08:55:02', '2019-03-18 09:03:57', 1, 2112, 473, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
+  ('94ad3c14-c553-41d0-b180-15bf8ef2551e', '2019-03-18 10:02:29', '2019-03-18 10:11:42', 1, 4147, 1230, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('b1152926-f011-4550-9db2-b551b384cfe1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бетазон%' LIMIT 1)),
-  ('b1152926-f011-4550-9db2-b551b384cfe1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Глицерофосфат кальция%' LIMIT 1));
+  ('94ad3c14-c553-41d0-b180-15bf8ef2551e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фентоламин%' LIMIT 1)),
+  ('94ad3c14-c553-41d0-b180-15bf8ef2551e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Папаверин%' LIMIT 1)),
+  ('94ad3c14-c553-41d0-b180-15bf8ef2551e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фулвестрант%' LIMIT 1)),
+  ('94ad3c14-c553-41d0-b180-15bf8ef2551e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Троксерутин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('b1152926-f011-4550-9db2-b551b384cfe1', '168'),
-  ('b1152926-f011-4550-9db2-b551b384cfe1', '21'),
-  ('b1152926-f011-4550-9db2-b551b384cfe1', '137'),
-  ('b1152926-f011-4550-9db2-b551b384cfe1', '177');
+  ('94ad3c14-c553-41d0-b180-15bf8ef2551e', '175'),
+  ('94ad3c14-c553-41d0-b180-15bf8ef2551e', '177'),
+  ('94ad3c14-c553-41d0-b180-15bf8ef2551e', '96'),
+  ('94ad3c14-c553-41d0-b180-15bf8ef2551e', '103');
   COMMIT TRANSACTION;
 END;   
 
@@ -3097,21 +3061,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('72d73344-9084-45a9-a0db-afcddf7c62b5', '2019-03-18 09:04:06', '2019-03-18 09:12:06', 1, 13136, 328, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
+  ('78ea546c-6529-490d-abf3-dab08a873ae5', '2019-03-18 10:11:59', '2019-03-18 10:18:19', 1, 12515, 1222, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('72d73344-9084-45a9-a0db-afcddf7c62b5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Прокаин%' LIMIT 1)),
-  ('72d73344-9084-45a9-a0db-afcddf7c62b5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Алимемазин%' LIMIT 1)),
-  ('72d73344-9084-45a9-a0db-afcddf7c62b5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ромиплостим%' LIMIT 1)),
-  ('72d73344-9084-45a9-a0db-afcddf7c62b5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Митотакс%' LIMIT 1));
+  ('78ea546c-6529-490d-abf3-dab08a873ae5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тримипрамин%' LIMIT 1)),
+  ('78ea546c-6529-490d-abf3-dab08a873ae5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Стримол%' LIMIT 1)),
+  ('78ea546c-6529-490d-abf3-dab08a873ae5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Дипипанон%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('72d73344-9084-45a9-a0db-afcddf7c62b5', '10'),
-  ('72d73344-9084-45a9-a0db-afcddf7c62b5', '152');
+  ('78ea546c-6529-490d-abf3-dab08a873ae5', '10'),
+  ('78ea546c-6529-490d-abf3-dab08a873ae5', '122'),
+  ('78ea546c-6529-490d-abf3-dab08a873ae5', '186');
   COMMIT TRANSACTION;
 END;   
 
@@ -3121,20 +3085,19 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('8248ce14-3750-46d9-bfaf-f71799c6591e', '2019-03-18 09:12:11', '2019-03-18 09:17:33', 1, 11976, 16, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
+  ('37fa77fd-60f1-45d9-bb9f-85b22cfeb3ce', '2019-03-18 10:18:35', '2019-03-18 10:22:46', 1, 10003, 161, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('8248ce14-3750-46d9-bfaf-f71799c6591e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Апиксабан%' LIMIT 1)),
-  ('8248ce14-3750-46d9-bfaf-f71799c6591e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Анрукинзумаб%' LIMIT 1));
+  ('37fa77fd-60f1-45d9-bb9f-85b22cfeb3ce', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Флузол%' LIMIT 1)),
+  ('37fa77fd-60f1-45d9-bb9f-85b22cfeb3ce', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Новокаинамид%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('8248ce14-3750-46d9-bfaf-f71799c6591e', '100'),
-  ('8248ce14-3750-46d9-bfaf-f71799c6591e', '45'),
-  ('8248ce14-3750-46d9-bfaf-f71799c6591e', '59');
+  ('37fa77fd-60f1-45d9-bb9f-85b22cfeb3ce', '7'),
+  ('37fa77fd-60f1-45d9-bb9f-85b22cfeb3ce', '132');
   COMMIT TRANSACTION;
 END;   
 
@@ -3144,22 +3107,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('4bf63cc1-ffc8-49f7-81d6-9f18f72cf824', '2019-03-18 09:17:38', '2019-03-18 09:23:06', 1, 3112, 123, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
+  ('ef5a2dbd-8ea9-46e0-ba06-4b733a76dae1', '2019-03-18 10:23:32', '2019-03-18 10:33:47', 1, 12347, 160, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('4bf63cc1-ffc8-49f7-81d6-9f18f72cf824', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Делавирдин%' LIMIT 1)),
-  ('4bf63cc1-ffc8-49f7-81d6-9f18f72cf824', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Мезокарб%' LIMIT 1)),
-  ('4bf63cc1-ffc8-49f7-81d6-9f18f72cf824', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ангиозил ретард%' LIMIT 1)),
-  ('4bf63cc1-ffc8-49f7-81d6-9f18f72cf824', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Lisocabtagene maraleucel%' LIMIT 1));
+  ('ef5a2dbd-8ea9-46e0-ba06-4b733a76dae1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Перамивир%' LIMIT 1)),
+  ('ef5a2dbd-8ea9-46e0-ba06-4b733a76dae1', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Мовасин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('4bf63cc1-ffc8-49f7-81d6-9f18f72cf824', '45'),
-  ('4bf63cc1-ffc8-49f7-81d6-9f18f72cf824', '126'),
-  ('4bf63cc1-ffc8-49f7-81d6-9f18f72cf824', '162');
+  ('ef5a2dbd-8ea9-46e0-ba06-4b733a76dae1', '131'),
+  ('ef5a2dbd-8ea9-46e0-ba06-4b733a76dae1', '9'),
+  ('ef5a2dbd-8ea9-46e0-ba06-4b733a76dae1', '87'),
+  ('ef5a2dbd-8ea9-46e0-ba06-4b733a76dae1', '50');
   COMMIT TRANSACTION;
 END;   
 
@@ -3169,21 +3131,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('8fe82718-d1f5-4d88-ab80-1216867b84cd', '2019-03-18 09:23:52', '2019-03-18 09:33:30', 1, 3869, 1183, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
+  ('2c425b2a-f846-4081-924d-941944558877', '2019-03-18 10:34:09', '2019-03-18 10:39:06', 1, 6059, 185, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('8fe82718-d1f5-4d88-ab80-1216867b84cd', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пропоксифен%' LIMIT 1)),
-  ('8fe82718-d1f5-4d88-ab80-1216867b84cd', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Боботик%' LIMIT 1)),
-  ('8fe82718-d1f5-4d88-ab80-1216867b84cd', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Нитроминт%' LIMIT 1)),
-  ('8fe82718-d1f5-4d88-ab80-1216867b84cd', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Нимегесик%' LIMIT 1));
+  ('2c425b2a-f846-4081-924d-941944558877', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'МИР-19%' LIMIT 1)),
+  ('2c425b2a-f846-4081-924d-941944558877', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Этинилэстрадиол/дроспиренон%' LIMIT 1)),
+  ('2c425b2a-f846-4081-924d-941944558877', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Кардикс Моно%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('8fe82718-d1f5-4d88-ab80-1216867b84cd', '70'),
-  ('8fe82718-d1f5-4d88-ab80-1216867b84cd', '158');
+  ('2c425b2a-f846-4081-924d-941944558877', '6'),
+  ('2c425b2a-f846-4081-924d-941944558877', '78');
   COMMIT TRANSACTION;
 END;   
 
@@ -3193,22 +3154,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('f09b4fb7-64d5-41be-bd2e-6bf811949591', '2019-03-18 09:33:55', '2019-03-18 09:43:37', 1, 1294, 48, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
+  ('21a9a39d-b14e-41ff-9317-4ce115aa432b', '2019-03-18 10:39:51', '2019-03-18 10:48:34', 1, 5242, 1186, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('f09b4fb7-64d5-41be-bd2e-6bf811949591', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Трамундин ретард%' LIMIT 1)),
-  ('f09b4fb7-64d5-41be-bd2e-6bf811949591', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пироксифер%' LIMIT 1)),
-  ('f09b4fb7-64d5-41be-bd2e-6bf811949591', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тазобактам%' LIMIT 1)),
-  ('f09b4fb7-64d5-41be-bd2e-6bf811949591', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Декарис%' LIMIT 1));
+  ('21a9a39d-b14e-41ff-9317-4ce115aa432b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Тетракаин%' LIMIT 1)),
+  ('21a9a39d-b14e-41ff-9317-4ce115aa432b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Солифенацин%' LIMIT 1)),
+  ('21a9a39d-b14e-41ff-9317-4ce115aa432b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Урохолум%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('f09b4fb7-64d5-41be-bd2e-6bf811949591', '171'),
-  ('f09b4fb7-64d5-41be-bd2e-6bf811949591', '3'),
-  ('f09b4fb7-64d5-41be-bd2e-6bf811949591', '29');
+  ('21a9a39d-b14e-41ff-9317-4ce115aa432b', '65'),
+  ('21a9a39d-b14e-41ff-9317-4ce115aa432b', '95');
   COMMIT TRANSACTION;
 END;   
 
@@ -3218,21 +3177,23 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('12ef2d77-5f31-4e62-a4b5-e3cc653e4606', '2019-03-18 09:44:20', '2019-03-18 09:49:09', 1, 4058, 855, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
+  ('8575c739-cfbf-4b3f-b06a-9e27a52b59ed', '2019-03-18 10:48:36', '2019-03-18 10:53:40', 1, 2078, 1162, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('12ef2d77-5f31-4e62-a4b5-e3cc653e4606', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Барицитиниб%' LIMIT 1)),
-  ('12ef2d77-5f31-4e62-a4b5-e3cc653e4606', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Метофеназат%' LIMIT 1));
+  ('8575c739-cfbf-4b3f-b06a-9e27a52b59ed', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фентермин%' LIMIT 1)),
+  ('8575c739-cfbf-4b3f-b06a-9e27a52b59ed', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Прохлорперазин%' LIMIT 1)),
+  ('8575c739-cfbf-4b3f-b06a-9e27a52b59ed', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ауротиопрол%' LIMIT 1)),
+  ('8575c739-cfbf-4b3f-b06a-9e27a52b59ed', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фентоламин%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('12ef2d77-5f31-4e62-a4b5-e3cc653e4606', '117'),
-  ('12ef2d77-5f31-4e62-a4b5-e3cc653e4606', '105'),
-  ('12ef2d77-5f31-4e62-a4b5-e3cc653e4606', '28'),
-  ('12ef2d77-5f31-4e62-a4b5-e3cc653e4606', '181');
+  ('8575c739-cfbf-4b3f-b06a-9e27a52b59ed', '31'),
+  ('8575c739-cfbf-4b3f-b06a-9e27a52b59ed', '25'),
+  ('8575c739-cfbf-4b3f-b06a-9e27a52b59ed', '87'),
+  ('8575c739-cfbf-4b3f-b06a-9e27a52b59ed', '189');
   COMMIT TRANSACTION;
 END;   
 
@@ -3242,21 +3203,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('2e3a1c3a-e9ca-4386-a9be-a0995a81e15e', '2019-03-18 09:49:58', '2019-03-18 09:55:47', 1, 5010, 272, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
+  ('5d7638b4-7d77-4eff-9d85-06bdce532dda', '2019-03-18 10:54:39', '2019-03-18 10:59:43', 1, 6337, 27, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('2e3a1c3a-e9ca-4386-a9be-a0995a81e15e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Перетиноин%' LIMIT 1)),
-  ('2e3a1c3a-e9ca-4386-a9be-a0995a81e15e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Оксикодон%' LIMIT 1)),
-  ('2e3a1c3a-e9ca-4386-a9be-a0995a81e15e', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Напробене%' LIMIT 1));
+  ('5d7638b4-7d77-4eff-9d85-06bdce532dda', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фамвир%' LIMIT 1)),
+  ('5d7638b4-7d77-4eff-9d85-06bdce532dda', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ингибиторы протеасомы%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('2e3a1c3a-e9ca-4386-a9be-a0995a81e15e', '72'),
-  ('2e3a1c3a-e9ca-4386-a9be-a0995a81e15e', '75'),
-  ('2e3a1c3a-e9ca-4386-a9be-a0995a81e15e', '117');
+  ('5d7638b4-7d77-4eff-9d85-06bdce532dda', '146'),
+  ('5d7638b4-7d77-4eff-9d85-06bdce532dda', '160'),
+  ('5d7638b4-7d77-4eff-9d85-06bdce532dda', '101');
   COMMIT TRANSACTION;
 END;   
 
@@ -3266,22 +3226,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('0fc90253-7b11-4c55-9be1-1aadd767339f', '2019-03-18 09:56:01', '2019-03-18 10:04:49', 1, 12133, 711, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
+  ('be31a9be-f009-49f2-b13e-2a10779bce31', '2019-03-18 11:00:17', '2019-03-18 11:06:42', 1, 8477, 452, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('0fc90253-7b11-4c55-9be1-1aadd767339f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Армин%' LIMIT 1)),
-  ('0fc90253-7b11-4c55-9be1-1aadd767339f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Циклосиликат циркония-натрия%' LIMIT 1)),
-  ('0fc90253-7b11-4c55-9be1-1aadd767339f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Омепрус%' LIMIT 1)),
-  ('0fc90253-7b11-4c55-9be1-1aadd767339f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Напробене%' LIMIT 1));
+  ('be31a9be-f009-49f2-b13e-2a10779bce31', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пипотиазин%' LIMIT 1)),
+  ('be31a9be-f009-49f2-b13e-2a10779bce31', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Флунитразепам%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('0fc90253-7b11-4c55-9be1-1aadd767339f', '143'),
-  ('0fc90253-7b11-4c55-9be1-1aadd767339f', '140'),
-  ('0fc90253-7b11-4c55-9be1-1aadd767339f', '109');
+  ('be31a9be-f009-49f2-b13e-2a10779bce31', '190'),
+  ('be31a9be-f009-49f2-b13e-2a10779bce31', '22'),
+  ('be31a9be-f009-49f2-b13e-2a10779bce31', '31'),
+  ('be31a9be-f009-49f2-b13e-2a10779bce31', '170');
   COMMIT TRANSACTION;
 END;   
 
@@ -3291,21 +3250,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('3233e9f7-4277-4bd0-8f01-429510738d79', '2019-03-18 10:05:16', '2019-03-18 10:09:17', 1, 11597, 1261, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
+  ('db37067d-7374-4e7c-a515-44d31c280d54', '2019-03-18 11:07:16', '2019-03-18 11:17:11', 1, 12921, 174, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('3233e9f7-4277-4bd0-8f01-429510738d79', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бензокаин%' LIMIT 1)),
-  ('3233e9f7-4277-4bd0-8f01-429510738d79', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Декортин Н50%' LIMIT 1)),
-  ('3233e9f7-4277-4bd0-8f01-429510738d79', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Алгелдрат%' LIMIT 1)),
-  ('3233e9f7-4277-4bd0-8f01-429510738d79', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бензилпенициллин%' LIMIT 1));
+  ('db37067d-7374-4e7c-a515-44d31c280d54', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Перфторан%' LIMIT 1)),
+  ('db37067d-7374-4e7c-a515-44d31c280d54', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Цефуроксим%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('3233e9f7-4277-4bd0-8f01-429510738d79', '135'),
-  ('3233e9f7-4277-4bd0-8f01-429510738d79', '63');
+  ('db37067d-7374-4e7c-a515-44d31c280d54', '42'),
+  ('db37067d-7374-4e7c-a515-44d31c280d54', '4'),
+  ('db37067d-7374-4e7c-a515-44d31c280d54', '81');
   COMMIT TRANSACTION;
 END;   
 
@@ -3315,20 +3273,19 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('ff6a6a81-dcb3-4e63-afc9-4d8059c2c948', '2019-03-18 10:09:22', '2019-03-18 10:19:48', 1, 3438, 1040, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
+  ('200809c1-3b04-4cf5-89df-69bbc16b132d', '2019-03-18 11:17:44', '2019-03-18 11:25:01', 1, 11049, 428, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('ff6a6a81-dcb3-4e63-afc9-4d8059c2c948', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Этодолак%' LIMIT 1)),
-  ('ff6a6a81-dcb3-4e63-afc9-4d8059c2c948', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Доцетера%' LIMIT 1));
+  ('200809c1-3b04-4cf5-89df-69bbc16b132d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Проксодолол%' LIMIT 1)),
+  ('200809c1-3b04-4cf5-89df-69bbc16b132d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Диплацина дихлорид%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('ff6a6a81-dcb3-4e63-afc9-4d8059c2c948', '152'),
-  ('ff6a6a81-dcb3-4e63-afc9-4d8059c2c948', '175'),
-  ('ff6a6a81-dcb3-4e63-afc9-4d8059c2c948', '54');
+  ('200809c1-3b04-4cf5-89df-69bbc16b132d', '15'),
+  ('200809c1-3b04-4cf5-89df-69bbc16b132d', '79');
   COMMIT TRANSACTION;
 END;   
 
@@ -3338,21 +3295,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('80bed6db-e25b-4955-93e2-f4158ad0a902', '2019-03-18 10:20:42', '2019-03-18 10:31:34', 1, 1230, 1219, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
+  ('9609eb2b-7383-4e4a-80c6-01d0189a5b1f', '2019-03-18 11:25:38', '2019-03-18 11:31:52', 1, 1305, 156, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('80bed6db-e25b-4955-93e2-f4158ad0a902', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Хондролон%' LIMIT 1)),
-  ('80bed6db-e25b-4955-93e2-f4158ad0a902', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Диазепам%' LIMIT 1)),
-  ('80bed6db-e25b-4955-93e2-f4158ad0a902', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Индометацин%' LIMIT 1)),
-  ('80bed6db-e25b-4955-93e2-f4158ad0a902', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Секуринин%' LIMIT 1));
+  ('9609eb2b-7383-4e4a-80c6-01d0189a5b1f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пассажикс%' LIMIT 1)),
+  ('9609eb2b-7383-4e4a-80c6-01d0189a5b1f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Балоксавир марбоксил%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('80bed6db-e25b-4955-93e2-f4158ad0a902', '86'),
-  ('80bed6db-e25b-4955-93e2-f4158ad0a902', '176');
+  ('9609eb2b-7383-4e4a-80c6-01d0189a5b1f', '12'),
+  ('9609eb2b-7383-4e4a-80c6-01d0189a5b1f', '150'),
+  ('9609eb2b-7383-4e4a-80c6-01d0189a5b1f', '135');
   COMMIT TRANSACTION;
 END;   
 
@@ -3362,21 +3318,19 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('4010866f-d845-4fb3-be3c-276c5cd445fe', '2019-03-18 10:32:31', '2019-03-18 10:43:22', 1, 8964, 724, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
+  ('bed350f1-f842-4b54-8c47-ea15a1aa2d69', '2019-03-18 11:32:26', '2019-03-18 11:37:21', 1, 4102, 546, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('4010866f-d845-4fb3-be3c-276c5cd445fe', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Феброфид%' LIMIT 1)),
-  ('4010866f-d845-4fb3-be3c-276c5cd445fe', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Седальгин-Нео%' LIMIT 1)),
-  ('4010866f-d845-4fb3-be3c-276c5cd445fe', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Супрастин%' LIMIT 1));
+  ('bed350f1-f842-4b54-8c47-ea15a1aa2d69', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Дувелисиб%' LIMIT 1)),
+  ('bed350f1-f842-4b54-8c47-ea15a1aa2d69', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Адалат%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('4010866f-d845-4fb3-be3c-276c5cd445fe', '58'),
-  ('4010866f-d845-4fb3-be3c-276c5cd445fe', '164'),
-  ('4010866f-d845-4fb3-be3c-276c5cd445fe', '96');
+  ('bed350f1-f842-4b54-8c47-ea15a1aa2d69', '188'),
+  ('bed350f1-f842-4b54-8c47-ea15a1aa2d69', '198');
   COMMIT TRANSACTION;
 END;   
 
@@ -3386,21 +3340,20 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('440245e3-d2b7-42c8-9cfe-b7e63d74bd2a', '2019-03-18 10:43:36', '2019-03-18 10:49:05', 1, 7119, 451, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
+  ('266d133c-027a-4db6-92a1-a530a0eb2021', '2019-03-18 11:37:57', '2019-03-18 11:44:21', 1, 658, 331, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('440245e3-d2b7-42c8-9cfe-b7e63d74bd2a', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Поливинилпирролидон%' LIMIT 1)),
-  ('440245e3-d2b7-42c8-9cfe-b7e63d74bd2a', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Анакинра%' LIMIT 1)),
-  ('440245e3-d2b7-42c8-9cfe-b7e63d74bd2a', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Холекальциферол%' LIMIT 1));
+  ('266d133c-027a-4db6-92a1-a530a0eb2021', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Такс-о-бид%' LIMIT 1)),
+  ('266d133c-027a-4db6-92a1-a530a0eb2021', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пепфиз%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('440245e3-d2b7-42c8-9cfe-b7e63d74bd2a', '179'),
-  ('440245e3-d2b7-42c8-9cfe-b7e63d74bd2a', '56'),
-  ('440245e3-d2b7-42c8-9cfe-b7e63d74bd2a', '167');
+  ('266d133c-027a-4db6-92a1-a530a0eb2021', '97'),
+  ('266d133c-027a-4db6-92a1-a530a0eb2021', '179'),
+  ('266d133c-027a-4db6-92a1-a530a0eb2021', '127');
   COMMIT TRANSACTION;
 END;   
 
@@ -3410,21 +3363,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('78622538-6214-437a-860a-29e313e93ab5', '2019-03-18 10:49:08', '2019-03-18 10:53:59', 1, 7470, 470, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
+  ('cf1969b4-65d3-4c05-b542-a0dddf874e15', '2019-03-18 11:45:19', '2019-03-18 11:50:33', 1, 10126, 639, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('78622538-6214-437a-860a-29e313e93ab5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Гриппол%' LIMIT 1)),
-  ('78622538-6214-437a-860a-29e313e93ab5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Капреомицин%' LIMIT 1)),
-  ('78622538-6214-437a-860a-29e313e93ab5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Треосульфан%' LIMIT 1)),
-  ('78622538-6214-437a-860a-29e313e93ab5', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Эриус%' LIMIT 1));
+  ('cf1969b4-65d3-4c05-b542-a0dddf874e15', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Геликаин%' LIMIT 1)),
+  ('cf1969b4-65d3-4c05-b542-a0dddf874e15', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Апап С Плюс%' LIMIT 1)),
+  ('cf1969b4-65d3-4c05-b542-a0dddf874e15', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Иринотекан%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('78622538-6214-437a-860a-29e313e93ab5', '80'),
-  ('78622538-6214-437a-860a-29e313e93ab5', '155');
+  ('cf1969b4-65d3-4c05-b542-a0dddf874e15', '104'),
+  ('cf1969b4-65d3-4c05-b542-a0dddf874e15', '59'),
+  ('cf1969b4-65d3-4c05-b542-a0dddf874e15', '59');
   COMMIT TRANSACTION;
 END;   
 
@@ -3434,21 +3387,21 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('5652fec3-d9db-4265-bffb-7a32d562467f', '2019-03-18 10:54:07', '2019-03-18 10:58:28', 1, 1373, 315, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
+  ('cbacef0d-5e4b-4704-a046-0ca6fff80516', '2019-03-18 11:50:41', '2019-03-18 11:58:13', 1, 6717, 1231, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('5652fec3-d9db-4265-bffb-7a32d562467f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Кутерид Г%' LIMIT 1)),
-  ('5652fec3-d9db-4265-bffb-7a32d562467f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Сабур%' LIMIT 1)),
-  ('5652fec3-d9db-4265-bffb-7a32d562467f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бензнидазол%' LIMIT 1));
+  ('cbacef0d-5e4b-4704-a046-0ca6fff80516', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Бетувакс-КоВ-2%' LIMIT 1)),
+  ('cbacef0d-5e4b-4704-a046-0ca6fff80516', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Сульфагуанидин%' LIMIT 1)),
+  ('cbacef0d-5e4b-4704-a046-0ca6fff80516', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Наком%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('5652fec3-d9db-4265-bffb-7a32d562467f', '47'),
-  ('5652fec3-d9db-4265-bffb-7a32d562467f', '71'),
-  ('5652fec3-d9db-4265-bffb-7a32d562467f', '65');
+  ('cbacef0d-5e4b-4704-a046-0ca6fff80516', '99'),
+  ('cbacef0d-5e4b-4704-a046-0ca6fff80516', '96'),
+  ('cbacef0d-5e4b-4704-a046-0ca6fff80516', '150');
   COMMIT TRANSACTION;
 END;   
 
@@ -3458,188 +3411,18 @@ BEGIN TRANSACTION;
   INSERT INTO DE_DOC_Inspection
   (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
   VALUES
-  ('79ddae5e-47c2-4bf4-891c-cfb14d43177b', '2019-03-18 10:59:01', '2019-03-18 11:05:01', 1, 2079, 134, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
+  ('ef0238a1-50db-474e-9f2d-bd051e9144eb', '2019-03-18 11:59:00', '2019-03-18 12:06:57', 1, 5127, 1276, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '9' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionMedicines
   (de_inspectionid, de_medicineid)
   VALUES
-  ('79ddae5e-47c2-4bf4-891c-cfb14d43177b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Асунапревир%' LIMIT 1)),
-  ('79ddae5e-47c2-4bf4-891c-cfb14d43177b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пентобарбитал%' LIMIT 1)),
-  ('79ddae5e-47c2-4bf4-891c-cfb14d43177b', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пентазоцин%' LIMIT 1));
+  ('ef0238a1-50db-474e-9f2d-bd051e9144eb', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Нитрокор%' LIMIT 1)),
+  ('ef0238a1-50db-474e-9f2d-bd051e9144eb', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Грамицидин С%' LIMIT 1));
 
   INSERT INTO DE_TAB_InspectionSymptoms
   (de_inspectionid, de_symptomeid)
   VALUES
-  ('79ddae5e-47c2-4bf4-891c-cfb14d43177b', '186'),
-  ('79ddae5e-47c2-4bf4-891c-cfb14d43177b', '179'),
-  ('79ddae5e-47c2-4bf4-891c-cfb14d43177b', '51'),
-  ('79ddae5e-47c2-4bf4-891c-cfb14d43177b', '14');
-  COMMIT TRANSACTION;
-END;   
-
--- Транзации №145
-
-BEGIN TRANSACTION;
-  INSERT INTO DE_DOC_Inspection
-  (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
-  VALUES
-  ('8c99cee3-1e92-4865-bec5-75f9054e20ab', '2019-03-18 11:05:59', '2019-03-18 11:12:53', 1, 12279, 1262, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
-
-  INSERT INTO DE_TAB_InspectionMedicines
-  (de_inspectionid, de_medicineid)
-  VALUES
-  ('8c99cee3-1e92-4865-bec5-75f9054e20ab', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Репаглинид%' LIMIT 1)),
-  ('8c99cee3-1e92-4865-bec5-75f9054e20ab', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Авибактам%' LIMIT 1));
-
-  INSERT INTO DE_TAB_InspectionSymptoms
-  (de_inspectionid, de_symptomeid)
-  VALUES
-  ('8c99cee3-1e92-4865-bec5-75f9054e20ab', '110'),
-  ('8c99cee3-1e92-4865-bec5-75f9054e20ab', '177'),
-  ('8c99cee3-1e92-4865-bec5-75f9054e20ab', '2');
-  COMMIT TRANSACTION;
-END;   
-
--- Транзации №146
-
-BEGIN TRANSACTION;
-  INSERT INTO DE_DOC_Inspection
-  (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
-  VALUES
-  ('9a2ec5d4-ce1f-448a-b60b-76e68d79d96f', '2019-03-18 11:13:01', '2019-03-18 11:22:58', 1, 10936, 568, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
-
-  INSERT INTO DE_TAB_InspectionMedicines
-  (de_inspectionid, de_medicineid)
-  VALUES
-  ('9a2ec5d4-ce1f-448a-b60b-76e68d79d96f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ланинамивир%' LIMIT 1)),
-  ('9a2ec5d4-ce1f-448a-b60b-76e68d79d96f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Ацетиламинонитропропоксибензол%' LIMIT 1)),
-  ('9a2ec5d4-ce1f-448a-b60b-76e68d79d96f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Гепабене%' LIMIT 1));
-
-  INSERT INTO DE_TAB_InspectionSymptoms
-  (de_inspectionid, de_symptomeid)
-  VALUES
-  ('9a2ec5d4-ce1f-448a-b60b-76e68d79d96f', '141'),
-  ('9a2ec5d4-ce1f-448a-b60b-76e68d79d96f', '115'),
-  ('9a2ec5d4-ce1f-448a-b60b-76e68d79d96f', '10');
-  COMMIT TRANSACTION;
-END;   
-
--- Транзации №147
-
-BEGIN TRANSACTION;
-  INSERT INTO DE_DOC_Inspection
-  (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
-  VALUES
-  ('60ae6c59-79a8-4861-82a4-e5fef97a269f', '2019-03-18 11:23:17', '2019-03-18 11:32:42', 1, 6181, 608, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
-
-  INSERT INTO DE_TAB_InspectionMedicines
-  (de_inspectionid, de_medicineid)
-  VALUES
-  ('60ae6c59-79a8-4861-82a4-e5fef97a269f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Пентаэритритила тетранитрат%' LIMIT 1)),
-  ('60ae6c59-79a8-4861-82a4-e5fef97a269f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Стафен%' LIMIT 1)),
-  ('60ae6c59-79a8-4861-82a4-e5fef97a269f', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Золдак%' LIMIT 1));
-
-  INSERT INTO DE_TAB_InspectionSymptoms
-  (de_inspectionid, de_symptomeid)
-  VALUES
-  ('60ae6c59-79a8-4861-82a4-e5fef97a269f', '186'),
-  ('60ae6c59-79a8-4861-82a4-e5fef97a269f', '70');
-  COMMIT TRANSACTION;
-END;   
-
--- Транзации №148
-
-BEGIN TRANSACTION;
-  INSERT INTO DE_DOC_Inspection
-  (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
-  VALUES
-  ('82b34111-5c7c-4d65-904f-568694fa95fb', '2019-03-18 11:33:25', '2019-03-18 11:38:13', 1, 2936, 987, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
-
-  INSERT INTO DE_TAB_InspectionMedicines
-  (de_inspectionid, de_medicineid)
-  VALUES
-  ('82b34111-5c7c-4d65-904f-568694fa95fb', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Фарингосепт%' LIMIT 1)),
-  ('82b34111-5c7c-4d65-904f-568694fa95fb', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Дантролен%' LIMIT 1));
-
-  INSERT INTO DE_TAB_InspectionSymptoms
-  (de_inspectionid, de_symptomeid)
-  VALUES
-  ('82b34111-5c7c-4d65-904f-568694fa95fb', '19'),
-  ('82b34111-5c7c-4d65-904f-568694fa95fb', '40'),
-  ('82b34111-5c7c-4d65-904f-568694fa95fb', '190');
-  COMMIT TRANSACTION;
-END;   
-
--- Транзации №149
-
-BEGIN TRANSACTION;
-  INSERT INTO DE_DOC_Inspection
-  (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
-  VALUES
-  ('c4dd9a1c-a492-45cb-9d43-f576cb6a60a3', '2019-03-18 11:38:29', '2019-03-18 11:49:20', 1, 3370, 893, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
-
-  INSERT INTO DE_TAB_InspectionMedicines
-  (de_inspectionid, de_medicineid)
-  VALUES
-  ('c4dd9a1c-a492-45cb-9d43-f576cb6a60a3', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Аторвокс%' LIMIT 1)),
-  ('c4dd9a1c-a492-45cb-9d43-f576cb6a60a3', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Дилоксанид%' LIMIT 1)),
-  ('c4dd9a1c-a492-45cb-9d43-f576cb6a60a3', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Апротинин%' LIMIT 1)),
-  ('c4dd9a1c-a492-45cb-9d43-f576cb6a60a3', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Небиволол%' LIMIT 1));
-
-  INSERT INTO DE_TAB_InspectionSymptoms
-  (de_inspectionid, de_symptomeid)
-  VALUES
-  ('c4dd9a1c-a492-45cb-9d43-f576cb6a60a3', '90'),
-  ('c4dd9a1c-a492-45cb-9d43-f576cb6a60a3', '97');
-  COMMIT TRANSACTION;
-END;   
-
--- Транзации №150
-
-BEGIN TRANSACTION;
-  INSERT INTO DE_DOC_Inspection
-  (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
-  VALUES
-  ('b2254d0f-99b6-4477-b8d7-1e964f60a51d', '2019-03-18 11:49:29', '2019-03-18 11:53:58', 1, 5194, 975, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
-
-  INSERT INTO DE_TAB_InspectionMedicines
-  (de_inspectionid, de_medicineid)
-  VALUES
-  ('b2254d0f-99b6-4477-b8d7-1e964f60a51d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Медаксон%' LIMIT 1)),
-  ('b2254d0f-99b6-4477-b8d7-1e964f60a51d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Лиздексамфетамин%' LIMIT 1)),
-  ('b2254d0f-99b6-4477-b8d7-1e964f60a51d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Седальгин-Нео%' LIMIT 1)),
-  ('b2254d0f-99b6-4477-b8d7-1e964f60a51d', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Вилдаглиптин%' LIMIT 1));
-
-  INSERT INTO DE_TAB_InspectionSymptoms
-  (de_inspectionid, de_symptomeid)
-  VALUES
-  ('b2254d0f-99b6-4477-b8d7-1e964f60a51d', '152'),
-  ('b2254d0f-99b6-4477-b8d7-1e964f60a51d', '133'),
-  ('b2254d0f-99b6-4477-b8d7-1e964f60a51d', '97'),
-  ('b2254d0f-99b6-4477-b8d7-1e964f60a51d', '8');
-  COMMIT TRANSACTION;
-END;   
-
--- Транзации №151
-
-BEGIN TRANSACTION;
-  INSERT INTO DE_DOC_Inspection
-  (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
-  VALUES
-  ('185855b1-b8ea-450d-bb29-202bce880ceb', '2019-03-18 11:54:37', '2019-03-18 12:01:53', 1, 3581, 111, (SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT 9));
-
-  INSERT INTO DE_TAB_InspectionMedicines
-  (de_inspectionid, de_medicineid)
-  VALUES
-  ('185855b1-b8ea-450d-bb29-202bce880ceb', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Хлорэтиламинофенацетилпарааминобензойная кислота%' LIMIT 1)),
-  ('185855b1-b8ea-450d-bb29-202bce880ceb', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Доксазозин%' LIMIT 1)),
-  ('185855b1-b8ea-450d-bb29-202bce880ceb', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE 'Орципреналин%' LIMIT 1));
-
-  INSERT INTO DE_TAB_InspectionSymptoms
-  (de_inspectionid, de_symptomeid)
-  VALUES
-  ('185855b1-b8ea-450d-bb29-202bce880ceb', '33'),
-  ('185855b1-b8ea-450d-bb29-202bce880ceb', '115'),
-  ('185855b1-b8ea-450d-bb29-202bce880ceb', '172');
+  ('ef0238a1-50db-474e-9f2d-bd051e9144eb', '73'),
+  ('ef0238a1-50db-474e-9f2d-bd051e9144eb', '164');
   COMMIT TRANSACTION;
 END;   

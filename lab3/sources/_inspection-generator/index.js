@@ -57,7 +57,7 @@ BEGIN TRANSACTION;
       sql += `1, `;
       sql += `${getRandomIntInclusive(1, 14629)}, `;
       sql += `${getRandomIntInclusive(1, 1291)}, `;
-      sql += `(SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT ${reg})`;
+      sql += `(SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '${reg}' LIMIT 1)`;
       sql += `);\n`;
 
       sql += `
@@ -162,7 +162,7 @@ VALUES
       sql += `2, `;
       sql += `${getRandomIntInclusive(1, 14629)}, `;
       sql += `${getRandomIntInclusive(1, 1291)}, `;
-      sql += `(SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '1' LIMIT ${reg})`;
+      sql += `(SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '${reg}' LIMIT 1)`;
       sql += `);\n`;
 
       sql += `
