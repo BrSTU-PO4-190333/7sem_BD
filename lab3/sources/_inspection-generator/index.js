@@ -118,7 +118,7 @@ function main_home(
 
   let regions = new Set(); // множество участков, работающих от 8 до 12 в понедельник
   regAddressDoctorTime.forEach((e) => {
-    if (e[a_day] === `${a_startTime} - ${a_endTime}`) {
+    if (e[`${a_day}_наДому`] === `${a_startTime} - ${a_endTime}`) {
       regions.add(e['Участок']);
       // console.log(e);
     }
@@ -270,7 +270,7 @@ function main() {
     sql += main_home(`${d_y}-${d_m}-${d_d}`, '13:00', '15:00');
   }
 
-  const path = `./../database/sql/9-insp.sql`;
+  const path = `./../../sql/init/9-insp.sql`;
   const text = sql;
   saveFile(path, text);
 }
