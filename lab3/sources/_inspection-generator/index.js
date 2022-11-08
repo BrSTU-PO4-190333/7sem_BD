@@ -258,13 +258,19 @@ function main() {
     let d_d = start_d.getDate();
 
     sql += main_polyclinic(`${d_y}-${d_m}-${d_d}`, '08:00', '12:00');
-    sql += main_home(`${d_y}-${d_m}-${d_d}`, '08:00', '12:00');
-
+    sql += main_polyclinic(`${d_y}-${d_m}-${d_d}`, '08:00', '11:00');
+    sql += main_polyclinic(`${d_y}-${d_m}-${d_d}`, '12:00', '15:00');
+    sql += main_polyclinic(`${d_y}-${d_m}-${d_d}`, '12:00', '16:00');
     sql += main_polyclinic(`${d_y}-${d_m}-${d_d}`, '16:00', '20:00');
-    sql += main_home(`${d_y}-${d_m}-${d_d}`, '16:00', '20:00');
+    sql += main_polyclinic(`${d_y}-${d_m}-${d_d}`, '17:00', '20:00');
+
+    sql += main_home(`${d_y}-${d_m}-${d_d}`, '08:00', '11:00');
+    sql += main_home(`${d_y}-${d_m}-${d_d}`, '11:00', '14:00');
+    sql += main_home(`${d_y}-${d_m}-${d_d}`, '12:00', '15:00');
+    sql += main_home(`${d_y}-${d_m}-${d_d}`, '13:00', '15:00');
   }
 
-  const path = `./../database/sql/8-inspection.sql`;
+  const path = `./../database/sql/9-insp.sql`;
   const text = sql;
   saveFile(path, text);
 }
