@@ -7,7 +7,7 @@
 - [x] задание 1 | [код](sql/select/1.sql)
 - [x] задание 2 | [код](sql/select/2.sql)
 - [ ] задание 3 | [код](sql/select/3.sql)
-- [ ] задание 4 | [код](sql/select/4.sql)
+- [x] задание 4 | [код](sql/select/4.sql)
 - [ ] задание 5 | [код](sql/select/5.sql)
 - [ ] задание 6 | [код](sql/select/6.sql)
 - [ ] задание 7 | [код](sql/select/7.sql)
