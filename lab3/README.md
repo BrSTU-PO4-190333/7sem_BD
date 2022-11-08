@@ -11,7 +11,7 @@
 - [x] задание 5 | [код](sql/select/5.sql)
 - [x] задание 6 | [код](sql/select/6.sql)
 - [ ] задание 7 | [код](sql/select/7.sql)
-- [ ] задание 8 | [код](sql/select/8.sql)
+- [x] задание 8 | [код](sql/select/8.sql)
 - [ ] задание 9 | [код](sql/select/9.sql)
 - [ ] задание 10 | [код](sql/select/10.sql)
 - [ ] задание 11 | [код](sql/select/11.sql)
