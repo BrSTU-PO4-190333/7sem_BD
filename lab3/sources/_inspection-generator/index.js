@@ -8,16 +8,16 @@ const symptomes = require('./../data/symptomes.json');
 function main_polyclinic(
   a_date = '2019-01-07',
   a_startTime = '8:00',
-  a_endTime = '12:00',
-  a_day = 'понедельник'
+  a_endTime = '12:00'
 ) {
   let sql = '';
+  let a_day = getDay(new Date(a_date).getDay());
 
   let regions = new Set(); // множество участков, работающих от 8 до 12 в понедельник
   regAddressDoctorTime.forEach((e) => {
     if (e[a_day] === `${a_startTime} - ${a_endTime}`) {
       regions.add(e['Участок']);
-      console.log(e);
+      // console.log(e);
     }
   });
 
@@ -101,24 +101,26 @@ END;
     }
   });
 
-  const path = `./../database/sql/8__${a_date}_${a_startTime}-${a_endTime}.sql`;
-  const text = sql;
-  saveFile(path, text);
+  // const path = `./../database/sql/8__${a_date}_${a_startTime}-${a_endTime}.sql`;
+  // const text = sql;
+  // saveFile(path, text);
+
+  return sql;
 }
 
 function main_home(
   a_date = '2019-01-07',
   a_startTime = '12:10',
-  a_endTime = '14:00',
-  a_day = 'понедельник'
+  a_endTime = '14:00'
 ) {
   let sql = '';
+  let a_day = getDay(new Date(a_date).getDay());
 
   let regions = new Set(); // множество участков, работающих от 8 до 12 в понедельник
   regAddressDoctorTime.forEach((e) => {
     if (e[a_day] === `${a_startTime} - ${a_endTime}`) {
       regions.add(e['Участок']);
-      console.log(e);
+      // console.log(e);
     }
   });
 
@@ -206,40 +208,80 @@ END;
     }
   });
 
-  const path = `./../database/sql/8__${a_date}_${a_startTime}-${a_endTime}.sql`;
+  // const path = `./../database/sql/8__${a_date}_${a_startTime}-${a_endTime}.sql`;
+  // const text = sql;
+  // saveFile(path, text);
+
+  return sql;
+}
+
+function main() {
+  let sql = '';
+  // sql += main_polyclinic('2018-12-24', '08:00', '12:00', 'понедельник');
+  // sql += main_polyclinic('2018-12-31', '08:00', '12:00', 'понедельник');
+  // sql += main_polyclinic('2019-01-07', '08:00', '12:00', 'понедельник');
+  // sql += main_polyclinic('2019-01-14', '08:00', '12:00', 'понедельник');
+  // sql += main_polyclinic('2019-01-21', '08:00', '12:00', 'понедельник');
+  // sql += main_polyclinic('2019-01-28', '08:00', '12:00', 'понедельник');
+  // sql += main_polyclinic('2019-02-04', '08:00', '12:00', 'понедельник');
+  // sql += main_polyclinic('2019-02-11', '08:00', '12:00', 'понедельник');
+  // sql += main_polyclinic('2019-02-18', '08:00', '12:00', 'понедельник');
+  // sql += main_polyclinic('2019-02-25', '08:00', '12:00', 'понедельник');
+  // sql += main_polyclinic('2019-03-04', '08:00', '12:00', 'понедельник');
+  // sql += main_polyclinic('2019-03-11', '08:00', '12:00', 'понедельник');
+  // sql += main_polyclinic('2019-03-18', '08:00', '12:00', 'понедельник');
+  // sql += main_polyclinic('2019-03-25', '08:00', '12:00', 'понедельник');
+
+  // sql += main_home('2018-12-26', '08:00', '12:00', 'среда');
+  // sql += main_home('2019-01-02', '08:00', '12:00', 'среда');
+  // sql += main_home('2019-01-09', '08:00', '12:00', 'среда');
+  // sql += main_home('2019-01-16', '08:00', '12:00', 'среда');
+  // sql += main_home('2019-01-23', '08:00', '12:00', 'среда');
+  // sql += main_home('2019-01-30', '08:00', '12:00', 'среда');
+  // sql += main_home('2019-02-06', '08:00', '12:00', 'среда');
+  // sql += main_home('2019-02-13', '08:00', '12:00', 'среда');
+  // sql += main_home('2019-02-20', '08:00', '12:00', 'среда');
+  // sql += main_home('2019-02-27', '08:00', '12:00', 'среда');
+  // sql += main_home('2019-03-06', '08:00', '12:00', 'среда');
+  // sql += main_home('2019-03-13', '08:00', '12:00', 'среда');
+  // sql += main_home('2019-03-20', '08:00', '12:00', 'среда');
+  // sql += main_home('2019-03-27', '08:00', '12:00', 'среда');
+
+  let start_d = new Date(`2018-01-01 00:00:00`);
+  let end_d = new Date(`2022-01-01 00:00:00`);
+  for (; end_d.getTime() > start_d.getTime(); ) {
+    start_d = new Date(start_d.getTime() + 1000 * 60 * 60 * 24);
+    console.log(`${start_d} - ${getDay(start_d.getDay())}`);
+
+    let d_y = start_d.getFullYear();
+    let d_m = start_d.getMonth() + 1;
+    let d_d = start_d.getDate();
+
+    sql += main_polyclinic(`${d_y}-${d_m}-${d_d}`, '08:00', '12:00');
+    sql += main_home(`${d_y}-${d_m}-${d_d}`, '08:00', '12:00');
+
+    sql += main_polyclinic(`${d_y}-${d_m}-${d_d}`, '16:00', '20:00');
+    sql += main_home(`${d_y}-${d_m}-${d_d}`, '16:00', '20:00');
+  }
+
+  const path = `./../database/sql/8-inspection.sql`;
   const text = sql;
   saveFile(path, text);
 }
 
-main_polyclinic('2018-12-24', '08:00', '12:00', 'понедельник');
-main_polyclinic('2018-12-31', '08:00', '12:00', 'понедельник');
-main_polyclinic('2019-01-07', '08:00', '12:00', 'понедельник');
-main_polyclinic('2019-01-14', '08:00', '12:00', 'понедельник');
-main_polyclinic('2019-01-21', '08:00', '12:00', 'понедельник');
-main_polyclinic('2019-01-28', '08:00', '12:00', 'понедельник');
-main_polyclinic('2019-02-04', '08:00', '12:00', 'понедельник');
-main_polyclinic('2019-02-11', '08:00', '12:00', 'понедельник');
-main_polyclinic('2019-02-18', '08:00', '12:00', 'понедельник');
-main_polyclinic('2019-02-25', '08:00', '12:00', 'понедельник');
-main_polyclinic('2019-03-04', '08:00', '12:00', 'понедельник');
-main_polyclinic('2019-03-11', '08:00', '12:00', 'понедельник');
-main_polyclinic('2019-03-18', '08:00', '12:00', 'понедельник');
-main_polyclinic('2019-03-25', '08:00', '12:00', 'понедельник');
+main();
 
-main_home('2018-12-26', '08:00', '12:00', 'среда');
-main_home('2019-01-02', '08:00', '12:00', 'среда');
-main_home('2019-01-09', '08:00', '12:00', 'среда');
-main_home('2019-01-16', '08:00', '12:00', 'среда');
-main_home('2019-01-23', '08:00', '12:00', 'среда');
-main_home('2019-01-30', '08:00', '12:00', 'среда');
-main_home('2019-02-06', '08:00', '12:00', 'среда');
-main_home('2019-02-13', '08:00', '12:00', 'среда');
-main_home('2019-02-20', '08:00', '12:00', 'среда');
-main_home('2019-02-27', '08:00', '12:00', 'среда');
-main_home('2019-03-06', '08:00', '12:00', 'среда');
-main_home('2019-03-13', '08:00', '12:00', 'среда');
-main_home('2019-03-20', '08:00', '12:00', 'среда');
-main_home('2019-03-27', '08:00', '12:00', 'среда');
+function getDay(day) {
+  return [
+    'воскресенье',
+    'понедельник',
+    'вторник',
+    'среда',
+    'четверг',
+    'пятница',
+    'суббота',
+  ][day];
+}
 
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
