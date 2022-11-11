@@ -206,7 +206,7 @@
 
 \textbf{Размер выборки}: 11174 rows.
 
-\textbf{Результат}: часть выборки изображена на рисунке~\ref{fig:t1}.
+\textbf{Результат}: часть выборки (в скриншоте LIMIT 24) изображена на рисунке~\ref{fig:t1}.
 
 \begin{figure}[!h]
   \centering
@@ -242,7 +242,7 @@
 
 \textbf{Размер выборки}: 36 rows.
 
-\textbf{Результат}: часть выборки изображена на рисунке~\ref{fig:t2}.
+\textbf{Результат}: часть выборки (в скриншоте LIMIT 24) изображена на рисунке~\ref{fig:t2}.
 
 \begin{figure}[!h]
   \centering
@@ -279,7 +279,7 @@
 
 \textbf{Размер выборки}: 1 row.
 
-\textbf{Результат}: часть выборки изображена на рисунке~\ref{fig:t3}.
+\textbf{Результат}: вся выборка изображена на рисунке~\ref{fig:t3}.
 
 \begin{figure}[!h]
   \centering
@@ -294,7 +294,42 @@
 
 % = = = = = = = = = = = = = = = =
 
-\lstinputlisting[language=sql]{../sql/select/4.sql}
+\begin{center}
+  \textbf{Задание 4}
+\end{center}
+  
+\textbf{Условие}:
+Для каждого врача подсчитать общее время обслуживания пациентов в госпитале
+  
+\textbf{Что я сделал}:
+
+Я связал таблицы Осмотр-Доктора, Осмотр-МестаОсмотра.
+
+Я отобрал записи только по осмотру в поликлинике.
+
+Я сгруппировал данные и вывел количество часов.
+
+\lstinputlisting[language=sql]{../sql/task4/4.sql}
+
+\textbf{Время выполнения}: 140-190 msec.
+
+\textbf{Размер выборки}: 9 rows.
+
+\textbf{Результат}: вся выборка изображена на рисунке~\ref{fig:t4}.
+
+\begin{figure}[!h]
+  \centering
+
+  \includegraphics[width=16cm]
+  {../sql/task4/4-out.png}
+
+  \caption{Выборка из задания 4}
+
+  \label{fig:t4}
+\end{figure}
+
+% = = = = = = = = = = = = = = = =
+
 
 \lstinputlisting[language=sql]{../sql/select/5.sql}
 
