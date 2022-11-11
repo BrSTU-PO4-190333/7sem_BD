@@ -178,11 +178,121 @@
 \textbf{Задание 1}
 \end{center}
 
+\textbf{Условие}:
+Вывести данные о всех приемах (дату, продолжительность приема в минутах, место
+осмотра, данные врача, данные пациента), которые были проведены между датами
+01.01.19 и 20.02.19 (привести два варианта решения задачи).
+
+\textbf{Что я сделал}:
+
+Я связал таблицы Осмотры-МестаОсмотра, Осмотры-Доктора, Осмотры-Пациенты.
+
+Я отобрал записи от даты 2019-01-01 00:00:00 по дату 2019-02-20 00:00:00.
+
+Я вывожу поля
+\begin{itemize}
+  \item дата: стартовое время осмотра
+  \item продолжительность в минутах: в таблице осмотр отнял конец осмотра от начала осмотра и функцией достал минуты
+  \item место осмотра: взял и вывел поле наименование в таблице места осмотра
+  \item данные\_врача: взял и сконкатенировал данные из таблицы докторов
+  \item данные\_пациена: взял и сконкатенировал данные из таблицы пациентов
+\end{itemize}
+
+Я отсортировал по полю дата.
+
 \lstinputlisting[language=sql]{../sql/select/1.sql}
 
-% \lstinputlisting[language=sql]{../sql/select/2.sql}
+\textbf{Время выполнения}: 68-117 msec.
+
+\textbf{Размер выборки}: 11174 rows.
+
+\textbf{Результат}: часть выборки изображена на рисунке~\ref{fig:t1}.
+
+\begin{figure}[!h]
+  \centering
+
+  \includegraphics[height=5cm]
+  {../sql/select/1-out.png}
+
+  \caption{Выборка из задания 1}
+
+  \label{fig:t1}
+\end{figure}
+
+% = = = = = = = = = = = = = = = =
+
+\begin{center}
+  \textbf{Задание 2}
+\end{center}
+  
+\textbf{Условие}:
+Вывести названия всех лекарств, у которых в названии присутствует '3\%'.
+  
+\textbf{Что я сделал}:
+
+Я взял таблицу лекарств.
+
+Я вывел поле наименование.
+
+Я отобрал записи, которые начинаются с букву З.
+
+\lstinputlisting[language=sql]{../sql/select/2.sql}
+
+\textbf{Время выполнения}: 3-5 msec.
+
+\textbf{Размер выборки}: 36 rows.
+
+\textbf{Результат}: часть выборки изображена на рисунке~\ref{fig:t2}.
+
+\begin{figure}[!h]
+  \centering
+
+  \includegraphics[height=5cm]
+  {../sql/select/2-out.png}
+
+  \caption{Выборка из задания 2}
+
+  \label{fig:t2}
+\end{figure}
+
+% = = = = = = = = = = = = = = = =
+
+\begin{center}
+  \textbf{Задание 3}
+\end{center}
+  
+\textbf{Условие}:
+Вывести данные о врачах, обслуживших максимальное количество пациентов на дому.
+  
+\textbf{Что я сделал}:
+
+Я связал таблицы Осмотры-МестаОсмотра, Осмотры-Доктора.
+
+Я отобрал осмотры, которые проводились на дому.
+
+Я вывел список врачей и их количество обслужанных пациентов,
+затем из этого множества нашел максимальное количество.
 
 \lstinputlisting[language=sql]{../sql/select/3.sql}
+
+\textbf{Время выполнения}: 71-104 msec.
+
+\textbf{Размер выборки}: 1 row.
+
+\textbf{Результат}: часть выборки изображена на рисунке~\ref{fig:t3}.
+
+\begin{figure}[!h]
+  \centering
+
+  \includegraphics[width=16cm]
+  {../sql/select/3-out.png}
+
+  \caption{Выборка из задания 3}
+
+  \label{fig:t3}
+\end{figure}
+
+% = = = = = = = = = = = = = = = =
 
 \lstinputlisting[language=sql]{../sql/select/4.sql}
 
@@ -210,16 +320,7 @@
 
 \newpage
 
-\begin{figure}[p!h]
-  \centering
 
-  \includegraphics[height=5cm]
-  {../sql/select/1-out.png}
-
-  \caption{Выборка из задания 1}
-
-  \label{fig:t1}
-\end{figure}
 
 \begin{figure}[p!h]
   \centering
@@ -307,4 +408,15 @@
   \caption{Выборка из задания 10}
 
   \label{fig:t10}
+\end{figure}
+
+\begin{figure}[p!h]
+  \centering
+
+  \includegraphics[width=16cm]
+  {../sql/select/11-out.png}
+
+  \caption{Выборка из задания 11}
+
+  \label{fig:t11}
 \end{figure}
