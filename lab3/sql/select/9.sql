@@ -1,67 +1,83 @@
--- Чтобы выполнить это задание нужно добавить больше лекарств,
+/*
+ Вывести данные о самых молодых пациентах, которым прописано максимальное
+ количество лекарств
+ = = = = = = = =
+ Я сгрупировал лекарства по ИдПациента
+ SELECT
+ B.de_patientId AS ИдПациента,
+ COUNT(A.de_medicineId) AS КоличествоВыписанныхЛекарств
+ FROM
+ DE_TAB_InspectionMedicines AS A,
+ DE_DOC_Inspection AS B
+ WHERE B.id = A.de_inspectionId
+ GROUP BY B.de_patientId;
+ ---
+ Я нашел минимальный возвраст пациента
+ SELECT
+ MIN(
+ DATE_PART('year', NOW()) - DATE_PART('year', de_birthday)
+ )
+ FROM DE_CTL_Patients;
+ ---
+ Я вывел самых молодых пациентов и их количество выписанных лекарств
+ SELECT
+ B.de_patientId AS ИдПациента,
+ COUNT(A.de_medicineId) AS КоличествоВыписанныхЛекарств, (
+ DATE_PART('year', NOW()) - DATE_PART('year', de_birthday)
+ ) AS ВозврастПациента
+ FROM
+ DE_TAB_InspectionMedicines AS A,
+ DE_DOC_Inspection AS B,
+ DE_CTL_Patients AS C
+ WHERE
+ B.id = A.de_inspectionId
+ AND C.id = B.de_patientId
+ AND (
+ DATE_PART('year', NOW()) - DATE_PART('year', de_birthday)
+ ) = (
+ SELECT
+ MIN(
+ DATE_PART('year', NOW()) - DATE_PART('year', de_birthday)
+ )
+ FROM DE_CTL_Patients
+ )
+ GROUP BY
+ B.de_patientId,
+ de_birthday;
+ */
 
--- чтобы была для пациентов количество не 1, а больше
-
--- Иначе задание не показать наглядно
-
--- Нужно добавить больше данных в БД
-
--- SELECT
-
---     MAX( (DATE_PART('year', NOW()) - DATE_PART('year', B.de_birthday)) )
-
--- FROM
-
---     DE_DOC_Inspection AS A,
-
---     DE_CTL_Patients AS B
-
--- WHERE
-
---     A.de_patientId = B.id
-
--- SELECT MAX(КоличествоПрописанныхЛекарств)
-
--- FROM (
-
---     SELECT
-
---     C.de_patientId AS ИдПациента,
-
---     D.de_medicineId AS ИдЛекарства,
-
---     E.de_name AS Лекарство,
-
---         COUNT(E.de_name) AS КоличествоПрописанныхЛекарств
-
---     FROM
-
---         DE_DOC_Inspection AS C,
-
---         DE_TAB_InspectionMedicines AS D,
-
---         DE_CTL_Medicines AS E
-
---     WHERE
-
---         C.id = D.de_inspectionId
-
---         AND
-
---         D.de_medicineId = E.id
-
---     GROUP BY
-
---         C.de_patientId,
-
---         D.de_medicineId,
-
---         E.de_name
-
---     ORDER BY ИдЛекарства
-
--- ) AS F
-
-SELECT MIN(DATE_PART('year', NOW()) - DATE_PART('year', de_birthday))
-FROM DE_CTL_Patients;
-
+SELECT
+    B.de_patientId AS ИдПациента,
+    COUNT(A.de_medicineId) AS КоличествоВыписанныхЛекарств, (
+        DATE_PART('year', NOW()) - DATE_PART('year', C.de_birthday)
+    ) AS ВозврастПациента,
+    C.de_birthday AS ДатаРожденияПациента,
+    C.de_name AS ИмяПациента,
+    C.de_surname AS ФамилияПациента,
+    C.de_patronymic AS ОтчествоПациента
+FROM
+    DE_TAB_InspectionMedicines AS A,
+    DE_DOC_Inspection AS B,
+    DE_CTL_Patients AS C
+WHERE
+    B.id = A.de_inspectionId
+    AND C.id = B.de_patientId
+    AND (
+        DATE_PART('year', NOW()) - DATE_PART('year', C.de_birthday)
+    ) = (
+        SELECT
+            MIN(
+                DATE_PART('year', NOW()) - DATE_PART('year', D.de_birthday)
+            )
+        FROM
+            DE_CTL_Patients AS D
+    )
+GROUP BY
+    B.de_patientId,
+    C.de_birthday,
+    C.de_name,
+    C.de_surname,
+    C.de_patronymic
+ORDER BY
+    КоличествоВыписанныхЛекарств DESC
+LIMIT 1;
