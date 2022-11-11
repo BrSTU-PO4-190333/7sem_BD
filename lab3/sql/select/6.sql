@@ -25,4 +25,5 @@ WHERE
     AND A.de_endtime < '2019-01-20 00:00:00' -- AND D.de_name = 'на дому'
 GROUP BY C.de_name, D.de_name
 ORDER BY
-    КоличествоПациентовОбслужаныхЗаПериод;
+    КоличествоПациентовОбслужаныхЗаПериод
+LIMIT 24;

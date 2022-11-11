@@ -50,4 +50,5 @@ WHERE
     AND D.id = A.de_patientId
     AND A.de_startTime >= '2019-01-01 00:00:00'
     AND A.de_endTime <= '2019-02-20 00:00:00'
-ORDER BY дата;
+ORDER BY дата
+LIMIT 24;

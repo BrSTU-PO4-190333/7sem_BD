@@ -36,4 +36,5 @@ GROUP BY
     C.de_name,
     C.de_patronymic,
     C.de_region,
-    C.de_office;
+    C.de_office
+LIMIT 24;

@@ -1,0 +1,6 @@
+st190333_db7lab3=> SELECT * FROM DE_CTL_Genders LIMIT 24;
+ id | de_name 
+----+---------
+  1 | мужской
+  2 | женский
+(2 rows)

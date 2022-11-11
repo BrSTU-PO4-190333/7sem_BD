@@ -1,0 +1,288 @@
+\begin{center}
+  \textbf{Отчёт лабораторной работы №\envReportLabNumber}
+\end{center}
+
+\textbf{Тема}:
+<<\envReportTitle>>
+
+\textbf{Цель}: приобрести навыки написания запросов выборки данных.
+
+% = = = = = = = = = = = = = = = =
+
+\begin{center}
+  \textbf{Подготовка к лабораторной работе}
+\end{center}
+
+Перед тем как начать делать эту лабораторную работу, нужно спроектировать базу данных до 3-ей нормальной формы
+и заполнить её данными, чтобы SELECT-ом получать данные.
+
+Базу данных до 3-ей нормальной формы спроектировали во 2-ой лабораторной работе.
+Я проектировал базу данных в SQL Power Architect. Результат на рисунке~\ref{fig:database}.
+
+\begin{figure}[!h]
+  \centering
+
+  \includegraphics[width=16cm]
+  {../sources/database/BD7.PO4.190333-02_05_00__logic_model.architect.pdf}
+
+  \caption{Логическая модель}
+
+  \label{fig:database}
+\end{figure}
+
+Я на Node JS написал код, который генерирует файл *.sql, которые содержит транзакции с INSERT-ами.
+Например таблицу с осмотрами я заполнял за три кода.
+Каждый рабочий день работаю несколько участков и врачи проводят прием либо в поликлинике, либо дома.
+
+Я заполнил следующие таблицы рандомными данными:
+
+\begin{itemize}
+  \item справочник <<Диагнозы>>, результат на рисунке~\ref{fig:DE_CTL_Diagnosis};
+  \item справочник <<Доктора>>, результат на рисунке~\ref{fig:DE_CTL_Doctors};
+  \item справочник <<Гендеры>>, результат на рисунке~\ref{fig:DE_CTL_Genders};
+  \item справочник <<Места осмотра>>, результат на рисунке~\ref{fig:DE_CTL_InspectionPlaces};
+  \item справочник <<Лекарства>>, результат на рисунке~\ref{fig:DE_CTL_Medicines};
+  \item справочник <<Пациенты>>, результат на рисунке~\ref{fig:DE_CTL_Patients};
+  \item справочник <<Симптомы>>, результат на рисунке~\ref{fig:DE_CTL_Symptoms};
+  \item оперативный документ <<Осмотр>>, результат на рисунке~\ref{fig:DE_DOC_Inspection};
+  \item табличная часть <<Лекарства выписанные при осмотре>>, результат на рисунке~\ref{fig:DE_TAB_InspectionMedicines};
+  \item табличная часть <<Симптомы выявленные при осмотре>>, результат на рисунке~\ref{fig:DE_TAB_InspectionSymptoms};
+  \item табличная часть <<Симптомы выявленные при осмотре>>, результат на рисунке~\ref{fig:DE_TAB_MedicineSideEffects}.
+\end{itemize}
+
+\begin{figure}[p!h]
+  \centering
+
+  \includegraphics[height=5cm]
+  {inc/DE_CTL_Diagnosis.png}
+
+  \caption{Справочник <<Диагнозы>>}
+
+  \label{fig:DE_CTL_Diagnosis}
+\end{figure}
+
+\begin{figure}[p!h]
+  \centering
+
+  \includegraphics[height=5cm]
+  {inc/DE_CTL_Doctors.png}
+
+  \caption{Справочник <<Доктора>>}
+
+  \label{fig:DE_CTL_Doctors}
+\end{figure}
+
+
+\begin{figure}[p!h]
+  \centering
+
+  \includegraphics[height=5cm]
+  {inc/DE_CTL_Genders.png}
+
+  \caption{Справочник <<Гендеры>>}
+
+  \label{fig:DE_CTL_Genders}
+\end{figure}
+
+\begin{figure}[p!h]
+  \centering
+
+  \includegraphics[height=5cm]
+  {inc/DE_CTL_InspectionPlaces.png}
+
+  \caption{Справочник <<Места осмотра>>}
+
+  \label{fig:DE_CTL_InspectionPlaces}
+\end{figure}
+
+\begin{figure}[p!h]
+  \centering
+
+  \includegraphics[height=5cm]
+  {inc/DE_CTL_Medicines.png}
+
+  \caption{Справочник <<Лекарства>>}
+
+  \label{fig:DE_CTL_Medicines}
+\end{figure}
+
+\begin{figure}[p!h]
+  \centering
+
+  \includegraphics[height=5cm]
+  {inc/DE_CTL_Patients.png}
+
+  \caption{Справочник <<Пациенты>>}
+
+  \label{fig:DE_CTL_Patients}
+\end{figure}
+
+\begin{figure}[p!h]
+  \centering
+
+  \includegraphics[height=5cm]
+  {inc/DE_CTL_Symptoms.png}
+
+  \caption{Справочник <<Симптомы>>}
+
+  \label{fig:DE_CTL_Symptoms}
+\end{figure}
+
+\begin{figure}[p!h]
+  \centering
+
+  \includegraphics[height=5cm]
+  {inc/DE_DOC_Inspection.png}
+
+  \caption{Оперативный документ <<Осмотры>>}
+
+  \label{fig:DE_DOC_Inspection}
+\end{figure}
+
+\begin{figure}[p!h]
+  \centering
+
+  \includegraphics[height=5cm]
+  {inc/DE_TAB_InspectionMedicines.png}
+
+  \caption{Табличная часть <<Лекарства выписанные при осмотре>>}
+
+  \label{fig:DE_TAB_InspectionMedicines}
+\end{figure}
+
+\begin{figure}[p!h]
+  \centering
+
+  \includegraphics[height=5cm]
+  {inc/DE_TAB_InspectionSymptoms.png}
+
+  \caption{Табличная часть <<Симптомы выявленные при осмотре>>}
+
+  \label{fig:DE_TAB_InspectionSymptoms}
+\end{figure}
+
+\begin{figure}[p!h]
+  \centering
+
+  \includegraphics[height=5cm]
+  {inc/DE_TAB_MedicineSideEffects.png}
+
+  \caption{Табличная часть <<Симптомы выявленные при осмотре>>}
+
+  \label{fig:DE_TAB_MedicineSideEffects}
+\end{figure}
+
+\newpage
+
+\begin{center}
+\textbf{Задание 1}
+\end{center}
+
+\lstinputlisting[language=sql]{../sql/select/1.sql}
+
+% \lstinputlisting[language=sql]{../sql/select/2.sql}
+
+\lstinputlisting[language=sql]{../sql/select/3.sql}
+
+\lstinputlisting[language=sql]{../sql/select/4.sql}
+
+\lstinputlisting[language=sql]{../sql/select/5.sql}
+
+\lstinputlisting[language=sql]{../sql/select/6.sql}
+
+\lstinputlisting[language=sql]{../sql/select/7.sql}
+
+\lstinputlisting[language=sql]{../sql/select/8.sql}
+
+\lstinputlisting[language=sql]{../sql/select/9.sql}
+
+\lstinputlisting[language=sql]{../sql/select/10.sql}
+
+\lstinputlisting[language=sql]{../sql/select/11.sql}
+
+\lstinputlisting[language=sql]{../sql/select/12.sql}
+
+\lstinputlisting[language=sql]{../sql/select/13.sql}
+
+\lstinputlisting[language=sql]{../sql/select/14.sql}
+
+\lstinputlisting[language=sql]{../sql/select/15.sql}
+
+\newpage
+
+\begin{figure}[p!h]
+  \centering
+
+  \includegraphics[height=5cm]
+  {../sql/select/1-out.png}
+
+  \caption{Выборка из задания 1}
+
+  \label{fig:t1}
+\end{figure}
+
+\begin{figure}[p!h]
+  \centering
+
+  \includegraphics[height=5cm]
+  {../sql/select/2-out.png}
+
+  \caption{Выборка из задания 2}
+
+  \label{fig:t2}
+\end{figure}
+
+\begin{figure}[p!h]
+  \centering
+
+  \includegraphics[height=5cm]
+  {../sql/select/4-out.png}
+
+  \caption{Выборка из задания 4}
+
+  \label{fig:t4}
+\end{figure}
+
+\begin{figure}[p!h]
+  \centering
+
+  \includegraphics[height=5cm]
+  {../sql/select/5-out.png}
+
+  \caption{Выборка из задания 5}
+
+  \label{fig:t5}
+\end{figure}
+
+\begin{figure}[p!h]
+  \centering
+
+  \includegraphics[height=5cm]
+  {../sql/select/6-out.png}
+
+  \caption{Выборка из задания 6}
+
+  \label{fig:t6}
+\end{figure}
+
+\begin{figure}[p!h]
+  \centering
+
+  \includegraphics[height=5cm]
+  {../sql/select/7-out.png}
+
+  \caption{Выборка из задания 7}
+
+  \label{fig:t7}
+\end{figure}
+
+\begin{figure}[p!h]
+  \centering
+
+  \includegraphics[height=5cm]
+  {../sql/select/8-out.png}
+
+  \caption{Выборка из задания 8}
+
+  \label{fig:t8}
+\end{figure}

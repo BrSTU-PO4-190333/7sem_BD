@@ -26,4 +26,5 @@ WHERE
     AND (
         DATE_PART('year', NOW()) - DATE_PART('year', B.de_birthday)
     ) > 100
-ORDER BY Участок;
+ORDER BY Участок
+LIMIT 24;

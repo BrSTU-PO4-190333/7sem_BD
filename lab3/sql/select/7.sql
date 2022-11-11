@@ -24,4 +24,5 @@ WHERE
 GROUP BY
     C.id,
     C.de_name,
-    C.de_description;
+    C.de_description
+LIMIT 24;

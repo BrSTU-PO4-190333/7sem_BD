@@ -51,4 +51,5 @@ WHERE id NOT IN (
         WHERE
             de_startTime >= '2019-01-01 00:00:00'
             AND de_endTime <= '2019-02-20 00:00:00'
-    );
+    )
+LIMIT 24;
