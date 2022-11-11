@@ -434,7 +434,7 @@
 
 \textbf{Размер выборки}: 14629 rows.
 
-\textbf{Результат}: вся выборка изображена на рисунке~\ref{fig:t7}.
+\textbf{Результат}: часть выборки (в скриншоте LIMIT 24) на рисунке~\ref{fig:t7}.
 
 \begin{figure}[!h]
   \centering
@@ -460,7 +460,32 @@
 
 \textbf{Что я сделал}:
 
-\lstinputlisting[language=sql]{../sql/select/8.sql}
+Я соединил таблицы Осмотры-Пациенты, Осмотры-Врачи.
+
+Я отобрал записи, у которых пациент имеет больше 100 лет.
+
+Я вывел сконкатенированные данные о враче.
+
+Я вывел сконкатенированные данные о пациенте.
+
+\lstinputlisting[language=sql]{../sql/task8/8.sql}
+
+\textbf{Время выполнения}: 61-103 msec.
+
+\textbf{Размер выборки}: 9918 rows.
+
+\textbf{Результат}: часть выборки (в скриншоте LIMIT 24) на рисунке~\ref{fig:t8}.
+
+\begin{figure}[!h]
+  \centering
+
+  \includegraphics[width=16cm]
+  {../sql/task8/8-out.png}
+
+  \caption{Выборка из задания 8}
+
+  \label{fig:t8}
+\end{figure}
 
 \lstinputlisting[language=sql]{../sql/select/9.sql}
 
