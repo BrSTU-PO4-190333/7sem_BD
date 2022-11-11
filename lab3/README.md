@@ -13,7 +13,7 @@
 - [x] задание 7 | [код](sql/select/7.sql)
 - [x] задание 8 | [код](sql/select/8.sql)
 - [x] задание 9 | [код](sql/select/9.sql)
-- [ ] задание 10 | [код](sql/select/10.sql)
+- [x] задание 10 | [код](sql/select/10.sql)
 - [ ] задание 11 | [код](sql/select/11.sql)
 - [ ] задание 12 | [код](sql/select/12.sql)
 - [ ] задание 13 | [код](sql/select/13.sql)
