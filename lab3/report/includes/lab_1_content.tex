@@ -371,7 +371,44 @@
 
 % = = = = = = = = = = = = = = = =
 
-\lstinputlisting[language=sql]{../sql/select/6.sql}
+\begin{center}
+  \textbf{Задание 6}
+\end{center}
+  
+\textbf{Условие}:
+В запросе для каждого врача подсчитать и вывести, начиная с даты 01.01.19, количество
+пациентов каждого пола, а также количество пациентов, обслуженных не в госпитале
+  
+\textbf{Что я сделал}:
+
+Объединил таблицы Осмотры-Пациенты, Пациенты-Гендеры, Осмотры-МестаОсмотра.
+
+Отобрал записи начиная от 1 января 2019 года.
+
+Сгруппировал записи по гендору пациента и месту осмотра.
+
+\lstinputlisting[language=sql]{../sql/task6/6.sql}
+
+\textbf{Время выполнения}: 97-118 msec.
+
+\textbf{Размер выборки}: 4 rows.
+
+\textbf{Результат}: вся выборка изображена на рисунке~\ref{fig:t6}.
+
+\begin{figure}[!h]
+  \centering
+
+  \includegraphics[width=16cm]
+  {../sql/task6/6-out.png}
+
+  \caption{Выборка из задания 6}
+
+  \label{fig:t6}
+\end{figure}
+
+\newpage
+
+% = = = = = = = = = = = = = = = =
 
 \lstinputlisting[language=sql]{../sql/select/7.sql}
 
