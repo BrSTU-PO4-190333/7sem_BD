@@ -11,7 +11,7 @@ SELECT
         ' ',
         C.de_name,
         ' ',
-        C.de_name
+        C.de_patronymic
     ) AS ДанныеВрача
 FROM
     DE_DOC_Inspection AS A,
