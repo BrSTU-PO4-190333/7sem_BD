@@ -551,7 +551,7 @@
 
 \textbf{Размер выборки}: 8441 rows.
 
-\textbf{Результат}: вся выборка изображена на рисунке~\ref{fig:t10}.
+\textbf{Результат}: часть выборки (в скриншоте LIMIT 24) изображена на рисунке~\ref{fig:t10}.
 
 \begin{figure}[!h]
   \centering
@@ -568,7 +568,34 @@
 
 % = = = = = = = = = = = = = = = =
 
-\lstinputlisting[language=sql]{../sql/select/11.sql}
+\begin{center}
+  \textbf{Задание 11}
+\end{center}
+  
+\textbf{Условие}:
+Для каждого врача вывести в минутах среднее время приёма, данные отсортировать по
+убыванию значений среднего времени приема
+
+\textbf{Что я сделал}:
+
+\lstinputlisting[language=sql]{../sql/task11/11.sql}
+
+\textbf{Время выполнения}: 270-311 msec.
+
+\textbf{Размер выборки}: 18 rows.
+
+\textbf{Результат}: вся выборка изображена на рисунке~\ref{fig:t11}.
+
+\begin{figure}[!h]
+  \centering
+
+  \includegraphics[width=16cm]
+  {../sql/task11/11-out.png}
+
+  \caption{Выборка из задания 11}
+
+  \label{fig:t11}
+\end{figure}
 
 \lstinputlisting[language=sql]{../sql/select/12.sql}
 
