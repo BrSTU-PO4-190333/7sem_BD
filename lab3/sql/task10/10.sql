@@ -1,3 +1,8 @@
+/*
+ Вывести данные о пациентах, о которых точно известно, что они никогда не обслуживались
+ дома
+ */
+
 SELECT *
 FROM DE_CTL_Patients AS A
 WHERE id NOT IN (
@@ -11,4 +16,4 @@ WHERE id NOT IN (
             AND B.de_name = 'на дому'
         ORDER BY
             A.de_patientId
-    );
+    ) --LIMIT 24;

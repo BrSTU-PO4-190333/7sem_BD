@@ -530,7 +530,43 @@
 
 % = = = = = = = = = = = = = = = =
 
-\lstinputlisting[language=sql]{../sql/select/10.sql}
+\begin{center}
+  \textbf{Задание 10}
+\end{center}
+  
+\textbf{Условие}:
+Вывести данные о пациентах, о которых точно известно, что они никогда не обслуживались дома.
+
+\textbf{Что я сделал}:
+
+Я соединил таблицы Осмотры-МестаОсомтра в подзапросе.
+
+В подзапросе я отобрал записи осмотра на дому.
+
+Взяв таблицу пациентов, я высек тех пациентов, которые обслуживались дома, то есть оставив тех, кто дома не обслуживался. 
+
+\lstinputlisting[language=sql]{../sql/task10/10.sql}
+
+\textbf{Время выполнения}: 71-117 msec.
+
+\textbf{Размер выборки}: 8441 rows.
+
+\textbf{Результат}: вся выборка изображена на рисунке~\ref{fig:t10}.
+
+\begin{figure}[!h]
+  \centering
+
+  \includegraphics[width=16cm]
+  {../sql/task10/10-out.png}
+
+  \caption{Выборка из задания 10}
+
+  \label{fig:t10}
+\end{figure}
+
+\newpage
+
+% = = = = = = = = = = = = = = = =
 
 \lstinputlisting[language=sql]{../sql/select/11.sql}
 
