@@ -434,7 +434,7 @@
 
 \textbf{Размер выборки}: 14629 rows.
 
-\textbf{Результат}: часть выборки (в скриншоте LIMIT 24) на рисунке~\ref{fig:t7}.
+\textbf{Результат}: часть выборки (в скриншоте LIMIT 24) изображена на рисунке~\ref{fig:t7}.
 
 \begin{figure}[!h]
   \centering
@@ -474,7 +474,7 @@
 
 \textbf{Размер выборки}: 9918 rows.
 
-\textbf{Результат}: часть выборки (в скриншоте LIMIT 24) на рисунке~\ref{fig:t8}.
+\textbf{Результат}: часть выборки (в скриншоте LIMIT 24) изображена на рисунке~\ref{fig:t8}.
 
 \begin{figure}[!h]
   \centering
@@ -487,7 +487,48 @@
   \label{fig:t8}
 \end{figure}
 
-\lstinputlisting[language=sql]{../sql/select/9.sql}
+% = = = = = = = = = = = = = = = =
+
+\begin{center}
+  \textbf{Задание 9}
+\end{center}
+  
+\textbf{Условие}:
+Вывести данные о самых молодых пациентах, которым прописано максимальное
+количество лекарств.
+
+\textbf{Что я сделал}:
+
+Я нашел минимальный возвраст пациента в подзапросе.
+
+Я сгруппировал записи по ид пациента и нашел количество выписанных лекарств для каждого пациента.
+
+Я нашел максимальное количество лекарств у молодого пациента в подзапросе.
+
+Я сконкатенировал данные пациента.
+
+\lstinputlisting[language=sql]{../sql/task9/9.sql}
+
+\textbf{Время выполнения}: 157-237 msec.
+
+\textbf{Размер выборки}: 1 row.
+
+\textbf{Результат}: вся выборка изображена на рисунке~\ref{fig:t9}.
+
+\begin{figure}[!h]
+  \centering
+
+  \includegraphics[width=16cm]
+  {../sql/task9/9-out.png}
+
+  \caption{Выборка из задания 9}
+
+  \label{fig:t9}
+\end{figure}
+
+\newpage
+
+% = = = = = = = = = = = = = = = =
 
 \lstinputlisting[language=sql]{../sql/select/10.sql}
 
