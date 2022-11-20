@@ -13,166 +13,166 @@
   \textbf{Подготовка к лабораторной работе}
 \end{center}
 
-Перед тем как начать делать эту лабораторную работу, нужно спроектировать базу данных до 3-ей нормальной формы
-и заполнить её данными, чтобы SELECT-ом получать данные.
+% Перед тем как начать делать эту лабораторную работу, нужно спроектировать базу данных до 3-ей нормальной формы
+% и заполнить её данными, чтобы SELECT-ом получать данные.
 
-Базу данных до 3-ей нормальной формы спроектировали во 2-ой лабораторной работе.
-Я проектировал базу данных в SQL Power Architect. Результат на рисунке~\ref{fig:database}.
+% Базу данных до 3-ей нормальной формы спроектировали во 2-ой лабораторной работе.
+Логическая модель базы данных спроектированная в SQL Power Architect изображена на рисунке~\ref{fig:database}.
 
 \begin{figure}[!h]
   \centering
 
   \includegraphics[width=16cm]
-  {../sources/database/BD7.PO4.190333-02_05_00__logic_model.architect.pdf}
+  {../database/logic_model.architect.pdf}
 
   \caption{Логическая модель}
 
   \label{fig:database}
 \end{figure}
 
-Я на Node JS написал код, который генерирует файл *.sql, которые содержит транзакции с INSERT-ами.
-Например таблицу с осмотрами я заполнял за три кода.
-Каждый рабочий день работаю несколько участков и врачи проводят прием либо в поликлинике, либо дома.
+% Я на Node JS написал код, который генерирует файл *.sql, которые содержит транзакции с INSERT-ами.
+% Например таблицу с осмотрами я заполнял за три кода.
+% Каждый рабочий день работаю несколько участков и врачи проводят прием либо в поликлинике, либо дома.
 
-Я заполнил следующие таблицы (СУБД Postgres) рандомными данными:
+% Я заполнил следующие таблицы (СУБД Postgres) рандомными данными:
 
-\begin{itemize}
-  \item справочник <<Диагнозы>>, результат на рисунке~\ref{fig:DE_CTL_Diagnosis};
-  \item справочник <<Доктора>>, результат на рисунке~\ref{fig:DE_CTL_Doctors};
-  \item справочник <<Гендеры>>, результат на рисунке~\ref{fig:DE_CTL_Genders};
-  \item справочник <<Места осмотра>>, результат на рисунке~\ref{fig:DE_CTL_InspectionPlaces};
-  \item справочник <<Лекарства>>, результат на рисунке~\ref{fig:DE_CTL_Medicines};
-  \item справочник <<Пациенты>>, результат на рисунке~\ref{fig:DE_CTL_Patients};
-  \item справочник <<Симптомы>>, результат на рисунке~\ref{fig:DE_CTL_Symptoms};
-  \item оперативный документ <<Осмотр>>, результат на рисунке~\ref{fig:DE_DOC_Inspection};
-  \item табличная часть <<Лекарства выписанные при осмотре>>, результат на рисунке~\ref{fig:DE_TAB_InspectionMedicines};
-  \item табличная часть <<Симптомы выявленные при осмотре>>, результат на рисунке~\ref{fig:DE_TAB_InspectionSymptoms};
-  \item табличная часть <<Симптомы выявленные при осмотре>>, результат на рисунке~\ref{fig:DE_TAB_MedicineSideEffects}.
-\end{itemize}
+% \begin{itemize}
+%   \item справочник <<Диагнозы>>, результат на рисунке~\ref{fig:DE_CTL_Diagnosis};
+%   \item справочник <<Доктора>>, результат на рисунке~\ref{fig:DE_CTL_Doctors};
+%   \item справочник <<Гендеры>>, результат на рисунке~\ref{fig:DE_CTL_Genders};
+%   \item справочник <<Места осмотра>>, результат на рисунке~\ref{fig:DE_CTL_InspectionPlaces};
+%   \item справочник <<Лекарства>>, результат на рисунке~\ref{fig:DE_CTL_Medicines};
+%   \item справочник <<Пациенты>>, результат на рисунке~\ref{fig:DE_CTL_Patients};
+%   \item справочник <<Симптомы>>, результат на рисунке~\ref{fig:DE_CTL_Symptoms};
+%   \item оперативный документ <<Осмотр>>, результат на рисунке~\ref{fig:DE_DOC_Inspection};
+%   \item табличная часть <<Лекарства выписанные при осмотре>>, результат на рисунке~\ref{fig:DE_TAB_InspectionMedicines};
+%   \item табличная часть <<Симптомы выявленные при осмотре>>, результат на рисунке~\ref{fig:DE_TAB_InspectionSymptoms};
+%   \item табличная часть <<Симптомы выявленные при осмотре>>, результат на рисунке~\ref{fig:DE_TAB_MedicineSideEffects}.
+% \end{itemize}
 
-\begin{figure}[p!h]
-  \centering
+% \begin{figure}[p!h]
+%   \centering
 
-  \includegraphics[height=5cm]
-  {inc/DE_CTL_Diagnosis.png}
+%   \includegraphics[height=5cm]
+%   {inc/DE_CTL_Diagnosis.png}
 
-  \caption{Справочник <<Диагнозы>>}
+%   \caption{Справочник <<Диагнозы>>}
 
-  \label{fig:DE_CTL_Diagnosis}
-\end{figure}
+%   \label{fig:DE_CTL_Diagnosis}
+% \end{figure}
 
-\begin{figure}[p!h]
-  \centering
+% \begin{figure}[p!h]
+%   \centering
 
-  \includegraphics[height=5cm]
-  {inc/DE_CTL_Doctors.png}
+%   \includegraphics[height=5cm]
+%   {inc/DE_CTL_Doctors.png}
 
-  \caption{Справочник <<Доктора>>}
+%   \caption{Справочник <<Доктора>>}
 
-  \label{fig:DE_CTL_Doctors}
-\end{figure}
+%   \label{fig:DE_CTL_Doctors}
+% \end{figure}
 
 
-\begin{figure}[p!h]
-  \centering
+% \begin{figure}[p!h]
+%   \centering
 
-  \includegraphics[height=5cm]
-  {inc/DE_CTL_Genders.png}
+%   \includegraphics[height=5cm]
+%   {inc/DE_CTL_Genders.png}
 
-  \caption{Справочник <<Гендеры>>}
+%   \caption{Справочник <<Гендеры>>}
 
-  \label{fig:DE_CTL_Genders}
-\end{figure}
+%   \label{fig:DE_CTL_Genders}
+% \end{figure}
 
-\begin{figure}[p!h]
-  \centering
+% \begin{figure}[p!h]
+%   \centering
 
-  \includegraphics[height=5cm]
-  {inc/DE_CTL_InspectionPlaces.png}
+%   \includegraphics[height=5cm]
+%   {inc/DE_CTL_InspectionPlaces.png}
 
-  \caption{Справочник <<Места осмотра>>}
+%   \caption{Справочник <<Места осмотра>>}
 
-  \label{fig:DE_CTL_InspectionPlaces}
-\end{figure}
+%   \label{fig:DE_CTL_InspectionPlaces}
+% \end{figure}
 
-\begin{figure}[p!h]
-  \centering
+% \begin{figure}[p!h]
+%   \centering
 
-  \includegraphics[height=5cm]
-  {inc/DE_CTL_Medicines.png}
+%   \includegraphics[height=5cm]
+%   {inc/DE_CTL_Medicines.png}
 
-  \caption{Справочник <<Лекарства>>}
+%   \caption{Справочник <<Лекарства>>}
 
-  \label{fig:DE_CTL_Medicines}
-\end{figure}
+%   \label{fig:DE_CTL_Medicines}
+% \end{figure}
 
-\begin{figure}[p!h]
-  \centering
+% \begin{figure}[p!h]
+%   \centering
 
-  \includegraphics[height=5cm]
-  {inc/DE_CTL_Patients.png}
+%   \includegraphics[height=5cm]
+%   {inc/DE_CTL_Patients.png}
 
-  \caption{Справочник <<Пациенты>>}
+%   \caption{Справочник <<Пациенты>>}
 
-  \label{fig:DE_CTL_Patients}
-\end{figure}
+%   \label{fig:DE_CTL_Patients}
+% \end{figure}
 
-\begin{figure}[p!h]
-  \centering
+% \begin{figure}[p!h]
+%   \centering
 
-  \includegraphics[height=5cm]
-  {inc/DE_CTL_Symptoms.png}
+%   \includegraphics[height=5cm]
+%   {inc/DE_CTL_Symptoms.png}
 
-  \caption{Справочник <<Симптомы>>}
+%   \caption{Справочник <<Симптомы>>}
 
-  \label{fig:DE_CTL_Symptoms}
-\end{figure}
+%   \label{fig:DE_CTL_Symptoms}
+% \end{figure}
 
-\begin{figure}[p!h]
-  \centering
+% \begin{figure}[p!h]
+%   \centering
 
-  \includegraphics[height=5cm]
-  {inc/DE_DOC_Inspection.png}
+%   \includegraphics[height=5cm]
+%   {inc/DE_DOC_Inspection.png}
 
-  \caption{Оперативный документ <<Осмотры>>}
+%   \caption{Оперативный документ <<Осмотры>>}
 
-  \label{fig:DE_DOC_Inspection}
-\end{figure}
+%   \label{fig:DE_DOC_Inspection}
+% \end{figure}
 
-\begin{figure}[p!h]
-  \centering
+% \begin{figure}[p!h]
+%   \centering
 
-  \includegraphics[height=5cm]
-  {inc/DE_TAB_InspectionMedicines.png}
+%   \includegraphics[height=5cm]
+%   {inc/DE_TAB_InspectionMedicines.png}
 
-  \caption{Табличная часть <<Лекарства выписанные при осмотре>>}
+%   \caption{Табличная часть <<Лекарства выписанные при осмотре>>}
 
-  \label{fig:DE_TAB_InspectionMedicines}
-\end{figure}
+%   \label{fig:DE_TAB_InspectionMedicines}
+% \end{figure}
 
-\begin{figure}[p!h]
-  \centering
+% \begin{figure}[p!h]
+%   \centering
 
-  \includegraphics[height=5cm]
-  {inc/DE_TAB_InspectionSymptoms.png}
+%   \includegraphics[height=5cm]
+%   {inc/DE_TAB_InspectionSymptoms.png}
 
-  \caption{Табличная часть <<Симптомы выявленные при осмотре>>}
+%   \caption{Табличная часть <<Симптомы выявленные при осмотре>>}
 
-  \label{fig:DE_TAB_InspectionSymptoms}
-\end{figure}
+%   \label{fig:DE_TAB_InspectionSymptoms}
+% \end{figure}
 
-\begin{figure}[p!h]
-  \centering
+% \begin{figure}[p!h]
+%   \centering
 
-  \includegraphics[height=5cm]
-  {inc/DE_TAB_MedicineSideEffects.png}
+%   \includegraphics[height=5cm]
+%   {inc/DE_TAB_MedicineSideEffects.png}
 
-  \caption{Табличная часть <<Симптомы выявленные при осмотре>>}
+%   \caption{Табличная часть <<Симптомы выявленные при осмотре>>}
 
-  \label{fig:DE_TAB_MedicineSideEffects}
-\end{figure}
+%   \label{fig:DE_TAB_MedicineSideEffects}
+% \end{figure}
 
-\newpage
+% \newpage
 
 \begin{center}
 \textbf{Задание 1}
