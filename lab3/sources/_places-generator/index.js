@@ -1,17 +1,17 @@
 const fs = require('fs');
 
-const symptoms = require('./../../data/symptoms.json');
+const inspectionPlaces = require('./../../data/inspectionPlaces.json');
 
 function main() {
   let arr = [];
-  symptoms.forEach(element => {
+  inspectionPlaces.forEach(element => {
     arr.push({
       de_name: element
     })
   })
 
   let sql = '';
-  sql += 'INSERT INTO DE_CTL_Symptoms \n'
+  sql += 'INSERT INTO DE_CTL_InspectionPlaces \n'
   sql += '(de_name) \n'
   sql += 'VALUES'
   arr.forEach(element => {
@@ -28,9 +28,9 @@ function main() {
       csv += ' \n';
   })
   
-  saveFile('./../data/DE_CTL_Symptoms.json', JSON.stringify(arr, null, 4));
-  saveFile('./../data/DE_CTL_Symptoms.csv', csv);
-  saveFile('./../data/DE_CTL_Symptoms.sql', sql);
+  saveFile('./../data/DE_CTL_InspectionPlaces.json', JSON.stringify(arr, null, 4));
+  saveFile('./../data/DE_CTL_InspectionPlaces.csv', csv);
+  saveFile('./../data/DE_CTL_InspectionPlaces.sql', sql);
 }
 
 main();

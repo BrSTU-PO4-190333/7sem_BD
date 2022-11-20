@@ -1,33 +1,42 @@
 const { v4: uuidv4 } = require('uuid');
 const fs = require('fs');
 
-const regAddressDoctorTime = require('../data/region-address-doctor-time.notAll.json');
-const medicine = require('./../data/medicine.json');
-const symptomes = require('./../data/symptomes.json');
+const doctors = require('./../../data/doctors.json');
+const medicine = require('./../../data/DE_CTL_Medicines.json');
+const symptoms = require('./../../data/DE_CTL_Symptoms.json');
+const patients = require('./../../data/DE_CTL_Patients.json');
 
-function main_polyclinic(
+function helper(
   a_date = '2019-01-07',
   a_startTime = '8:00',
-  a_endTime = '12:00'
+  a_endTime = '12:00',
+  a_atHome = false
 ) {
   let sql = '';
   let a_day = getDay(new Date(a_date).getDay());
 
-  let regions = new Set(); // множество участков, работающих от 8 до 12 в понедельник
-  regAddressDoctorTime.forEach((e) => {
-    if (e[a_day] === `${a_startTime} - ${a_endTime}`) {
-      regions.add(e['Участок']);
-      // console.log(e);
-    }
-  });
+  let regions = new Set(); // множество участков, работающих от 8 (a_startTime) до 12 (a_endTime) в понедельник (a_day)
+
+  if (a_atHome) {
+    doctors.forEach((element, index) => {
+      if (element[`${a_day}_наДом`] === `${a_startTime} - ${a_endTime}`) {
+        regions.add({ de_region: element['Участок'], id: index + 1 });
+      }
+    });
+  }
+
+  if (!a_atHome) {
+    doctors.forEach((element, index) => {
+      if (element[a_day] === `${a_startTime} - ${a_endTime}`) {
+        regions.add({ de_region: element['Участок'], id: index + 1 });
+      }
+    });
+  }
 
   let startDate = new Date(`${a_date} ${a_startTime}`);
   let endDate = new Date(`${a_date} ${a_endTime}`);
 
-  let counter = 0;
-  regions.forEach((reg) => {
-    console.log(`-- Транзации для участка №${reg}`);
-
+  regions.forEach((element) => {
     start = startDate;
     end = endDate;
 
@@ -40,239 +49,202 @@ function main_polyclinic(
           1000 * getRandomIntInclusive(1, 60)
       );
 
-      console.log(`${printDate(start)}  -  ${printDate(next)}`);
-      counter += 1;
       const uuid = uuidv4();
-      sql += `
--- Транзации №${counter}
+      sql += `-- [${printDate(start)}; ${printDate(next)}] `;
+      sql += 'Транзакция приёма пациента в поликлинике \n';
 
-BEGIN TRANSACTION;
-  INSERT INTO DE_DOC_Inspection
-  (id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
-  VALUES
-  (`;
+      sql += 'BEGIN; \n\n';
+
+      sql += '\tINSERT INTO DE_DOC_Inspection \n';
+      sql +=
+        '\t(id, de_startTime, de_endTime, de_placeId, de_diagnosisId, de_patientId, de_doctorId) \n';
+      sql += '\tVALUES \n';
+      sql += '\t(';
       sql += `'${uuid}', `;
       sql += `'${printDate(start)}', `;
       sql += `'${printDate(next)}', `;
-      sql += `1, `;
-      sql += `${getRandomIntInclusive(1, 14629)}, `;
-      sql += `${getRandomIntInclusive(1, 1291)}, `;
-      sql += `(SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '${reg}' LIMIT 1)`;
-      sql += `);\n`;
 
-      sql += `
-  INSERT INTO DE_TAB_InspectionMedicines
-  (de_inspectionid, de_medicineid)
-  VALUES`;
+      if (a_atHome) {
+        sql += '2, ';
+      }
+
+      if (!a_atHome) {
+        sql += '1, ';
+      }
+
+      sql += `${getRandomIntInclusive(1, medicine.length - 1)}, `;
+      sql += `${getRandomIntInclusive(1, patients.length - 1)}, `;
+      sql += `${element.id}`;
+      sql += `); \n\n`;
+
+      sql += '\tINSERT INTO DE_TAB_InspectionMedicines \n';
+      sql += '\t(de_inspectionId, de_medicineId) \n';
+      sql += '\tVALUES \n';
 
       let len = getRandomIntInclusive(2, 4);
       for (let i = 1; i < len; i++) {
-        sql += `
-  ('${uuid}', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE '${
-          medicine[getRandomIntInclusive(1, medicine.length - 1)]
-        }%' LIMIT 1)),`;
+        sql += '\t(';
+        sql += `'${uuid}', `;
+        sql += `'${
+          medicine[getRandomIntInclusive(1, medicine.length - 1)].id
+        }'`;
+        sql += '), \n';
       }
 
-      sql += `
-  ('${uuid}', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE '${
-        medicine[getRandomIntInclusive(1, medicine.length - 1)]
-      }%' LIMIT 1));\n`;
+      sql += '\t(';
+      sql += `'${uuid}', `;
+      sql += `'${medicine[getRandomIntInclusive(1, medicine.length - 1)].id}'`;
+      sql += '); \n\n';
 
-      sql += `
-  INSERT INTO DE_TAB_InspectionSymptoms
-  (de_inspectionid, de_symptomeid)
-  VALUES`;
+      sql += '\tINSERT INTO DE_TAB_InspectionSymptoms \n';
+      sql += '\t(de_inspectionId, de_symptomId) \n';
+      sql += '\tVALUES \n';
 
       let length = getRandomIntInclusive(2, 4);
       for (let i = 1; i < length; i++) {
-        sql += `
-  ('${uuid}', '${getRandomIntInclusive(1, symptomes.length - 1)}'),`;
+        sql += '\t(';
+        sql += `'${uuid}', `;
+        sql += `${getRandomIntInclusive(1, symptoms.length - 1)}`;
+        sql += '), \n';
       }
 
-      sql += `
-  ('${uuid}', '${getRandomIntInclusive(1, symptomes.length - 1)}');`;
+      sql += '\t(';
+      sql += `'${uuid}', `;
+      sql += `${getRandomIntInclusive(1, symptoms.length - 1)}`;
+      sql += '); \n\n';
 
-      sql += `
-  COMMIT TRANSACTION;
-END;   
-`;
+      sql += 'COMMIT; \n';
 
       start = next;
     }
   });
 
-  // const path = `./../database/sql/8__${a_date}_${a_startTime}-${a_endTime}.sql`;
-  // const text = sql;
-  // saveFile(path, text);
-
   return sql;
 }
 
-function main_home(
-  a_date = '2019-01-07',
-  a_startTime = '12:10',
-  a_endTime = '14:00'
-) {
-  let sql = '';
-  let a_day = getDay(new Date(a_date).getDay());
+// function main_home(
+//   a_date = '2019-01-07',
+//   a_startTime = '12:10',
+//   a_endTime = '14:00'
+// ) {
+//   let sql = '';
+//   let a_day = getDay(new Date(a_date).getDay());
 
-  let regions = new Set(); // множество участков, работающих от 8 до 12 в понедельник
-  regAddressDoctorTime.forEach((e) => {
-    if (e[`${a_day}_наДому`] === `${a_startTime} - ${a_endTime}`) {
-      regions.add(e['Участок']);
-      // console.log(e);
-    }
-  });
+//   let regions = new Set(); // множество участков, работающих от 8 до 12 в понедельник
+//   doctors.forEach((e) => {
+//     if (e[`${a_day}_наДом`] === `${a_startTime} - ${a_endTime}`) {
+//       regions.add(e['Участок']);
+//     }
+//   });
 
-  let startDate = new Date(`${a_date} ${a_startTime}`);
-  let endDate = new Date(`${a_date} ${a_endTime}`);
+//   let startDate = new Date(`${a_date} ${a_startTime}`);
+//   let endDate = new Date(`${a_date} ${a_endTime}`);
 
-  let counter = 0;
-  regions.forEach((reg) => {
-    console.log(`-- Транзации для участка №${reg}`);
+//   let counter = 0;
+//   regions.forEach((reg) => {
+//     start = startDate;
+//     end = endDate;
 
-    start = startDate;
-    end = endDate;
+//     while (1) {
+//       if (end.getTime() < start.getTime()) break;
+//       start = addTime(
+//         start,
+//         1000 * 60 * getRandomIntInclusive(16, 30) +
+//           1000 * getRandomIntInclusive(1, 60)
+//       );
+//       let next = addTime(
+//         start,
+//         1000 * 60 * getRandomIntInclusive(6, 15) +
+//           1000 * getRandomIntInclusive(1, 60)
+//       );
 
-    while (1) {
-      if (end.getTime() < start.getTime()) break;
-      start = addTime(
-        start,
-        1000 * 60 * getRandomIntInclusive(16, 30) +
-          1000 * getRandomIntInclusive(1, 60)
-      );
-      let next = addTime(
-        start,
-        1000 * 60 * getRandomIntInclusive(6, 15) +
-          1000 * getRandomIntInclusive(1, 60)
-      );
+//       // console.log(`${printDate(start)}  -  ${printDate(next)}`);
+//       counter += 1;
+//       const uuid = uuidv4();
+//       sql += `
+// -- Транзакция приёма приема на дому №${counter}
 
-      console.log(`${printDate(start)}  -  ${printDate(next)}`);
-      counter += 1;
-      const uuid = uuidv4();
-      sql += `
--- Транзации №${counter}
+// BEGIN TRANSACTION;
+// INSERT INTO DE_DOC_Inspection
+// (id, de_startTime, de_endTime, de_placeId, de_diagnosisId, de_patientId, de_doctorId)
+// VALUES
+// (`;
+//       sql += `'${uuid}', `;
+//       sql += `'${printDate(start)}', `;
+//       sql += `'${printDate(next)}', `;
+//       sql += `2, `;
+//       sql += `${getRandomIntInclusive(1, medicine.length - 1)}, `;
+//       sql += `${getRandomIntInclusive(1, patients.length - 1)}, `;
+//       sql += `(SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '${reg}' LIMIT 1)`;
+//       sql += `);\n`;
 
-BEGIN TRANSACTION;
-INSERT INTO DE_DOC_Inspection
-(id, de_starttime, de_endtime, de_placeid, de_diagnosisid, de_patientid, de_doctorid)
-VALUES
-(`;
-      sql += `'${uuid}', `;
-      sql += `'${printDate(start)}', `;
-      sql += `'${printDate(next)}', `;
-      sql += `2, `;
-      sql += `${getRandomIntInclusive(1, 14629)}, `;
-      sql += `${getRandomIntInclusive(1, 1291)}, `;
-      sql += `(SELECT id FROM public.DE_CTL_Doctors WHERE de_region = '${reg}' LIMIT 1)`;
-      sql += `);\n`;
+//       sql += `
+// INSERT INTO DE_TAB_InspectionMedicines
+// (de_inspectionId, de_medicineId)
+// VALUES`;
 
-      sql += `
-INSERT INTO DE_TAB_InspectionMedicines
-(de_inspectionid, de_medicineid)
-VALUES`;
+//       let len = getRandomIntInclusive(2, 4);
+//       for (let i = 1; i < len; i++) {
+//         sql += `
+// ('${uuid}', '${medicine[getRandomIntInclusive(1, medicine.length - 1)].id}'),`;
+//       }
 
-      let len = getRandomIntInclusive(2, 4);
-      for (let i = 1; i < len; i++) {
-        sql += `
-('${uuid}', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE '${
-          medicine[getRandomIntInclusive(1, medicine.length - 1)]
-        }%' LIMIT 1)),`;
-      }
+//       sql += `
+// ('${uuid}', '${
+//         medicine[getRandomIntInclusive(1, medicine.length - 1)].id
+//       }');\n`;
 
-      sql += `
-('${uuid}', (SELECT id FROM public.DE_CTL_Medicines WHERE de_name LIKE '${
-        medicine[getRandomIntInclusive(1, medicine.length - 1)]
-      }%' LIMIT 1));\n`;
+//       sql += `
+// INSERT INTO DE_TAB_InspectionSymptoms
+// (de_inspectionId, de_symptomId)
+// VALUES`;
 
-      sql += `
-INSERT INTO DE_TAB_InspectionSymptoms
-(de_inspectionid, de_symptomeid)
-VALUES`;
+//       let length = getRandomIntInclusive(2, 4);
+//       for (let i = 1; i < length; i++) {
+//         sql += `
+// ('${uuid}', '${getRandomIntInclusive(1, symptoms.length - 1)}'),`;
+//       }
 
-      let length = getRandomIntInclusive(2, 4);
-      for (let i = 1; i < length; i++) {
-        sql += `
-('${uuid}', '${getRandomIntInclusive(1, symptomes.length - 1)}'),`;
-      }
+//       sql += `
+// ('${uuid}', '${getRandomIntInclusive(1, symptoms.length - 1)}');`;
 
-      sql += `
-('${uuid}', '${getRandomIntInclusive(1, symptomes.length - 1)}');`;
+//       sql += `
+// COMMIT TRANSACTION;
+// END;
+// `;
 
-      sql += `
-COMMIT TRANSACTION;
-END;   
-`;
+//       start = next;
+//     }
+//   });
 
-      start = next;
-    }
-  });
-
-  // const path = `./../database/sql/8__${a_date}_${a_startTime}-${a_endTime}.sql`;
-  // const text = sql;
-  // saveFile(path, text);
-
-  return sql;
-}
+//   return sql;
+//}
 
 function main() {
-  let sql = '';
-  // sql += main_polyclinic('2018-12-24', '08:00', '12:00', 'понедельник');
-  // sql += main_polyclinic('2018-12-31', '08:00', '12:00', 'понедельник');
-  // sql += main_polyclinic('2019-01-07', '08:00', '12:00', 'понедельник');
-  // sql += main_polyclinic('2019-01-14', '08:00', '12:00', 'понедельник');
-  // sql += main_polyclinic('2019-01-21', '08:00', '12:00', 'понедельник');
-  // sql += main_polyclinic('2019-01-28', '08:00', '12:00', 'понедельник');
-  // sql += main_polyclinic('2019-02-04', '08:00', '12:00', 'понедельник');
-  // sql += main_polyclinic('2019-02-11', '08:00', '12:00', 'понедельник');
-  // sql += main_polyclinic('2019-02-18', '08:00', '12:00', 'понедельник');
-  // sql += main_polyclinic('2019-02-25', '08:00', '12:00', 'понедельник');
-  // sql += main_polyclinic('2019-03-04', '08:00', '12:00', 'понедельник');
-  // sql += main_polyclinic('2019-03-11', '08:00', '12:00', 'понедельник');
-  // sql += main_polyclinic('2019-03-18', '08:00', '12:00', 'понедельник');
-  // sql += main_polyclinic('2019-03-25', '08:00', '12:00', 'понедельник');
-
-  // sql += main_home('2018-12-26', '08:00', '12:00', 'среда');
-  // sql += main_home('2019-01-02', '08:00', '12:00', 'среда');
-  // sql += main_home('2019-01-09', '08:00', '12:00', 'среда');
-  // sql += main_home('2019-01-16', '08:00', '12:00', 'среда');
-  // sql += main_home('2019-01-23', '08:00', '12:00', 'среда');
-  // sql += main_home('2019-01-30', '08:00', '12:00', 'среда');
-  // sql += main_home('2019-02-06', '08:00', '12:00', 'среда');
-  // sql += main_home('2019-02-13', '08:00', '12:00', 'среда');
-  // sql += main_home('2019-02-20', '08:00', '12:00', 'среда');
-  // sql += main_home('2019-02-27', '08:00', '12:00', 'среда');
-  // sql += main_home('2019-03-06', '08:00', '12:00', 'среда');
-  // sql += main_home('2019-03-13', '08:00', '12:00', 'среда');
-  // sql += main_home('2019-03-20', '08:00', '12:00', 'среда');
-  // sql += main_home('2019-03-27', '08:00', '12:00', 'среда');
+  const path = './../data/DE_DOC_Inspection.sql';
+  saveFile(path, '');
 
   let start_d = new Date(`2018-01-01 00:00:00`);
   let end_d = new Date(`2022-01-01 00:00:00`);
   for (; end_d.getTime() > start_d.getTime(); ) {
     start_d = new Date(start_d.getTime() + 1000 * 60 * 60 * 24);
-    console.log(`${start_d} - ${getDay(start_d.getDay())}`);
+    console.log(`${printDate(start_d)} - ${getDay(start_d.getDay())}`);
 
     let d_y = start_d.getFullYear();
     let d_m = start_d.getMonth() + 1;
     let d_d = start_d.getDate();
 
-    sql += main_polyclinic(`${d_y}-${d_m}-${d_d}`, '08:00', '12:00');
-    sql += main_polyclinic(`${d_y}-${d_m}-${d_d}`, '08:00', '11:00');
-    sql += main_polyclinic(`${d_y}-${d_m}-${d_d}`, '12:00', '15:00');
-    sql += main_polyclinic(`${d_y}-${d_m}-${d_d}`, '12:00', '16:00');
-    sql += main_polyclinic(`${d_y}-${d_m}-${d_d}`, '16:00', '20:00');
-    sql += main_polyclinic(`${d_y}-${d_m}-${d_d}`, '17:00', '20:00');
+    appendFile(path, helper(`${d_y}-${d_m}-${d_d}`, '08:00', '12:00', false));
+    appendFile(path, helper(`${d_y}-${d_m}-${d_d}`, '08:00', '11:00', false));
+    appendFile(path, helper(`${d_y}-${d_m}-${d_d}`, '12:00', '15:00', false));
+    appendFile(path, helper(`${d_y}-${d_m}-${d_d}`, '12:00', '16:00', false));
+    appendFile(path, helper(`${d_y}-${d_m}-${d_d}`, '16:00', '20:00', false));
+    appendFile(path, helper(`${d_y}-${d_m}-${d_d}`, '17:00', '20:00', false));
 
-    sql += main_home(`${d_y}-${d_m}-${d_d}`, '08:00', '11:00');
-    sql += main_home(`${d_y}-${d_m}-${d_d}`, '11:00', '14:00');
-    sql += main_home(`${d_y}-${d_m}-${d_d}`, '12:00', '15:00');
-    sql += main_home(`${d_y}-${d_m}-${d_d}`, '13:00', '15:00');
+    appendFile(path, helper(`${d_y}-${d_m}-${d_d}`, '08:00', '10:00', true));
+    appendFile(path, helper(`${d_y}-${d_m}-${d_d}`, '12:00', '14:00', true));
+    appendFile(path, helper(`${d_y}-${d_m}-${d_d}`, '14:00', '16:00', true));
   }
-
-  const path = `./../../sql/init/9-insp.sql`;
-  const text = sql;
-  saveFile(path, text);
 }
 
 main();
@@ -319,29 +291,16 @@ function printDate(d = new Date()) {
   return `${year}-${month}-${date} ${hour}:${min}:${sec}`;
 }
 
-function printDateInOneWord(d = new Date()) {
-  let year = d.getFullYear();
-  let month = d.getMonth() + 1;
-  month = month < 10 ? `0${month}` : `${month}`;
-
-  let date = d.getDate();
-  date = date < 10 ? `0${date}` : `${date}`;
-
-  let hour = d.getHours();
-  hour = hour < 10 ? `0${hour}` : `${hour}`;
-
-  let min = d.getMinutes();
-  min = min < 10 ? `0${min}` : `${min}`;
-
-  let sec = d.getSeconds();
-  sec = sec < 10 ? `0${sec}` : `${sec}`;
-
-  return `${year}-${month}-${date}_${hour}:${min}:${sec}`;
-}
-
 function saveFile(path = 'hello.txt', text = 'Hello мир!') {
   fs.writeFile(path, text, function (error) {
     if (error) throw error; // если возникла ошибка
     console.log('Асинхронная запись файла завершена.');
+  });
+}
+
+function appendFile(path = 'hello.txt', text = 'Hello мир!') {
+  fs.appendFile(path, text, function (err) {
+    if (err) throw err;
+    //console.log('Saved!');
   });
 }

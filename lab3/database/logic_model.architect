@@ -106,7 +106,7 @@
     <column id="COL27" populated="true" UUID="7ed1e50c-df6d-4551-aba9-06fad1d5b8a8" autoIncrement="false" autoIncrementSequenceName="DE_CTL_Patients_de_birthday_seq" defaultValue="" name="de_birthday" nullable="1" physicalName="de_birthday" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
      <remarks></remarks>
     </column>
-    <column id="COL28" populated="true" UUID="4da75784-8b25-4578-8f94-7ccf061d7448" autoIncrement="false" autoIncrementSequenceName="DE_CTL_Patients_de_address_seq" defaultValue="" name="de_address" nullable="1" physicalName="de_address" precision="128" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL28" populated="true" UUID="4da75784-8b25-4578-8f94-7ccf061d7448" autoIncrement="false" autoIncrementSequenceName="DE_CTL_Patients_de_address_seq" defaultValue="" name="de_address" nullable="0" physicalName="de_address" precision="128" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     <column id="COL29" populated="true" UUID="eb036110-eae4-48dc-a71e-1186a1152def" autoIncrement="false" autoIncrementSequenceName="DE_CTL_Genders_id_seq" defaultValue="" name="de_genderId" nullable="0" physicalName="de_genderId" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
@@ -146,7 +146,7 @@
   <table id="TAB37" populated="true" UUID="df9f30e7-bcd5-4387-9d1b-6fd4ba2fa68f" name="DE_CTL_Symptoms" objectType="TABLE" physicalName="DE_CTL_Symptoms" >
    <remarks></remarks>
    <folder id="FOLTAB371" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL38" populated="true" UUID="fba316da-f1a5-4f44-a9a6-b8ba9bb847a6" autoIncrement="true" autoIncrementSequenceName="DE_CTL_Symptoms_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL38" populated="true" UUID="fba316da-f1a5-4f44-a9a6-b8ba9bb847a6" autoIncrement="true" autoIncrementSequenceName="DE_CTL_Symptoms_id_seq1" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL39" populated="true" UUID="ea3cea46-51df-4378-9db0-aabae6798a57" autoIncrement="false" autoIncrementSequenceName="DE_CTL_Symptoms_de_name_seq" defaultValue="" name="de_name" nullable="0" physicalName="de_name" precision="32" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -172,7 +172,7 @@
     <column id="COL44" populated="true" UUID="b8741947-81d1-4cdf-9a77-43ca177493d3" autoIncrement="false" autoIncrementSequenceName="DE_DOC_Inspection_q_seq" defaultValue="" name="de_inspectionId" nullable="0" physicalName="de_inspectionId" precision="128" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL45" populated="true" UUID="26e307ab-727e-4eb7-a052-1c29d817c601" autoIncrement="false" autoIncrementSequenceName="DE_CTL_Symptomes_id_seq_1" defaultValue="" name="de_symptomeId" nullable="0" physicalName="de_symptomeId" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL45" populated="true" UUID="4a993cb3-84c1-42a5-9ffe-f9c8a05e6a09" autoIncrement="false" autoIncrementSequenceName="DE_CTL_Symptoms_id_seq" defaultValue="" name="de_symptomId" nullable="0" physicalName="de_symptomId" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     </folder>
@@ -288,39 +288,39 @@
    </folder>
   </table>
   <relationships>
-   <relationship id="REL75" populated="true" UUID="fde9658c-9afe-4b13-9a0b-f862a95752e9" deferrability="7" deleteRule="3" fk-table-ref="TAB42" fkCardinality="6" identifying="false" name="DE_DOC_Inspection_DE_TAB_InspectionSymptomes_fk" physicalName="DE_DOC_Inspection_DE_TAB_InspectionSymptomes_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+   <relationship id="REL75" populated="true" UUID="fde9658c-9afe-4b13-9a0b-f862a95752e9" deferrability="7" deleteRule="3" fk-table-ref="TAB42" fkCardinality="6" identifying="false" name="DE_DOC_Inspection_DE_TAB_InspectionSymptomes_fk" physicalName="de_doc_inspection_de_tab_inspectionsymptomes_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP76" populated="true" UUID="b6354f85-bf63-4878-b272-1ad3e485d759" fk-column-ref="COL44" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
    </relationship>
-   <relationship id="REL77" populated="true" UUID="5ca7a533-9a03-4830-a660-deafd2efbd1d" deferrability="7" deleteRule="3" fk-table-ref="TAB63" fkCardinality="6" identifying="false" name="DE_DOC_Inspection_DE_TAB_InspectionMedicine_fk" physicalName="DE_DOC_Inspection_DE_TAB_InspectionMedicine_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+   <relationship id="REL77" populated="true" UUID="5ca7a533-9a03-4830-a660-deafd2efbd1d" deferrability="7" deleteRule="3" fk-table-ref="TAB63" fkCardinality="6" identifying="false" name="DE_DOC_Inspection_DE_TAB_InspectionMedicine_fk" physicalName="de_doc_inspection_de_tab_inspectionmedicine_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP78" populated="true" UUID="109fd705-322a-44f9-9301-7cd8a3747930" fk-column-ref="COL65" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
    </relationship>
-   <relationship id="REL79" populated="true" UUID="65b333a1-2951-4cbc-bf50-6bcba0f1969e" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="6" identifying="false" name="DE_CTL_Diagnosis_DE_DOC_Inspection_fk" physicalName="DE_CTL_Diagnosis_DE_DOC_Inspection_fk" pk-table-ref="TAB11" pkCardinality="2" updateRule="3" >
+   <relationship id="REL79" populated="true" UUID="65b333a1-2951-4cbc-bf50-6bcba0f1969e" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="6" identifying="false" name="DE_CTL_Diagnosis_DE_DOC_Inspection_fk" physicalName="de_ctl_diagnosis_de_doc_inspection_fk" pk-table-ref="TAB11" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP80" populated="true" UUID="473b8ad3-1ac9-45ee-813a-0aa48e987bff" fk-column-ref="COL6" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL12" />
    </relationship>
-   <relationship id="REL81" populated="true" UUID="45839dae-291b-4299-9168-f29f7a577393" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="6" identifying="false" name="DE_CTL_InspectionPlaces_DE_DOC_Inspection_fk" physicalName="DE_CTL_InspectionPlaces_DE_DOC_Inspection_fk" pk-table-ref="TAB17" pkCardinality="2" updateRule="3" >
+   <relationship id="REL81" populated="true" UUID="45839dae-291b-4299-9168-f29f7a577393" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="6" identifying="false" name="DE_CTL_InspectionPlaces_DE_DOC_Inspection_fk" physicalName="de_ctl_inspectionplaces_de_doc_inspection_fk" pk-table-ref="TAB17" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP82" populated="true" UUID="8343759e-af0e-47a0-acbd-719e9524e60e" fk-column-ref="COL5" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL18" />
    </relationship>
-   <relationship id="REL83" populated="true" UUID="280fa852-928f-49af-bbba-54c663b5c61a" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="6" identifying="false" name="DE_CTL_Patients_DE_DOC_Inspection_fk" physicalName="DE_CTL_Patients_DE_DOC_Inspection_fk" pk-table-ref="TAB22" pkCardinality="2" updateRule="3" >
+   <relationship id="REL83" populated="true" UUID="280fa852-928f-49af-bbba-54c663b5c61a" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="6" identifying="false" name="DE_CTL_Patients_DE_DOC_Inspection_fk" physicalName="de_ctl_patients_de_doc_inspection_fk" pk-table-ref="TAB22" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP84" populated="true" UUID="dfaa75c2-0113-497c-8b92-76789c9aa640" fk-column-ref="COL7" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL23" />
    </relationship>
-   <relationship id="REL85" populated="true" UUID="4b1d451b-bcd9-4a21-86f7-e5a7ff7a112f" deferrability="7" deleteRule="3" fk-table-ref="TAB22" fkCardinality="6" identifying="false" name="DE_CTL_Genders_DE_CTL_Patients_fk" physicalName="DE_CTL_Genders_DE_CTL_Patients_fk" pk-table-ref="TAB32" pkCardinality="2" updateRule="3" >
+   <relationship id="REL85" populated="true" UUID="4b1d451b-bcd9-4a21-86f7-e5a7ff7a112f" deferrability="7" deleteRule="3" fk-table-ref="TAB22" fkCardinality="6" identifying="false" name="DE_CTL_Genders_DE_CTL_Patients_fk" physicalName="de_ctl_genders_de_ctl_patients_fk" pk-table-ref="TAB32" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP86" populated="true" UUID="f31f39cf-8d26-4685-a957-2aa1ce20aac3" fk-column-ref="COL29" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL33" />
    </relationship>
-   <relationship id="REL87" populated="true" UUID="020c22af-ecbe-4248-b0e6-5dcd14267c5c" deferrability="7" deleteRule="3" fk-table-ref="TAB42" fkCardinality="6" identifying="false" name="DE_CTL_Symptomes_DE_TAB_InspectionSymptomes_fk" physicalName="DE_CTL_Symptomes_DE_TAB_InspectionSymptomes_fk" pk-table-ref="TAB37" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP88" populated="true" UUID="768fba74-81ee-4f04-97d9-c037a2ad77b4" fk-column-ref="COL45" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL38" />
+   <relationship id="REL87" populated="true" UUID="ea07f6bd-677d-475b-bd7d-7b2d7a5ed509" deferrability="7" deleteRule="3" fk-table-ref="TAB42" fkCardinality="6" identifying="false" name="DE_CTL_Symptoms_DE_TAB_InspectionSymptoms_fk" physicalName="de_ctl_symptoms_de_tab_inspectionsymptoms_fk" pk-table-ref="TAB37" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP88" populated="true" UUID="b2a27702-5714-4bf4-88e6-ac107a8e984a" fk-column-ref="COL45" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL38" />
    </relationship>
-   <relationship id="REL89" populated="true" UUID="55ef5bcf-ec1e-4c84-84c6-f36f4a9ff349" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="6" identifying="false" name="DE_CTL_Doctors_DE_DOC_Inspection_fk" physicalName="DE_CTL_Doctors_DE_DOC_Inspection_fk" pk-table-ref="TAB48" pkCardinality="2" updateRule="3" >
+   <relationship id="REL89" populated="true" UUID="55ef5bcf-ec1e-4c84-84c6-f36f4a9ff349" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="6" identifying="false" name="DE_CTL_Doctors_DE_DOC_Inspection_fk" physicalName="de_ctl_doctors_de_doc_inspection_fk" pk-table-ref="TAB48" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP90" populated="true" UUID="fc526246-11aa-4480-bf34-309a4c0cb7cd" fk-column-ref="COL8" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL49" />
    </relationship>
-   <relationship id="REL91" populated="true" UUID="ff2cbec0-f42a-41f4-8de9-c9a4aff390b6" deferrability="7" deleteRule="3" fk-table-ref="TAB63" fkCardinality="6" identifying="false" name="DE_CTL_Medicine_DE_TAB_InspectionMedicine_fk" physicalName="DE_CTL_Medicine_DE_TAB_InspectionMedicine_fk" pk-table-ref="TAB57" pkCardinality="2" updateRule="3" >
+   <relationship id="REL91" populated="true" UUID="ff2cbec0-f42a-41f4-8de9-c9a4aff390b6" deferrability="7" deleteRule="3" fk-table-ref="TAB63" fkCardinality="6" identifying="false" name="DE_CTL_Medicine_DE_TAB_InspectionMedicine_fk" physicalName="de_ctl_medicine_de_tab_inspectionmedicine_fk" pk-table-ref="TAB57" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP92" populated="true" UUID="fe9beb7c-4c16-4199-afdd-11245c78d330" fk-column-ref="COL66" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL58" />
    </relationship>
-   <relationship id="REL93" populated="true" UUID="7aea8036-6e76-417e-b759-19489555de36" deferrability="7" deleteRule="3" fk-table-ref="TAB69" fkCardinality="6" identifying="false" name="DE_CTL_Medicine_DE_TAB_MedicineSideEffects_fk" physicalName="DE_CTL_Medicine_DE_TAB_MedicineSideEffects_fk" pk-table-ref="TAB57" pkCardinality="2" updateRule="3" >
+   <relationship id="REL93" populated="true" UUID="7aea8036-6e76-417e-b759-19489555de36" deferrability="7" deleteRule="3" fk-table-ref="TAB69" fkCardinality="6" identifying="false" name="DE_CTL_Medicine_DE_TAB_MedicineSideEffects_fk" physicalName="de_ctl_medicine_de_tab_medicinesideeffects_fk" pk-table-ref="TAB57" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP94" populated="true" UUID="2244cdba-3c5b-45f9-9512-7f7b2f80880a" fk-column-ref="COL71" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL58" />
    </relationship>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="true" target-schema="public"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="false" target-schema="public"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
  <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
@@ -339,12 +339,12 @@
   <table-link relationship-ref="REL81" pkConnection="0.4492753623188406" fkConnection="0.6037735849056604" rLineColor="0x3d3d3d" pkLabelText="" fkLabelText="" orientation="33"/>
   <table-link relationship-ref="REL83" pkConnection="0.1949685534591195" fkConnection="0.8301886792452831" rLineColor="0x3d3d3d" pkLabelText="" fkLabelText="" orientation="33"/>
   <table-link relationship-ref="REL85" pkConnection="0.43478260869565216" fkConnection="0.9371069182389937" rLineColor="0x3d3d3d" pkLabelText="" fkLabelText="" orientation="33"/>
-  <table-link relationship-ref="REL75" pkConnection="0.1949685534591195" fkConnection="0.6666666666666666" rLineColor="0x3d3d3d" pkLabelText="" fkLabelText="" orientation="33"/>
-  <table-link relationship-ref="REL87" pkConnection="0.42028985507246375" fkConnection="0.8850574712643678" rLineColor="0x3d3d3d" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL75" pkConnection="0.1949685534591195" fkConnection="0.6551724137931034" rLineColor="0x3d3d3d" pkLabelText="" fkLabelText="" orientation="33"/>
   <table-link relationship-ref="REL89" pkConnection="0.3142857142857143" fkConnection="0.9433962264150944" rLineColor="0x3d3d3d" pkLabelText="" fkLabelText="" orientation="33"/>
   <table-link relationship-ref="REL77" pkConnection="0.18867924528301888" fkConnection="0.6781609195402298" rLineColor="0x3d3d3d" pkLabelText="" fkLabelText="" orientation="33"/>
   <table-link relationship-ref="REL91" pkConnection="0.367816091954023" fkConnection="0.8620689655172413" rLineColor="0x3d3d3d" pkLabelText="" fkLabelText="" orientation="33"/>
   <table-link relationship-ref="REL93" pkConnection="0.3563218390804598" fkConnection="0.6551724137931034" rLineColor="0x3d3d3d" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL87" pkConnection="0.4492753623188406" fkConnection="0.8735632183908046" rLineColor="0x3d3d3d" pkLabelText="" fkLabelText="" orientation="18"/>
  </play-pen>
  <critic-manager>
   <critic-grouping platformType="Generic" enabled="true">

@@ -1,6 +1,13 @@
 {
     "scripts": {
-        "start": "node index.js"
+        "plac": "node _places-generator/index.js",
+        "diag": "node _diagnosis-generator/index.js",
+        "medi": "node _medicine-generator/index.js",
+        "symp": "node _symptomes-generator/index.js",
+        "gend": "node _genders-generator/index.js",
+        "pati": "node _patient-generator/index.js",
+        "doct": "node _doctors-generator/index.js",
+        "insp": "node _inspection-generator/index.js"
     },
     "dependencies": {
         "uuid": "^9.0.0"
