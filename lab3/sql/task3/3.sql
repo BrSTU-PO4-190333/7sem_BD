@@ -53,10 +53,10 @@ HAVING
     );
 
 SELECT
-    -- = = = = = = = = = = = = = = = = Колонка "МестоОбслуживания"
-    Places2.de_name AS МестоОбслуживания,
     -- = = = = = = = = = = = = = = = = Колонка "КоличествоОбслуженныхПациентов"
     COUNT(Inspections2.de_patientId) AS КоличествоОбслуженныхПациентов,
+    -- = = = = = = = = = = = = = = = = Колонка "МестоОбслуживания"
+    Places2.de_name AS МестоОбслуживания,
     -- = = = = = = = = = = = = = = = = Колонка "ДанныеВрача"
     CONCAT(
         'Участок №',
@@ -77,12 +77,18 @@ FROM
 WHERE Places2.de_name = 'на дому'
 GROUP BY
     Places2.de_name,
-    Inspections2.de_doctorId,
-    Doctors2.de_region,
-    Doctors2.de_office,
-    Doctors2.de_surname,
-    Doctors2.de_name,
-    Doctors2.de_patronymic
+    CONCAT(
+        'Участок №',
+        Doctors2.de_region,
+        ', кабинет ',
+        Doctors2.de_office,
+        ', ',
+        Doctors2.de_surname,
+        ' ',
+        Doctors2.de_name,
+        ' ',
+        Doctors2.de_patronymic
+    )
 HAVING
     COUNT(Inspections2.de_patientId) = (
         SELECT
@@ -91,13 +97,10 @@ HAVING
                 SELECT
                     COUNT(Inspection.de_patientId) AS КолОблужПацНаДому
                 FROM
-                    DE_DOC_Inspection AS Inspection,
-                    DE_CTL_InspectionPlaces AS Places,
-                    DE_CTL_Doctors AS Doctors
+                    DE_DOC_Inspection AS Inspection INNER JOIN
+                    DE_CTL_InspectionPlaces AS Places ON Inspection.de_placeId = Places.id
                 WHERE
-                    Inspection.de_placeId = Places.id
-                    AND Inspection.de_doctorId = Doctors.id
-                    AND Places.de_name = 'на дому'
+                    Places.de_name = 'на дому'
                 GROUP BY
                     Places.de_name,
                     Inspection.de_doctorId
