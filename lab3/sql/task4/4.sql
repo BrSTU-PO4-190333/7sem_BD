@@ -1,29 +1,68 @@
 SELECT
-    SUM(A.de_endTime - A.de_startTime) AS ОбщееВремяОбслуживанияПациентовВГоспитале,
+    -- = = = = = = = = = = = = = = = = Колонка "ОбщееВремяОбслуживанияПациентов"
+    CONCAT(
+        SUM(
+            DATE_PART(
+                'minutes',
+                AGE(
+                    Inspections.de_endTime,
+                    Inspections.de_startTime
+                )
+            )
+        ),
+        ' минут + ',
+        SUM(
+            DATE_PART(
+                'seconds',
+                AGE(
+                    Inspections.de_endTime,
+                    Inspections.de_startTime
+                )
+            )
+        ),
+        ' секунд = ',
+        SUM(
+            AGE(
+                Inspections.de_endTime,
+                Inspections.de_startTime
+            )
+        ),
+        ' (часы:минуты:секунды)'
+    ) AS ОбщееВремяОбслуживанияПациентов,
+    -- = = = = = = = = = = = = = = = = Колонка "МестоОсмотра"
+    Places.de_name AS МестоОсмотра,
+    -- = = = = = = = = = = = = = = = = Колонка "ДанныеВрача"
     CONCAT(
         'Участок №',
-        C.de_region,
+        Doctors.de_region,
         ', кабинет ',
-        C.de_office,
+        Doctors.de_office,
         ', ',
-        C.de_surname,
+        Doctors.de_surname,
         ' ',
-        C.de_name,
+        Doctors.de_name,
         ' ',
-        C.de_name
+        Doctors.de_patronymic
     ) AS ДанныеВрача
 FROM
-    DE_DOC_Inspection AS A,
-    DE_CTL_InspectionPlaces AS B,
-    DE_CTL_Doctors AS C
+    DE_DOC_Inspection AS Inspections
+    INNER JOIN DE_CTL_InspectionPlaces AS Places ON Places.id = Inspections.de_placeId
+    INNER JOIN DE_CTL_Doctors AS Doctors ON Doctors.id = Inspections.de_doctorId
 WHERE
-    B.id = A.de_placeId
-    AND C.id = A.de_doctorId
-    AND B.de_name = 'поликлиника'
+    Places.de_name = 'поликлиника'
 GROUP BY
-    A.de_doctorId,
-    C.de_region,
-    C.de_office,
-    C.de_surname,
-    C.de_name,
-    C.de_patronymic;
+    Places.de_name,
+    CONCAT(
+        'Участок №',
+        Doctors.de_region,
+        ', кабинет ',
+        Doctors.de_office,
+        ', ',
+        Doctors.de_surname,
+        ' ',
+        Doctors.de_name,
+        ' ',
+        Doctors.de_patronymic
+    )
+ORDER BY
+    ОбщееВремяОбслуживанияПациентов DESC;
