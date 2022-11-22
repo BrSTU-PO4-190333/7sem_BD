@@ -1,4 +1,6 @@
 SELECT
+    -- = = = = = = = = = = = = = = = = Колонка "Участок"
+    Doctors.de_region AS Участок,
     -- = = = = = = = = = = = = = = = = Колонка "ОбщееВремяОбслуживанияПациентов"
     CONCAT(
         SUM(
@@ -51,6 +53,7 @@ FROM
 WHERE
     Places.de_name = 'поликлиника'
 GROUP BY
+    Doctors.de_region,
     Places.de_name,
     CONCAT(
         'Участок №',
@@ -64,5 +67,4 @@ GROUP BY
         ' ',
         Doctors.de_patronymic
     )
-ORDER BY
-    ОбщееВремяОбслуживанияПациентов DESC;
+ORDER BY Участок;

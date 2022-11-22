@@ -1,14 +1,15 @@
 SELECT *
-FROM DE_CTL_Patients AS A
+FROM DE_CTL_Patients
 WHERE id NOT IN (
         SELECT
-            DISTINCT A.de_patientId
+            DISTINCT Inspections.de_patientId
         FROM
-            DE_DOC_Inspection AS A,
-            DE_CTL_InspectionPlaces AS B
+            DE_DOC_Inspection AS Inspections
+            INNER JOIN DE_CTL_InspectionPlaces AS Places ON Places.id = Inspections.de_placeId
         WHERE
-            B.id = A.de_placeId
-            AND B.de_name = 'на дому'
+            Places.de_name = 'на дому'
         ORDER BY
-            A.de_patientId
-    );
+            Inspections.de_patientId
+    )
+    /*LIMIT 48*/
+;

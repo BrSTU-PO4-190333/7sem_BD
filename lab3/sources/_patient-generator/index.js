@@ -10,10 +10,14 @@ const regionAddress = require('./../../data/region-address.json');
 
 function main() {
   let arr = [];
+  let de_patientId = 0;
   regionAddress.forEach((element) => {
     const countPeopleInHome = 9 * 4 * 2;
     for (let i = 1; i <= countPeopleInHome; ++i) {
+      de_patientId += 1;
+
       arr.push({
+        id: de_patientId,
         de_surname:
           surnames4man[getRandomIntInclusive(1, surnames4man.length - 1)],
         de_name: names4man[getRandomIntInclusive(1, names4man.length - 1)],
@@ -24,7 +28,11 @@ function main() {
         de_genderId: 1,
         de_region: element['Участок'],
       });
+
+      de_patientId += 1;
+      
       arr.push({
+        id: de_patientId,
         de_surname:
           surnames4woman[getRandomIntInclusive(1, surnames4woman.length - 1)],
         de_name: names4woman[getRandomIntInclusive(1, names4woman.length - 1)],

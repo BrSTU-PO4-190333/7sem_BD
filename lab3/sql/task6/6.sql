@@ -1,5 +1,7 @@
 SELECT
+    -- = = = = = = = = = = = = = = = = Колонка "ИдВрача"
     Doctors.id AS ИдВрача,
+    -- = = = = = = = = = = = = = = = = Колонка "ДанныеВрача"
     CONCAT(
         'Участок ',
         Doctors.de_region,
@@ -12,8 +14,11 @@ SELECT
         ', ',
         Doctors.de_patronymic
     ) AS ДанныеВрача,
+    -- = = = = = = = = = = = = = = = = Колонка "ГендерПациента"
     Genders.de_name AS ГендерПациента,
+    -- = = = = = = = = = = = = = = = = Колонка "МестоОсмотра"
     Places.de_name AS МестоОсмотра,
+    -- = = = = = = = = = = = = = = = = Колонка "КолвоПациентовОбслужЗаПериод"
     COUNT(Patients.id) AS КолвоПациентовОбслужЗаПериод
 FROM
     DE_DOC_Inspection AS Inspections
@@ -39,5 +44,4 @@ GROUP BY
     ),
     Genders.de_name,
     Places.de_name
-ORDER BY ИдВрача
-LIMIT 24;
+ORDER BY ИдВрача;

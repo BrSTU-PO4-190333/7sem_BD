@@ -8,35 +8,15 @@ function main() {
 
   medicine.forEach((medicine, index) => {
     const uuid = uuidv4();
-    let sql = `
--- Транзакция №${index + 1}
 
-BEGIN;
-
-    INSERT INTO DE_CTL_Medicines
-    (id, de_name, de_methodtaking)
-    VALUES
-    ('${uuid}','${medicine}','Инструкция по приему лекарства №${index + 1}.');
-        
-    INSERT INTO DE_TAB_MedicineSideEffects
-    (de_medicineid, de_name)
-    VALUES`;
     let arrEffects = [];
     let count = getRandomIntInclusive(1, 4);
     for (let i = 1; i <= count; i++) {
-      sql += `
-    ('${uuid}', 'побочный эффект №${index + 1}.${i}'),`;
-
       arrEffects.push({
         de_medicineId: uuid,
         de_name: `побочный эффект №${index + 1}.${i}`,
       });
     }
-    sql += `
-    ('${uuid}', 'побочный эффект №${index + 1}.${count+1}');\n`;
-
-    sql += `       
-COMMIT;\n`;
 
     arr.push({
       id: uuid,
@@ -72,12 +52,12 @@ COMMIT;\n`;
     sql += '(';
     sql += `'${
       element.DE_TAB_MedicineSideEffects[
-        element.DE_TAB_MedicineSideEffects.length - 1
+        element.DE_TAB_MedicineSideEffects.length -1
       ].de_medicineId
     }', `;
     sql += `'${
       element.DE_TAB_MedicineSideEffects[
-        element.DE_TAB_MedicineSideEffects.length - 1
+        element.DE_TAB_MedicineSideEffects.length -1
       ].de_name
     }'`;
     sql += '); \n\n';
@@ -91,9 +71,9 @@ COMMIT;\n`;
     csv += `"${element.id}", `;
     csv += `"${element.de_name}", `;
     csv += `"${element.de_methodTaking}", `;
-    element.DE_TAB_MedicineSideEffects.forEach(effect => {
+    element.DE_TAB_MedicineSideEffects.forEach((effect) => {
       csv += `"${effect.de_name}", `;
-    })
+    });
     csv += ' \n';
   });
 

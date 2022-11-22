@@ -1,36 +1,46 @@
 SELECT
+    -- = = = = = = = = = = = = = = = = Колонка "ДанныеВрача"
     CONCAT(
         'Участок №',
-        C.de_region,
+        Doctors.de_region,
         ', кабинет ',
-        C.de_office,
+        Doctors.de_office,
         ', ',
-        C.de_surname,
+        Doctors.de_surname,
         ' ',
-        C.de_name,
+        Doctors.de_name,
         ' ',
-        C.de_patronymic
-    ) AS ДанныеВрача, (
-        DATE_PART('year', NOW()) - DATE_PART('year', B.de_birthday)
-    ) AS КоличествоЛетПациенту,
+        Doctors.de_patronymic
+    ) AS ДанныеВрача,
+    -- = = = = = = = = = = = = = = = = Колонка "КоличествоЛетПациентуПодробно"
+    AGE(Patients.de_birthday) AS КоличествоЛетПациентуПодробно,
+    -- = = = = = = = = = = = = = = = = Колонка "ДанныеПациента"
     CONCAT(
-        B.de_birthday,
+        Patients.de_birthday,
         ', ',
-        B.de_surname,
+        Patients.de_surname,
         ' ',
-        B.de_name,
+        Patients.de_name,
         ' ',
-        B.de_patronymic
+        Patients.de_patronymic
     ) AS ДанныеПациента
-FROM
-    DE_DOC_Inspection AS A,
-    DE_CTL_Patients AS B,
-    DE_CTL_Doctors AS C
+FROM (
+        SELECT
+            DISTINCT de_patientId,
+            de_doctorid
+        FROM
+            DE_DOC_Inspection
+        ORDER BY
+            de_patientId
+    ) AS Inspections
+    INNER JOIN DE_CTL_Patients AS Patients ON Patients.id = Inspections.de_patientId
+    INNER JOIN DE_CTL_Doctors AS Doctors ON Doctors.id = Inspections.de_doctorId
 WHERE
-    B.id = A.de_patientid
-    AND C.id = A.de_doctorId
-    AND (
-        DATE_PART('year', NOW()) - DATE_PART('year', B.de_birthday)
+    DATE_PART(
+        'year',
+        AGE(Patients.de_birthday)
     ) > 100
 ORDER BY
-    КоличествоЛетПациенту;
+    КоличествоЛетПациентуПодробно DESC
+    /*LIMIT 48*/
+;

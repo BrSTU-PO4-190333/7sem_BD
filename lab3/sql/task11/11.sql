@@ -1,32 +1,40 @@
 SELECT
-    B.de_name AS МестоОсмотра,
-    AVG(A.de_endTime - A.de_startTime) AS СреднееВремяПриемаПациента,
+    -- = = = = = = = = = = = = = = = = Колонка "МестоОсмотра"
+    Places.de_name AS МестоОсмотра,
+    -- = = = = = = = = = = = = = = = = Колонка "СреднееВремяПриемаПациента"
+    AVG(
+        Inspections.de_endTime - Inspections.de_startTime
+    ) AS СреднееВремяПриемаПациента,
+    -- = = = = = = = = = = = = = = = = Колонка "ДанныеВрача"
     CONCAT(
         'Участок №',
-        C.de_region,
+        Doctors.de_region,
         ', кабинет ',
-        C.de_office,
+        Doctors.de_office,
         ', ',
-        C.de_surname,
+        Doctors.de_surname,
         ' ',
-        C.de_name,
+        Doctors.de_name,
         ' ',
-        C.de_patronymic
+        Doctors.de_patronymic
     ) AS ДанныеВрача
 FROM
-    DE_DOC_Inspection AS A,
-    DE_CTL_InspectionPlaces AS B,
-    DE_CTL_Doctors AS C
-WHERE
-    A.de_placeId = B.id
-    AND A.de_doctorId = C.id
+    DE_DOC_Inspection AS Inspections
+    INNER JOIN DE_CTL_InspectionPlaces AS Places ON Places.id = Inspections.de_placeId
+    INNER JOIN DE_CTL_Doctors AS Doctors ON Doctors.id = Inspections.de_doctorId
 GROUP BY
-    B.de_name,
-    A.de_doctorId,
-    C.de_region,
-    C.de_office,
-    C.de_surname,
-    C.de_name,
-    C.de_patronymic
+    Places.de_name,
+    CONCAT(
+        'Участок №',
+        Doctors.de_region,
+        ', кабинет ',
+        Doctors.de_office,
+        ', ',
+        Doctors.de_surname,
+        ' ',
+        Doctors.de_name,
+        ' ',
+        Doctors.de_patronymic
+    )
 ORDER BY
     СреднееВремяПриемаПациента DESC;
