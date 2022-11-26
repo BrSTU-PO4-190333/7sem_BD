@@ -29,22 +29,4 @@ make generate-sql
 make init-database
 ```
 
-## Tasks
-
-| Task | Is done | Is check | View code                |
-| ---- | ------- | -------- | ------------------------ |
-| 1    | x       | x        | [код](sql/task1/1.sql)   |
-| 2    |         |          | [код](sql/task2/2.sql)   |
-| 3    | x       | x        | [код](sql/task3/3.sql)   |
-| 4    |         |          | [код](sql/task4/4.sql)   |
-| 5    | x       | x        | [код](sql/task5/5.sql)   |
-| 6    |         |          | [код](sql/task6/6.sql)   |
-| 7    |         |          | [код](sql/task7/7.sql)   |
-| 8    | x       | x        | [код](sql/task9/8.sql)   |
-| 9    | x       | x        | [код](sql/task9/9.sql)   |
-| 10   | x       | x        | [код](sql/task10/10.sql) |
-| 11   | x       | x        | [код](sql/task11/11.sql) |
-| 12   |         |          | [код](sql/task12/12.sql) |
-| 13   |         |          | [код](sql/task13/13.sql) |
-| 14   |         |          | [код](sql/task14/14.sql) |
-| 15   |         |          | [код](sql/task15/15.sql) |
+SQL-запросы находятся в папке [sql/](sql/).
