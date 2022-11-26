@@ -29,7 +29,7 @@ CREATE SEQUENCE public.de_ctl_universities_id_seq;
 CREATE TABLE public.DE_CTL_Universities (
                 id INTEGER NOT NULL DEFAULT nextval('public.de_ctl_universities_id_seq'),
                 de_name VARCHAR(256) NOT NULL,
-                de_rating INTEGER NOT NULL,
+                de_rating REAL NOT NULL,
                 de_cityId INTEGER NOT NULL,
                 CONSTRAINT de_ctl_universities_pk PRIMARY KEY (id)
 );
