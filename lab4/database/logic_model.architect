@@ -22,10 +22,10 @@
     <column id="COL4" populated="true" UUID="f06cc42b-1776-47ef-bf63-2f626c2b87e3" autoIncrement="false" autoIncrementSequenceName="DE_CTL_Students_Name_seq" defaultValue="" name="de_name" nullable="0" physicalName="de_name" precision="32" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL5" populated="true" UUID="5af317b7-f02b-4e95-a4e6-c5a0d57ea953" autoIncrement="false" autoIncrementSequenceName="DE_CTL_Students_de_patronymic_seq" defaultValue="" name="de_patronymic" nullable="0" physicalName="de_patronymic" precision="32" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL5" populated="true" UUID="5af317b7-f02b-4e95-a4e6-c5a0d57ea953" autoIncrement="false" autoIncrementSequenceName="DE_CTL_Students_de_patronymic_seq" defaultValue="" name="de_patronymic" nullable="1" physicalName="de_patronymic" precision="32" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL6" populated="true" UUID="02e47afd-1401-4eea-81d7-73134945cf82" autoIncrement="false" autoIncrementSequenceName="DE_CTL_Students_Stipend_seq" defaultValue="" name="de_sholarship" nullable="1" physicalName="de_sholarship" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="6" userDefinedTypeUUID="7e55bcd0-7606-4153-b749-9c397f12c4d8" >
+    <column id="COL6" populated="true" UUID="6a55072e-4208-4d6c-8ef7-0b56fdf8dd68" autoIncrement="false" autoIncrementSequenceName="DE_CTL_Students_de_scholarship_seq" defaultValue="" name="de_scholarship" nullable="1" physicalName="de_scholarship" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="6" userDefinedTypeUUID="7e55bcd0-7606-4153-b749-9c397f12c4d8" >
      <remarks></remarks>
     </column>
     <column id="COL7" populated="true" UUID="63ac77b8-76f6-4c05-ac29-b14884f96257" autoIncrement="false" autoIncrementSequenceName="DE_CTL_Students_Kurs_seq" defaultValue="" name="de_course" nullable="0" physicalName="de_course" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
@@ -57,7 +57,7 @@
   <table id="TAB14" populated="true" UUID="d6e8cb2e-0b19-4df7-a215-701185b80f8a" name="DE_CTL_Lecturers" objectType="TABLE" physicalName="DE_CTL_Lecturers" >
    <remarks></remarks>
    <folder id="FOLTAB141" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL15" populated="true" UUID="8b7a3e41-45b0-44c2-8983-3c2d70a8d3ca" autoIncrement="false" autoIncrementSequenceName="DE_CTL_Lecturers_Lecturer_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL15" populated="true" UUID="8b7a3e41-45b0-44c2-8983-3c2d70a8d3ca" autoIncrement="true" autoIncrementSequenceName="DE_CTL_Lecturers_Lecturer_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL16" populated="true" UUID="bc81e50e-42ae-4c95-89e1-13115b9c5ba5" autoIncrement="false" autoIncrementSequenceName="DE_CTL_Lecturers_Surname_seq" defaultValue="" name="de_surname" nullable="0" physicalName="de_surname" precision="32" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -95,7 +95,7 @@
     <column id="COL25" populated="true" UUID="85ba1079-7ef1-413c-9597-944ba3fed122" autoIncrement="true" autoIncrementSequenceName="DE_CTL_Universities_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL26" populated="true" UUID="863fdbd4-f208-4d85-88f4-3211360ef719" autoIncrement="false" autoIncrementSequenceName="UNIVERSITY_Univ_name_seq" defaultValue="" name="de_name" nullable="0" physicalName="de_name" precision="128" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL26" populated="true" UUID="863fdbd4-f208-4d85-88f4-3211360ef719" autoIncrement="false" autoIncrementSequenceName="UNIVERSITY_Univ_name_seq" defaultValue="" name="de_name" nullable="0" physicalName="de_name" precision="256" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     <column id="COL27" populated="true" UUID="62dd90f8-c7c5-46a6-9291-f0a89702e226" autoIncrement="false" autoIncrementSequenceName="UNIVERSITY_Rating_seq" defaultValue="" name="de_rating" nullable="0" physicalName="de_rating" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
@@ -124,7 +124,7 @@
     <column id="COL33" populated="true" UUID="e8b722a7-d5a6-4696-89ca-b6fe9b753d87" autoIncrement="false" autoIncrementSequenceName="DE_CTL_Subjects_Subj_name_seq" defaultValue="" name="de_name" nullable="0" physicalName="de_name" precision="32" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL34" populated="true" UUID="fd326366-e783-43c6-a809-d9b00c41367b" autoIncrement="false" autoIncrementSequenceName="DE_CTL_Subjects_Hour_seq" defaultValue="" name="de_hours" nullable="0" physicalName="de_hours" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL34" populated="true" UUID="fd326366-e783-43c6-a809-d9b00c41367b" autoIncrement="false" autoIncrementSequenceName="DE_CTL_Subjects_Hour_seq" defaultValue="" name="de_hours" nullable="1" physicalName="de_hours" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL35" populated="true" UUID="eb6ad398-7493-4d0b-a355-38fc1583c33e" autoIncrement="false" autoIncrementSequenceName="DE_CTL_Subjects_Semestr_seq" defaultValue="" name="de_semestr" nullable="0" physicalName="de_semestr" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
@@ -246,7 +246,7 @@
  <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="false" target-schema="public"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
- <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+ <play-pen zoom="1.0" viewportX="197" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
   <table-pane table-ref="TAB1" x="271" y="169" bgColor="0xfbdabb" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB14" x="733" y="104" bgColor="0xfbdabb" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB24" x="1205" y="20" bgColor="0xfbdabb" fgColor="0x000000" rounded="false" dashed="false"/>

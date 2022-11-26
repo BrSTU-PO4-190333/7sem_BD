@@ -14,8 +14,8 @@ CREATE SEQUENCE public.de_ctl_subjects_subj_id_seq;
 
 CREATE TABLE public.DE_CTL_Subjects (
                 id INTEGER NOT NULL DEFAULT nextval('public.de_ctl_subjects_subj_id_seq'),
-                de_name VARCHAR(32) NOT NULL,
-                de_hours INTEGER NOT NULL,
+                de_name VARCHAR(256) NOT NULL,
+                de_hours INTEGER,
                 de_semestr INTEGER NOT NULL,
                 de_course INTEGER NOT NULL,
                 CONSTRAINT de_ctl_subjects_pk PRIMARY KEY (id)
@@ -28,7 +28,7 @@ CREATE SEQUENCE public.de_ctl_universities_id_seq;
 
 CREATE TABLE public.DE_CTL_Universities (
                 id INTEGER NOT NULL DEFAULT nextval('public.de_ctl_universities_id_seq'),
-                de_name VARCHAR(128) NOT NULL,
+                de_name VARCHAR(256) NOT NULL,
                 de_rating INTEGER NOT NULL,
                 de_cityId INTEGER NOT NULL,
                 CONSTRAINT de_ctl_universities_pk PRIMARY KEY (id)
@@ -37,8 +37,10 @@ CREATE TABLE public.DE_CTL_Universities (
 
 ALTER SEQUENCE public.de_ctl_universities_id_seq OWNED BY public.DE_CTL_Universities.id;
 
+CREATE SEQUENCE public.de_ctl_lecturers_lecturer_id_seq;
+
 CREATE TABLE public.DE_CTL_Lecturers (
-                id INTEGER NOT NULL,
+                id INTEGER NOT NULL DEFAULT nextval('public.de_ctl_lecturers_lecturer_id_seq'),
                 de_surname VARCHAR(32) NOT NULL,
                 de_name VARCHAR(32) NOT NULL,
                 de_patronymic VARCHAR(32) NOT NULL,
@@ -48,6 +50,8 @@ CREATE TABLE public.DE_CTL_Lecturers (
                 CONSTRAINT de_ctl_lecturers_pk PRIMARY KEY (id)
 );
 
+
+ALTER SEQUENCE public.de_ctl_lecturers_lecturer_id_seq OWNED BY public.DE_CTL_Lecturers.id;
 
 CREATE SEQUENCE public.de_tab_subjectlecturer_id_seq;
 
@@ -67,8 +71,8 @@ CREATE TABLE public.DE_CTL_Students (
                 id INTEGER NOT NULL DEFAULT nextval('public.de_ctl_students_student_id_seq'),
                 de_surname VARCHAR(32) NOT NULL,
                 de_name VARCHAR(32) NOT NULL,
-                de_patronymic VARCHAR(32) NOT NULL,
-                de_sholarship REAL,
+                de_patronymic VARCHAR(32),
+                de_scholarship REAL,
                 de_course INTEGER NOT NULL,
                 de_city VARCHAR(32),
                 de_birthday DATE NOT NULL,
