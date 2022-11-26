@@ -1,6 +1,0 @@
-st190333_db7lab3=> SELECT * FROM DE_CTL_InspectionPlaces LIMIT 24;
- id |   de_name   
-----+-------------
-  1 | поликлиника
-  2 | на дому
-(2 rows)
