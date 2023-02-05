@@ -1,0 +1,8 @@
+{
+    "scripts": {
+        "file": "node _to_one_file/index.js",
+        "city": "node _cities_generator/index.js",
+        "univ": "node _university_generator/index.js",
+        "stud": "node _students_generator/index.js"
+    }
+}

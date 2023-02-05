@@ -1,0 +1,8 @@
+docker/
+*.env
+
+sql/init/2*.sql
+sql/init/3*.sql
+sql/init/4*.sql
+sql/init/5*.sql
+sql/init/6*.sql
